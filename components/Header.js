@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 const NavLink = ({ link, activeLink, onClick, children }) => {
     return (
@@ -15,21 +16,9 @@ const NavLink = ({ link, activeLink, onClick, children }) => {
 
 const Sidebar = ({ activeLink, onLinkClick }) => {
     return (
-        <aside className="bg-blue-500 h-screen w-32 text-white p-4 fixed top-0 left-0 overflow-y-auto">
+        <aside className="bg-blue-500 h-screen w-36 text-white p-4 fixed top-0 left-0 overflow-y-auto z-10">
             {/* Sidebar content */}
             <nav className="space-y-4">
-                <NavLink link="home" activeLink={activeLink} onClick={onLinkClick}>
-                    Home
-                </NavLink>
-                <NavLink link="about" activeLink={activeLink} onClick={onLinkClick}>
-                    About Us
-                </NavLink>
-                <NavLink link="courses" activeLink={activeLink} onClick={onLinkClick}>
-                    Courses
-                </NavLink>
-                <NavLink link="contact" activeLink={activeLink} onClick={onLinkClick}>
-                    Contact
-                </NavLink>
                 <NavLink link="home" activeLink={activeLink} onClick={onLinkClick}>
                     Home
                 </NavLink>
@@ -47,7 +36,17 @@ const Sidebar = ({ activeLink, onLinkClick }) => {
     );
 };
 
+NavLink.propTypes = {
+    link: PropTypes.string.isRequired,
+    activeLink: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired,
+    children: PropTypes.node.isRequired,
+};
 
+Sidebar.propTypes = {
+    activeLink: PropTypes.string.isRequired,
+    onLinkClick: PropTypes.func.isRequired,
+};
 
 const Header = () => {
     // State to track the current active link
@@ -119,12 +118,12 @@ const Header = () => {
                                 onClick={handleLinkClick}
                             >About Us</NavLink>
                             <NavLink
-                                link="about"
+                                link="courses"
                                 activeLink={activeLink}
                                 onClick={handleLinkClick}
                             >Courses</NavLink>
                             <NavLink
-                                link="courses"
+                                link="contact"
                                 activeLink={activeLink}
                                 onClick={handleLinkClick}
                             >Contact</NavLink>
