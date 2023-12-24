@@ -8,11 +8,11 @@ const LearningSection = () => {
                 <p className="text-gray-600">
                     Explore a world of knowledge with our extensive selection of online courses.
                 </p>
-                <div className="mt-4 flex space-x-4">
-                    <button className="bg-blue-500 text-white px-4 py-2 rounded">
+                <div className="mt-4 flex flex-wrap gap-y-5 gap-x-3 md:gap-x-5">
+                    <button className="bg-blue-500 text-white px-4 py-2 rounded w-200">
                         Start learning now
                     </button>
-                    <button className="bg-gray-800 text-white px-4 py-2 rounded">
+                    <button className="bg-gray-800 text-white px-4 py-2 rounded w-200">
                         Explore Courses
                     </button>
                 </div>
