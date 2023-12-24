@@ -12,17 +12,17 @@ const Section_02 = () => {
                     <img
                         src="/images/section_02/company_01.png"
                         alt="Company 01"
-                        className="h-16 w-auto mb-4 md:mb-0 md:mr-4"
+                        className="h-16 w-32 md:w-auto mb-4 md:mb-0 md:mr-4"
                     />
                     <img
-                        src="/images/section_02/company_01.png"
-                        alt="Company 01"
-                        className="h-16 w-auto mb-4 md:mb-0 md:mr-4"
+                        src="/images/section_02/company_02.png"
+                        alt="Company 02"
+                        className="h-16 w-32 md:w-auto mb-4 md:mb-0 md:mr-4"
                     />
                     <img
-                        src="/images/section_02/company_01.png"
-                        alt="Company 01"
-                        className="h-16 w-auto mb-4 md:mb-0 md:mr-4"
+                        src="/images/section_02/company_03.png"
+                        alt="Company 03"
+                        className="h-16 w-32 md:w-auto mb-4 md:mb-0 md:mr-4"
                     />
                 </div>
             </div>
