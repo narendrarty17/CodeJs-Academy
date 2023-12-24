@@ -2,7 +2,7 @@ import React from 'react';
 
 const Section_02 = () => {
     return (
-        <section className="p-8">
+        <section className="bg-gray-800 p-8">
             <div className="flex flex-col items-center md:flex-row md:justify-center container mx-auto">
                 <h2 className="text-3xl font-bold mb-6">Trusted by 2000+ companies worldwide.</h2>
 
