@@ -145,7 +145,7 @@ const Section_04 = () => {
 
             {/* Part 4: View All Button */}
             <div className="flex justify-center">
-                <button className="text-white border border-blue-400 text-base leading-6 whitespace-nowrap justify-center items-stretch border px-4 py-2 rounded-md border-solid">
+                <button className="text-white border border-white text-base leading-6 whitespace-nowrap justify-center items-stretch border px-4 py-2 rounded-md border-solid">
                     View All Courses
                 </button>
             </div>
