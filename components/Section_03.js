@@ -10,15 +10,15 @@ const Section_03 = () => {
                 </h2>
                 <p className="text-gray-400 mb-2">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at justo vel justo cursus cursus non ac justo.
-                    Fusce in hendrerit neque, nec ullamcorper ante. Vestibulum aliquet velit ac ultricies lacinia.
+                    Ullamcorper ante. Vestibulum aliquet velit ac ultricies lacinia.
                 </p>
                 <p className="text-gray-400 mb-2">
                     Integer laoreet, quam in feugiat condimentum, nunc est vehicula velit, a aliquet nisl lectus sit amet sem.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at justo vel justo cursus cursus non ac justo.
+                    Proin at justo vel justo cursus cursus non ac justo.
                 </p>
                 <p className="text-gray-400 mb-4">
                     Fusce in hendrerit neque, nec ullamcorper ante. Vestibulum aliquet velit ac ultricies lacinia.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at justo vel justo cursus cursus non ac justo.
+                    Consectetur adipiscing elit. Proin at justo vel justo cursus cursus non ac justo.
                 </p>
                 <button className="bg-blue-500 text-white px-4 py-2 mt-5 rounded">
                     Explore Courses
@@ -26,11 +26,11 @@ const Section_03 = () => {
             </div>
 
             {/* Image */}
-            <div className="flex justify-center md:w-1/2 mt-10 md:mt-0">
+            <div className="flex justify-center md:w-1/2 mt-10 md:mt-4">
                 <img
                     src="/images/section_03/posterImage.jpg"  // Update the image path
                     alt="Section Image"
-                    className="w-full md:w-full h-auto object-cover"
+                    className="w-full md:w-full lg:w-2/3 h-auto object-cover"
                 />
             </div>
         </section>
