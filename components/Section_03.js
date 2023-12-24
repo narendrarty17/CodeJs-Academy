@@ -2,7 +2,7 @@ import React from 'react';
 
 const Section_03 = () => {
     return (
-        <section className="container mx-auto p-8 flex flex-col md:flex-row items-center">
+        <section className="container mx-auto p-8 flex flex-col justify-center md:items-start md:flex-row items-center">
             {/* Content */}
             <div className="md:w-1/2 md:pr-8">
                 <h2 className="text-3xl font-bold mb-4">
@@ -30,7 +30,7 @@ const Section_03 = () => {
                 <img
                     src="/images/section_03/posterImage.jpg"  // Update the image path
                     alt="Section Image"
-                    className="w-full md:w-2/3 h-auto object-cover"
+                    className="w-full md:w-full h-auto object-cover"
                 />
             </div>
         </section>
