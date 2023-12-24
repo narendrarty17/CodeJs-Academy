@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LearningSection = () => {
+const Section_01 = () => {
     return (
         <div className="flex flex-col items-center md:flex-row">
             <div className="w-full md:w-1/2 p-8 mb-4 md:mb-0">
@@ -19,7 +19,7 @@ const LearningSection = () => {
             </div>
             <div className="w-full md:w-1/2 relative" style={{ paddingBottom: '50%' }}>
                 <img
-                    src="/images/section_01/posterImage.png" // Update the image path
+                    src="/images/section_01/posterImage.jpg" // Update the image path
                     alt="Learning Section"
                     className="absolute inset-0 w-full h-auto object-cover max-w-full md:w-full md:h-auto"
                 />
@@ -28,4 +28,4 @@ const LearningSection = () => {
     );
 };
 
-export default LearningSection;
+export default Section_01;
