@@ -17,7 +17,7 @@ const Section_01 = () => {
                     </button>
                 </div>
             </div>
-            <div className="w-full md:w-1/2  mb-[160px] md:mb-[0px] relative z-0" style={{ paddingBottom: '50%' }}>
+            <div className="w-full md:w-1/2  mb-[180px] md:mb-[0px] relative z-0" style={{ paddingBottom: '50%' }}>
                 <img
                     src="/images/section_01/posterImage.jpg"
                     alt="Learning Section"
