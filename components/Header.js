@@ -30,6 +30,18 @@ const Sidebar = ({ activeLink, onLinkClick }) => {
                 <NavLink link="contact" activeLink={activeLink} onClick={onLinkClick}>
                     Contact
                 </NavLink>
+                <NavLink link="home" activeLink={activeLink} onClick={onLinkClick}>
+                    Home
+                </NavLink>
+                <NavLink link="about" activeLink={activeLink} onClick={onLinkClick}>
+                    About Us
+                </NavLink>
+                <NavLink link="courses" activeLink={activeLink} onClick={onLinkClick}>
+                    Courses
+                </NavLink>
+                <NavLink link="contact" activeLink={activeLink} onClick={onLinkClick}>
+                    Contact
+                </NavLink>
             </nav>
         </aside>
     );
