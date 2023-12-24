@@ -21,7 +21,7 @@ const LearningSection = () => {
                 <img
                     src="/images/section_01/posterImage.png" // Update the image path
                     alt="Learning Section"
-                    className="absolute inset-0 w-full h-auto object-cover max-w-full"
+                    className="absolute inset-0 w-full h-[350px] object-cover max-w-full md:w-2/3 md:h-auto"
                 />
             </div>
         </div>
