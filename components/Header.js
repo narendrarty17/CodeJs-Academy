@@ -16,7 +16,7 @@ const NavLink = ({ link, activeLink, onClick, children }) => {
 
 const Sidebar = ({ activeLink, onLinkClick }) => {
     return (
-        <aside className="bg-blue-500 h-screen w-36 text-white p-4 fixed top-0 left-0 overflow-y-auto z-10">
+        <aside className="flex flex-col pt-[100px] items-center bg-blue-500 h-screen w-40 text-white p-4 fixed top-0 left-0 overflow-y-auto z-10">
             {/* Sidebar content */}
             <nav className="space-y-4">
                 <NavLink link="home" activeLink={activeLink} onClick={onLinkClick}>
