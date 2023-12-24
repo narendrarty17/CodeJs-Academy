@@ -16,7 +16,7 @@ const Section_04 = () => {
             {/* Part 2: Buttons */}
             <div className="flex justify-center space-x-4 mb-8">
                 <button
-                    className={`text-gray-600 hover:text-blue-500 focus:text-blue-500 focus:underline ${selectedButton === 'Popular' && 'text-blue-500 underline' // Conditionally apply styles
+                    className={`text-gray-600 hover:text-blue-500 focus:text-blue-500 focus:underline ${selectedButton === 'Popular' && 'text-blue-600 underline' // Conditionally apply styles
                         }`}
                     onClick={() => setSelectedButton('Popular')}
                 >
@@ -41,7 +41,7 @@ const Section_04 = () => {
             {/* Part 3: Courses */}
             <div className="flex flex-wrap justify-around">
                 {/* Course Card 1 */}
-                <div className="bg-white border border-gray-200 shadow-md w-80 mb-8">
+                <div className="bg-white shadow-md w-80 mb-8">
                     {/* Section 1: Image */}
                     <img
                         src="/images/section_04/course_01.png" // Updated image path
@@ -74,7 +74,7 @@ const Section_04 = () => {
                 </div>
 
                 {/* Course Card 2 */}
-                <div className="bg-white border border-gray-200 shadow-md w-80 mb-8">
+                <div className="bg-white shadow-md w-80 mb-8">
                     {/* Section 1: Image */}
                     <img
                         src="/images/section_04/course_01.png" // Updated image path
@@ -107,7 +107,7 @@ const Section_04 = () => {
                 </div>
 
                 {/* Course Card 3 */}
-                <div className="bg-white border border-gray-200 shadow-md w-80 mb-8">
+                <div className="bg-white shadow-md w-80 mb-8">
                     {/* Section 1: Image */}
                     <img
                         src="/images/section_04/course_01.png" // Updated image path
@@ -141,6 +141,13 @@ const Section_04 = () => {
 
 
                 {/* Repeat similar structure for additional courses */}
+            </div>
+
+            {/* Part 4: View All Button */}
+            <div className="flex justify-center">
+                <button className="text-white border border-blue-400 text-base leading-6 whitespace-nowrap justify-center items-stretch border px-4 py-2 rounded-md border-solid">
+                    View All Courses
+                </button>
             </div>
         </section>
     );
