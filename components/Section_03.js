@@ -26,7 +26,7 @@ const Section_03 = () => {
             </div>
 
             {/* Image */}
-            <div className="flex justify-center md:w-1/2 mt-10 md:mt-5">
+            <div className="flex justify-center md:w-1/2 mt-10 md:mt-4">
                 <img
                     src="/images/section_03/posterImage.jpg"  // Update the image path
                     alt="Section Image"
