@@ -1,20 +1,83 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSwipeable } from 'react-swipeable';
+
+const courseData = [
+    {
+        id: 0,
+        image: '/images/section_04/course_01.png',
+        category: 'Design',
+        rating: 5.0,
+        title: 'Your 1st Course',
+        description: 'Course description text goes here. Course description text goes here.',
+        enrollButton: '$430',
+    },
+    {
+        id: 1,
+        image: '/images/section_04/course_02.png',
+        category: 'Management',
+        rating: 4.5,
+        title: 'Your 2nd Course',
+        description: 'Another course description. More text goes here.',
+        enrollButton: '$250',
+    },
+    {
+        id: 2,
+        image: '/images/section_04/course_03.png',
+        category: 'Programming',
+        rating: 4.5,
+        title: 'Your 3rd Course',
+        description: 'Another course description. More text goes here.',
+        enrollButton: '$250',
+    },
+    // Add more courses as needed
+];
 
 const Section_04 = () => {
-    // State to track the selected button
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
     const [selectedButton, setSelectedButton] = useState('Popular');
+    const [selectedCourse, setSelectedCourse] = useState(0);
+
+    const handlers = useSwipeable({
+        onSwipedLeft: () => handleSwipe('left'),
+        onSwipedRight: () => handleSwipe('right'),
+        preventDefaultTouchmoveEvent: true,
+        trackMouse: true,
+    });
+
+    const handleSwipe = (direction) => {
+        if (direction === 'left' && selectedCourse < courseData.length - 1) {
+            setSelectedCourse((prevCourse) => prevCourse + 1);
+        } else if (direction === 'right' && selectedCourse > 0) {
+            setSelectedCourse((prevCourse) => prevCourse - 1);
+        }
+    };
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth <= 600);
+        };
+
+        handleResize(); // Initial check
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    const numberOfCourses = isSmallScreen ? 1 : courseData.length;
 
     return (
         <section className="container mx-auto p-8">
             {/* Part 1: Heading and Description */}
             <div className="text-center mb-6">
-                {/* Reduced margin-bottom to 6 */}
                 <h2 className="text-3xl font-bold">Courses</h2>
                 <p className="text-gray-600">Your Ultimate Guide to Learning</p>
             </div>
 
             {/* Part 2: Buttons */}
             <div className="flex justify-center space-x-4 mb-8">
+                {/* Your buttons code here */}
                 <button
                     className={`text-gray-600 hover:text-blue-500 focus:text-blue-500 focus:underline ${selectedButton === 'Popular' && 'text-blue-600 underline' // Conditionally apply styles
                         }`}
@@ -39,108 +102,53 @@ const Section_04 = () => {
             </div>
 
             {/* Part 3: Courses */}
-            <div className="flex flex-wrap justify-around">
-                {/* Course Card 1 */}
-                <div className="bg-white shadow-md w-80 mb-8">
-                    {/* Section 1: Image */}
-                    <img
-                        src="/images/section_04/course_01.png" // Updated image path
-                        alt="Course Image"
-                        className="w-full h-auto object-cover mb-4"
-                    />
+            <div className="flex flex-wrap justify-around" {...handlers}>
+                {courseData.filter((_, index) => (isSmallScreen ? index === selectedCourse : true))
+                    .map((course) => (
+                        <div key={course.id} className="bg-white shadow-md w-80 mb-8">
+                            {/* Section 1: Image */}
+                            <img
+                                src={course.image}
+                                alt="Course Image"
+                                className="w-full h-auto object-cover mb-4"
+                            />
 
-                    {/* Section 2: Category and Rating */}
-                    <div className="px-4 mb-2 text-gray-500 flex justify-between items-center">
-                        <span>Design</span>
-                        <div>
-                            <span className="mx-2">&bull;</span>
-                            <span>Rating: 5.0</span>
+                            {/* Section 2: Category and Rating */}
+                            <div className="px-4 mb-2 text-gray-500 flex justify-between items-center">
+                                <span>{course.category}</span>
+                                <div>
+                                    <span className="mx-2">&bull;</span>
+                                    <span>Rating: {course.rating}</span>
+                                </div>
+                            </div>
+
+                            {/* Section 3: Title */}
+                            <h3 className="px-4 text-xl font-bold text-black mb-2 truncate">{course.title}</h3>
+
+                            {/* Section 4: Description */}
+                            <p className="px-4 text-gray-600 line-clamp-2 mb-4">
+                                {course.description}
+                            </p>
+
+                            {/* Section 5: Buttons */}
+                            <div className="pl-4 pb-4 flex justify-start items-center">
+                                <button className="bg-blue-500 text-white px-4 py-2 rounded">Enroll Now</button>
+                                <button className="text-gray-700 px-4 py-2 font-semibold">{course.enrollButton}</button>
+                            </div>
                         </div>
-                    </div>
+                    ))}
+            </div>
 
-                    {/* Section 3: Title */}
-                    <h3 className="px-4 text-xl font-bold text-black mb-2 truncate">Course Title Here</h3>
-
-                    {/* Section 4: Description */}
-                    <p className="px-4 text-gray-600 line-clamp-2 mb-4">
-                        Course description text goes here. Course description text goes here.
-                    </p>
-
-                    {/* Section 5: Buttons */}
-                    <div className="pl-4 pb-4 flex justify-start items-center">
-                        <button className="bg-blue-500 text-white px-4 py-2 rounded">Enroll Now</button>
-                        <button className="text-gray-700 px-4 py-2 font-semibold">$430</button>
-                    </div>
-                </div>
-
-                {/* Course Card 2 */}
-                <div className="bg-white shadow-md w-80 mb-8">
-                    {/* Section 1: Image */}
-                    <img
-                        src="/images/section_04/course_01.png" // Updated image path
-                        alt="Course Image"
-                        className="w-full h-auto object-cover mb-4"
+            {/* Part 3: Course Dots */}
+            <div className="flex justify-center mb-6">
+                {courseData.map((_, index) => (
+                    <div
+                        key={index}
+                        className={`w-3 h-3 rounded-full mx-1 ${selectedCourse === index ? 'bg-white' : 'bg-gray-600'
+                            }`}
+                        onClick={() => setSelectedCourse(index)}
                     />
-
-                    {/* Section 2: Category and Rating */}
-                    <div className="px-4 mb-2 text-gray-500 flex justify-between items-center">
-                        <span>Design</span>
-                        <div>
-                            <span className="mx-2">&bull;</span>
-                            <span>Rating: 5.0</span>
-                        </div>
-                    </div>
-
-                    {/* Section 3: Title */}
-                    <h3 className="px-4 text-xl font-bold text-black mb-2 truncate">Course Title Here</h3>
-
-                    {/* Section 4: Description */}
-                    <p className="px-4 text-gray-600 line-clamp-2 mb-4">
-                        Course description text goes here. Course description text goes here.
-                    </p>
-
-                    {/* Section 5: Buttons */}
-                    <div className="pl-4 pb-4 flex justify-start items-center">
-                        <button className="bg-blue-500 text-white px-4 py-2 rounded">Enroll Now</button>
-                        <button className="text-gray-700 px-4 py-2 font-semibold">$430</button>
-                    </div>
-                </div>
-
-                {/* Course Card 3 */}
-                <div className="bg-white shadow-md w-80 mb-8">
-                    {/* Section 1: Image */}
-                    <img
-                        src="/images/section_04/course_01.png" // Updated image path
-                        alt="Course Image"
-                        className="w-full h-auto object-cover mb-4"
-                    />
-
-                    {/* Section 2: Category and Rating */}
-                    <div className="px-4 mb-2 text-gray-500 flex justify-between items-center">
-                        <span>Design</span>
-                        <div>
-                            <span className="mx-2">&bull;</span>
-                            <span>Rating: 5.0</span>
-                        </div>
-                    </div>
-
-                    {/* Section 3: Title */}
-                    <h3 className="px-4 text-xl font-bold text-black mb-2 truncate">Course Title Here</h3>
-
-                    {/* Section 4: Description */}
-                    <p className="px-4 text-gray-600 line-clamp-2 mb-4">
-                        Course description text goes here. Course description text goes here.
-                    </p>
-
-                    {/* Section 5: Buttons */}
-                    <div className="pl-4 pb-4 flex justify-start items-center">
-                        <button className="bg-blue-500 text-white px-4 py-2 rounded">Enroll Now</button>
-                        <button className="text-gray-700 px-4 py-2 font-semibold">$430</button>
-                    </div>
-                </div>
-
-
-                {/* Repeat similar structure for additional courses */}
+                ))}
             </div>
 
             {/* Part 4: View All Button */}
