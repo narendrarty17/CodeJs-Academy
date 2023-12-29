@@ -77,53 +77,55 @@ const Section_05 = () => {
 
             {/* Part 2: Review Cards */}
             <div className="flex flex-wrap justify-center mx-auto space-x-4" {...handlers}>
-                {reviewsData.map((review, index) => {
-                    const cardRef = React.createRef();
+                {reviewsData
+                    .filter((_, index) => index === selectedReview)
+                    .map((review, index) => {
+                        const cardRef = React.createRef();
 
-                    // Log the width after rendering
-                    useEffect(() => {
-                        if (cardRef.current) {
-                            console.log(`Card ${index} width:`, cardRef.current.offsetWidth);
-                        }
-                    }, [cardRef]);
+                        // Log the width after rendering
+                        useEffect(() => {
+                            if (cardRef.current) {
+                                console.log(`Card ${index} width:`, cardRef.current.offsetWidth);
+                            }
+                        }, [cardRef]);
 
-                    return (
-                        <div
-                            key={index}
-                            ref={cardRef}
-                            className={`bg-white shadow-md w-full h-auto pb-4 sm:w-96 mb-8 cursor-pointer rounded-md overflow-hidden flex-shrink-0 ${selectedReview === index ? 'border border-blue-500' : ''}`}
-                            onClick={() => setSelectedReview(index)}
-                        >
-                            {/* Section 1: Rating */}
-                            <div className="p-4 text-2xl text-black font-bold">
-                                <RatingComponent rating={review.rating} />
-                            </div>
+                        return (
+                            <div
+                                key={index}
+                                ref={cardRef}
+                                className={`bg-white shadow-md w-full h-auto pb-4 sm:w-96 mb-8 cursor-pointer rounded-md overflow-hidden flex-shrink-0 ${selectedReview === index ? 'border border-blue-500' : ''}`}
+                                onClick={() => setSelectedReview(index)}
+                            >
+                                {/* Section 1: Rating */}
+                                <div className="p-4 text-2xl text-black font-bold">
+                                    <RatingComponent rating={review.rating} />
+                                </div>
 
-                            {/* Section 2: Review Text */}
-                            <p className="px-4 text-gray-600 line-clamp-3 mb-4 h-24 overflow-hidden">
-                                {review.reviewText}
-                            </p>
+                                {/* Section 2: Review Text */}
+                                <p className="px-4 text-gray-600 line-clamp-3 mb-4 h-24 overflow-hidden">
+                                    {review.reviewText}
+                                </p>
 
-                            {/* Section 3: Reviewer Information */}
-                            <div className="flex items-center justify-start h-16 p-4">
-                                {/* Part 1: Reviewer Image */}
-                                <img
-                                    src={review.reviewerImage}
-                                    alt="Reviewer"
-                                    className="w-16 h-16 object-cover rounded-full"
-                                />
+                                {/* Section 3: Reviewer Information */}
+                                <div className="flex items-center justify-start h-16 p-4">
+                                    {/* Part 1: Reviewer Image */}
+                                    <img
+                                        src={review.reviewerImage}
+                                        alt="Reviewer"
+                                        className="w-16 h-16 object-cover rounded-full"
+                                    />
 
-                                {/* Part 2: Reviewer Name and Company */}
-                                <div className="ml-4 flex flex-col items-start">
-                                    <p className="font-bold text-gray-500">{review.reviewerName}</p>
-                                    <div className="text-gray-800">
-                                        {review.role}, {review.companyName}
+                                    {/* Part 2: Reviewer Name and Company */}
+                                    <div className="ml-4 flex flex-col items-start">
+                                        <p className="font-bold text-gray-500">{review.reviewerName}</p>
+                                        <div className="text-gray-800">
+                                            {review.role}, {review.companyName}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    );
-                })}
+                        );
+                    })}
             </div>
 
             {/* Part 3: Review Dots */}
