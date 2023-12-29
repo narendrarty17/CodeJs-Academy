@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSwipeable } from 'react-swipeable';
 
 const reviewsData = [
     {
@@ -47,6 +48,21 @@ const Section_05 = () => {
     // State to track the selected review
     const [selectedReview, setSelectedReview] = useState(0);
 
+    const handlers = useSwipeable({
+        onSwipedLeft: () => handleSwipe('left'),
+        onSwipedRight: () => handleSwipe('right'),
+        preventDefaultTouchmoveEvent: true,
+        trackMouse: true,
+    });
+
+    const handleSwipe = (direction) => {
+        if (direction === 'left' && selectedReview < reviewsData.length - 1) {
+            setSelectedReview(selectedReview + 1);
+        } else if (direction === 'right' && selectedReview > 0) {
+            setSelectedReview(selectedReview - 1);
+        }
+    };
+
     useEffect(() => {
         console.log("Selected review: ", selectedReview);
     }, [selectedReview]);
@@ -60,7 +76,7 @@ const Section_05 = () => {
             </div>
 
             {/* Part 2: Review Cards */}
-            <div className="flex flex-wrap justify-center space-x-4">
+            <div className="flex flex-wrap justify-center mx-auto space-x-4" {...handlers}>
                 {reviewsData.map((review, index) => {
                     const cardRef = React.createRef();
 
