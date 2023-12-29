@@ -4,6 +4,7 @@ import Section_02 from '@/components/Section_02';
 import Section_03 from '@/components/Section_03';
 import Section_04 from '@/components/Section_04';
 import Section_05 from '@/components/Section_05';
+import Footer from '@/components/footer';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Section_03 />
       <Section_04 />
       <Section_05 />
+      <Footer />
     </div>
   )
 }
