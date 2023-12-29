@@ -10,7 +10,7 @@ const footer = () => {
                         <p>Hire me</p>
                         <img
                             className="w-8"
-                            src="/images/up-right-arrow.png"
+                            src="/images/footer/up-right-arrow.png"
                         />
                     </button>
                 </div>
@@ -19,8 +19,8 @@ const footer = () => {
             <div className="mt-5 flex flex-wrap justify-center md:justify-start gap-10">
                 <div className="flex flex-col gap-4">
                     <div className="flex gap-2">
-                        <img src="/images/company_logo.svg" />
-                        <img src="/images/company_name.svg" />
+                        <img src="/images/footer/company_logo.svg" />
+                        <img src="/images/footer/company_name.svg" />
                     </div>
                     <div className="hidden md:inline text-white max-w-xl">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue
@@ -28,11 +28,11 @@ const footer = () => {
                         adipiscing elit. Sed lobortis orci elementum egestas lobortis.
                     </div>
                     <div className="flex gap-2">
-                        <img src="/images/socialMediaIcons/facebook.svg" />
-                        <img src="/images/socialMediaIcons/youtube.svg" />
-                        <img src="/images/socialMediaIcons/whatsapp.svg" />
-                        <img src="/images/socialMediaIcons/twitter.svg" />
-                        <img src="/images/socialMediaIcons/instagram.svg" />
+                        <img src="/images/footer/socialMediaIcons/facebook.svg" />
+                        <img src="/images/footer/socialMediaIcons/youtube.svg" />
+                        <img src="/images/footer/socialMediaIcons/whatsapp.svg" />
+                        <img src="/images/footer/socialMediaIcons/twitter.svg" />
+                        <img src="/images/footer/socialMediaIcons/instagram.svg" />
                     </div>
                 </div>
                 <div className="hidden md:flex flex-col gap-3">
