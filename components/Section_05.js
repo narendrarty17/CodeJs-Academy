@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable';
+import { motion, useAnimation } from 'framer-motion';
 
 const reviewsData = [
     {
@@ -50,6 +51,7 @@ const RatingComponent = ({ rating }) => {
 const Section_05 = () => {
     const [isSmallScreen, setIsSmallScreen] = useState(false);
     const [selectedReview, setSelectedReview] = useState(0);
+    const controls = useAnimation();
 
     const handlers = useSwipeable({
         onSwipedLeft: () => handleSwipe('left'),
@@ -60,11 +62,23 @@ const Section_05 = () => {
 
     const handleSwipe = (direction) => {
         if (direction === 'left' && selectedReview < reviewsData.length - 1) {
+            swipeAnimation('left');
             setSelectedReview((prevReview) => prevReview + 1);
         } else if (direction === 'right' && selectedReview > 0) {
+            swipeAnimation('right');
             setSelectedReview((prevReview) => prevReview - 1);
         }
     };
+
+    const swipeAnimation = async (direction) => {
+        const cardWidth = 300; // Adjust as needed
+        const offset = direction === 'left' ? -cardWidth : cardWidth;
+
+        await controls.start({ x: offset, opacity: 0 });
+
+        // Reset animation
+        controls.set({ x: 0, opacity: 1 });
+    }
 
     useEffect(() => {
         const handleResize = () => {
@@ -80,7 +94,7 @@ const Section_05 = () => {
     }, []);
 
     return (
-        <section className="container mx-auto p-8">
+        <motion.section className="container mx-auto p-8">
             {/* Part 1: Heading and Description */}
             <div className="flex flex-col gap-1 mb-6">
                 <h2 className="text-3xl font-bold text-white">What Our Students Say</h2>
@@ -88,14 +102,20 @@ const Section_05 = () => {
             </div>
 
             {/* Part 2: Review Cards */}
-            <div className="flex flex-row justify-center mx-auto space-x-4 mb-4 gap-3 overflow-hidden" {...handlers}>
+            <motion.div
+                className="flex flex-row justify-center mx-auto space-x-4 mb-4 gap-3 overflow-hidden"
+                {...handlers}
+                animate={controls}
+            >
                 {reviewsData
                     .filter((_, index) => (isSmallScreen ? index === selectedReview : true))
                     .map((review) => (
-                        <div
+                        <motion.div
                             key={review.id}
-                            className="swipeable-content transition-transform ease-in-out duration-9000 bg-white shadow-md w-96 pb-4 rounded-md"
+                            className="bg-white shadow-md w-96 pb-4 rounded-md"
                             onClick={() => setSelectedReview(review.id)}
+                            initial={{ x: 0, opacity: 1 }}
+                            whileHover={{ scale: 1.05 }}
                         >
                             {/* Section 1: Rating */}
                             <div className="p-4 text-2xl text-black font-bold">
@@ -124,9 +144,9 @@ const Section_05 = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-            </div>
+            </motion.div>
 
             {/* Part 3: review Dots */}
             <div className="flex justify-center mb-6">
@@ -146,7 +166,7 @@ const Section_05 = () => {
                     View All Reviews
                 </button>
             </div>
-        </section>
+        </motion.section>
     );
 };
 
