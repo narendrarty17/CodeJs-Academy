@@ -94,7 +94,7 @@ const Section_05 = () => {
                     .map((review) => (
                         <div
                             key={review.id}
-                            className="bg-white shadow-md w-96 pb-4 rounded-md"
+                            className="swipeable-content transition-transform ease-in-out duration-9000 bg-white shadow-md w-96 pb-4 rounded-md"
                             onClick={() => setSelectedReview(review.id)}
                         >
                             {/* Section 1: Rating */}
