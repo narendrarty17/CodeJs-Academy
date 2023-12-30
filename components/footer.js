@@ -1,6 +1,6 @@
 const footer = () => {
     return (
-        <footer className="overflow-hidden                                                                                                                                                                                     pt-10 pb-5 px-10 bg-gray-800">
+        <footer className="overflow-hidden pt-10 pb-5 px-10 bg-blue-500">
             <div className="flex flex-col gap-3 items-center md:items-start md:flex-row justify-between">
                 <div className="text-white text-3xl font-bold">
                     Lets Connect there
