@@ -88,10 +88,25 @@ const Section_05 = () => {
         handleResize(); // Initial check
         window.addEventListener('resize', handleResize);
 
+        // Auto-swipe on small screens
+        let swipeInterval;
+
+        if (isSmallScreen) {
+            swipeInterval = setInterval(() => {
+                if (selectedReview === reviewsData.length - 1) {
+                    // Reset to the first review when all reviews have been swiped
+                    setSelectedReview(0);
+                } else {
+                    handleSwipe('left');
+                }
+            }, 2000);
+        }
+
         return () => {
             window.removeEventListener('resize', handleResize);
+            clearInterval(swipeInterval); // Clear the interval when the component is unmounted or the screen size changes
         };
-    }, []);
+    }, [isSmallScreen, selectedReview]);
 
     return (
         <motion.section className="container mx-auto p-8">
