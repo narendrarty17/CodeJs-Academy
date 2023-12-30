@@ -5,7 +5,7 @@ const footer = () => {
                 <div className="text-white text-3xl font-bold">
                     Lets Connect there
                 </div>
-                <div className="px-6 py-2 w-[200px] h-[60px] font-medium rounded-full bg-blue-500 text-white text-xl">
+                <div className="flex items-center px-3 pb-3 pt-1 md:px-6 md:w-[200px] md:h-[60px] font-medium rounded-full bg-blue-500 text-white text-xl">
                     <button className="flex justify-center items-center pl-3 pt-1.5 gap-1">
                         <p>Enroll Now</p>
                         <img
