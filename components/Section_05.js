@@ -71,13 +71,12 @@ const Section_05 = () => {
     };
 
     const swipeAnimation = async (direction) => {
-        const cardWidth = 300; // Adjust as needed
-        const offset = direction === 'left' ? -cardWidth : cardWidth;
+        const offset = direction === 'left' ? '-10px 0 10px rgba(0, 0, 0, 0.2)' : '10px 0 10px rgba(0, 0, 0, 0.2)';
 
-        await controls.start({ x: offset, opacity: 0 });
+        await controls.start({ boxShadow: offset, opacity: 0 });
 
         // Reset animation
-        controls.set({ x: 0, opacity: 1 });
+        controls.set({ boxShadow: '0 0 0 rgba(0, 0, 0, 0)', opacity: 1, transition: { duration: 0.2 } });
     }
 
     useEffect(() => {
