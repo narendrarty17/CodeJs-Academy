@@ -68,7 +68,7 @@ const Section_05 = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsSmallScreen(window.innerWidth <= 600);
+            setIsSmallScreen(window.innerWidth <= 900);
         };
 
         handleResize(); // Initial check
@@ -88,13 +88,14 @@ const Section_05 = () => {
             </div>
 
             {/* Part 2: Review Cards */}
-            <div className="flex flex-wrap justify-center mx-auto space-x-4 mb-4" {...handlers}>
+            <div className="flex flex-row justify-center mx-auto space-x-4 mb-4 gap-3 overflow-hidden" {...handlers}>
                 {reviewsData
                     .filter((_, index) => (isSmallScreen ? index === selectedReview : true))
                     .map((review) => (
                         <div
                             key={review.id}
                             className="bg-white shadow-md w-96 pb-4 rounded-md"
+                            onClick={() => setSelectedReview(review.id)}
                         >
                             {/* Section 1: Rating */}
                             <div className="p-4 text-2xl text-black font-bold">

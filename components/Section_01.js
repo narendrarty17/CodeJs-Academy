@@ -12,7 +12,7 @@ const Section_01 = () => {
                     <button className="bg-blue-500 text-white px-4 py-2 rounded w-200">
                         Start learning now
                     </button>
-                    <button className="bg-gray-1000 text-white px-4 py-2 rounded w-200">
+                    <button className="bg-gray-800 text-white px-4 py-2 rounded w-200">
                         Explore Courses
                     </button>
                 </div>
