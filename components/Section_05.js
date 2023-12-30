@@ -142,7 +142,7 @@ const Section_05 = () => {
             {/* Part 4: View All Button */}
             <div className="flex justify-center">
                 <button className="text-white border border-white text-base leading-6 whitespace-nowrap justify-center items-stretch border px-4 py-2 rounded-md border-solid">
-                    View All Courses
+                    View All Reviews
                 </button>
             </div>
         </section>
