@@ -33,39 +33,8 @@ const courseData = [
 ];
 
 const Section_04 = () => {
-    const [isSmallScreen, setIsSmallScreen] = useState(false);
     const [selectedButton, setSelectedButton] = useState('Popular');
     const [selectedCourse, setSelectedCourse] = useState(0);
-
-    const handlers = useSwipeable({
-        onSwipedLeft: () => handleSwipe('left'),
-        onSwipedRight: () => handleSwipe('right'),
-        preventDefaultTouchmoveEvent: true,
-        trackMouse: true,
-    });
-
-    const handleSwipe = (direction) => {
-        if (direction === 'left' && selectedCourse < courseData.length - 1) {
-            setSelectedCourse((prevCourse) => prevCourse + 1);
-        } else if (direction === 'right' && selectedCourse > 0) {
-            setSelectedCourse((prevCourse) => prevCourse - 1);
-        }
-    };
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsSmallScreen(window.innerWidth <= 600);
-        };
-
-        handleResize(); // Initial check
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
-    const numberOfCourses = isSmallScreen ? 1 : courseData.length;
 
     return (
         <section className="container mx-auto p-8">
@@ -102,8 +71,8 @@ const Section_04 = () => {
             </div>
 
             {/* Part 3: Courses */}
-            <div className="flex flex-wrap justify-around" {...handlers}>
-                {courseData.filter((_, index) => (isSmallScreen ? index === selectedCourse : true))
+            <div className="flex flex-wrap justify-around">
+                {courseData
                     .map((course) => (
                         <div key={course.id} className="bg-white shadow-md w-80 mb-8">
                             {/* Section 1: Image */}
@@ -137,18 +106,6 @@ const Section_04 = () => {
                             </div>
                         </div>
                     ))}
-            </div>
-
-            {/* Part 3: Course Dots */}
-            <div className="flex justify-center mb-6">
-                {courseData.map((_, index) => (
-                    <div
-                        key={index}
-                        className={`w-3 h-3 rounded-full mx-1 ${selectedCourse === index ? 'bg-white' : 'bg-gray-600'
-                            }`}
-                        onClick={() => setSelectedCourse(index)}
-                    />
-                ))}
             </div>
 
             {/* Part 4: View All Button */}
