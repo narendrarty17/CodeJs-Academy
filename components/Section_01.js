@@ -2,6 +2,30 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Section_01 = () => {
+    const darkerBlueColor = '#2563EB'; // Adjust this color to your preference
+    const lighterGrayColor = '#718096'; // Adjust this color to your preference
+
+
+    const buttonVariant_01 = {
+        hover: {
+            backgroundColor: darkerBlueColor, // New background color on hover
+            color: '#FFFFFF', // New text color on hover
+            transition: {
+                duration: 0.3,
+            },
+        },
+    };
+
+    const buttonVariant_02 = {
+        hover: {
+            backgroundColor: lighterGrayColor, // New background color on hover
+            color: '#FFFFFF', // New text color on hover
+            transition: {
+                duration: 0.3,
+            },
+        },
+    }
+
     return (
         <motion.div
             initial={{ opacity: 0, y: -50 }}
@@ -15,12 +39,20 @@ const Section_01 = () => {
                     Explore a world of knowledge with our extensive selection of online courses.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-y-5 gap-x-3 md:gap-x-5">
-                    <button className="bg-blue-500 text-white px-4 py-2 rounded w-200">
+                    <motion.button
+                        className="bg-blue-500 text-white px-4 py-2 rounded w-200"
+                        whileHover="hover"
+                        variants={buttonVariant_01}
+                    >
                         Start learning now
-                    </button>
-                    <button className="bg-gray-800 text-white px-4 py-2 rounded w-200">
+                    </motion.button>
+                    <motion.button
+                        className="bg-gray-800 text-white px-4 py-2 rounded w-200"
+                        whileHover="hover"
+                        variants={buttonVariant_02}
+                    >
                         Explore Courses
-                    </button>
+                    </motion.button>
                 </div>
             </div>
             <div

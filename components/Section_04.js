@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const courseData = [
     {
@@ -34,8 +35,35 @@ const courseData = [
 const Section_04 = () => {
     const [selectedButton, setSelectedButton] = useState('Popular');
 
+    const darkerBlueColor = '#2563EB'; // Adjust this color to your preference
+
+    const buttonVariant_01 = {
+        hover: {
+            backgroundColor: darkerBlueColor, // New background color on hover
+            color: '#FFFFFF', // New text color on hover
+            transition: {
+                duration: 0.3,
+            },
+        },
+    };
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { duration: 0.8, delay: 0.2 } },
+    };
+
+    const courseVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+    };
+
     return (
-        <section className="container mx-auto p-8">
+        <motion.section
+            className="container mx-auto p-8"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+        >
             {/* Part 1: Heading and Description */}
             <div className="text-center mb-6">
                 <h2 className="text-3xl font-bold">Courses</h2>
@@ -69,10 +97,15 @@ const Section_04 = () => {
             </div>
 
             {/* Part 3: Courses */}
-            <div className="flex flex-wrap justify-around">
+            <motion.div className="flex flex-wrap justify-around" variants={containerVariants} initial="hidden" animate="visible">
                 {courseData
                     .map((course) => (
-                        <div key={course.id} className="bg-white shadow-md w-80 mb-8">
+                        <motion.div
+                            key={course.id}
+                            className="bg-white shadow-md w-80 mb-8"
+                            variants={courseVariants}
+                            whileHover={{ scale: 1.05 }} // Add this line for hover effect
+                        >
                             {/* Section 1: Image */}
                             <img
                                 src={course.image}
@@ -99,12 +132,18 @@ const Section_04 = () => {
 
                             {/* Section 5: Buttons */}
                             <div className="pl-4 pb-4 flex justify-start items-center">
-                                <button className="bg-blue-500 text-white px-4 py-2 rounded">Enroll Now</button>
+                                <motion.button
+                                    className="bg-blue-500 text-white px-4 py-2 rounded"
+                                    whileHover="hover"
+                                    variants={buttonVariant_01}
+                                >
+                                    Enroll Now
+                                </motion.button>
                                 <button className="text-gray-700 px-4 py-2 font-semibold">{course.enrollButton}</button>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-            </div>
+            </motion.div>
 
             {/* Part 4: View All Button */}
             <div className="flex justify-center">
@@ -112,7 +151,7 @@ const Section_04 = () => {
                     View All Courses
                 </button>
             </div>
-        </section>
+        </motion.section>
     );
 };
 

@@ -1,10 +1,43 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Section_03 = () => {
+    const darkerBlueColor = '#2563EB'; // Adjust this color to your preference
+
+    const buttonVariant_01 = {
+        hover: {
+            backgroundColor: darkerBlueColor, // New background color on hover
+            color: '#FFFFFF', // New text color on hover
+            transition: {
+                duration: 0.3,
+            },
+        },
+    };
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { duration: 1 } },
+    };
+
+    const contentVariants = {
+        hidden: { x: -50, opacity: 0 },
+        visible: { x: 0, opacity: 1, transition: { duration: 0.8, delay: 0.5 } },
+    };
+
+    const imageVariants = {
+        hidden: { x: 50, opacity: 0 },
+        visible: { x: 0, opacity: 1, transition: { duration: 0.8, delay: 0.5 } },
+    };
+
     return (
-        <section className="container mx-auto p-8 flex flex-col justify-center md:items-start md:flex-row items-center">
+        <motion.section
+            className="container mx-auto p-8 flex flex-col justify-center md:items-start md:flex-row items-center"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+        >
             {/* Content */}
-            <div className="md:w-1/2 md:pr-8">
+            <motion.div className="md:w-1/2 md:pr-8" variants={contentVariants}>
                 <h2 className="text-3xl font-bold mb-4">
                     Discover a wide range of courses covering a variety of subjects, taught by expert instructors.
                 </h2>
@@ -14,20 +47,24 @@ const Section_03 = () => {
                 <p className="text-gray-400 mb-2">
                     Their commitment to your success is evident in their personalized approach to teaching, fostering an environment where questions are encouraged, collaboration is celebrated, and the pursuit of excellence is a shared endeavor between instructor and student.
                 </p>
-                <button className="bg-blue-500 text-white px-4 py-2 mt-5 rounded">
+                <motion.button
+                    className="bg-blue-500 text-white px-4 py-2 rounded"
+                    whileHover="hover"
+                    variants={buttonVariant_01}
+                >
                     Explore Courses
-                </button>
-            </div>
+                </motion.button>
+            </motion.div>
 
             {/* Image */}
-            <div className="flex justify-center md:w-1/2 mt-10 md:mt-4">
+            <motion.div className="flex justify-center md:w-1/2 mt-10 md:mt-4" variants={imageVariants}>
                 <img
                     src="/images/section_03/posterImage.jpg"  // Update the image path
                     alt="Section Image"
                     className="w-full md:w-full lg:w-2/3 h-auto object-cover"
                 />
-            </div>
-        </section>
+            </motion.div>
+        </motion.section>
     );
 };
 
