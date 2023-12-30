@@ -9,16 +9,10 @@ const Section_03 = () => {
                     Discover a wide range of courses covering a variety of subjects, taught by expert instructors.
                 </h2>
                 <p className="text-gray-400 mb-2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at justo vel justo cursus cursus non ac justo.
-                    Vestibulum aliquet velit ac ultricies lacinia.
+                    Embarking on your web development journey with us means learning from a faculty of seasoned instructors who are not just teachers but mentors on your path to mastery. Our instructors don't simply cover the syllabus; they curate an immersive curriculum designed to equip you with the skills demanded by the ever-evolving tech industry.
                 </p>
                 <p className="text-gray-400 mb-2">
-                    Integer laoreet, quam in feugiat condimentum, nunc est vehicula velit, a aliquet nisl lectus sit amet sem.
-                    Vel justo cursus cursus non ac justo.
-                </p>
-                <p className="text-gray-400 mb-4">
-                    Fusce in hendrerit neque, nec ullamcorper ante. Vestibulum aliquet velit ac ultricies lacinia.
-                    Proin at justo vel justo cursus cursus non ac justo.
+                    Their commitment to your success is evident in their personalized approach to teaching, fostering an environment where questions are encouraged, collaboration is celebrated, and the pursuit of excellence is a shared endeavor between instructor and student.
                 </p>
                 <button className="bg-blue-500 text-white px-4 py-2 mt-5 rounded">
                     Explore Courses

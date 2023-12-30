@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable';
-import { motion, animate, useAnimation } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 
 const logosData = [
     {
@@ -40,16 +40,16 @@ const Section_02 = () => {
     const handleSwipe = (direction) => {
         if (direction === 'left' && selectedLogo < logosData.length - 1) {
             swipeAnimation('left');
-            setSelectedLogo((prevReview) => prevReview + 1);
-        } else if (direction === 'right' && selectedReview > 0) {
+            setSelectedLogo((prevLogo) => prevLogo + 1);
+        } else if (direction === 'right' && selectedLogo > 0) {
             swipeAnimation('right');
-            setSelectedLogo((prevReview) => prevReview - 1);
+            setSelectedLogo((prevLogo) => prevLogo - 1);
         }
     };
 
     const swipeAnimation = async (direction) => {
         const cardWidth = 300; // Adjust as needed
-        const offset = direction === 'left' ? -cardWidth : cardWidth * 2;
+        const offset = direction === 'left' ? -cardWidth : cardWidth;
 
         await controls.start({ x: offset, opacity: 0 });
 
@@ -89,7 +89,7 @@ const Section_02 = () => {
         <motion.section className="p-8">
             <div className="flex flex-col items-center md:flex-row md:justify-center container mx-auto">
                 <h2 className="text-3xl font-bold mb-6">
-                    "Your Path to Success: Meet Our Top Recruiters.
+                    Your Path to Success: Meet Our Top Recruiters.
                 </h2>
 
                 {/* Image container */}
