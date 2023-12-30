@@ -1,32 +1,120 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSwipeable } from 'react-swipeable';
+import { motion, animate, useAnimation } from 'framer-motion';
+
+const logosData = [
+    {
+        id: 0,
+        url: "/images/section_02/company_01.png",
+        alt: "company 01"
+    },
+    {
+        id: 1,
+        url: "/images/section_02/company_02.png",
+        alt: "company 02"
+    },
+    {
+        id: 2,
+        url: "/images/section_02/company_03.png",
+        alt: "company 03"
+    },
+    {
+        id: 3,
+        url: "/images/section_02/company_04.png",
+        alt: "company 04"
+    }
+]
 
 const Section_02 = () => {
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const [selectedLogo, setSelectedLogo] = useState(0);
+    const controls = useAnimation();
+
+    const handlers = useSwipeable({
+        onSwipedLeft: () => handleSwipe('left'),
+        onSwipedRight: () => handleSwipe('right'),
+        preventDefaultTouchmoveEvent: true,
+        trackMouse: true,
+    });
+
+    const handleSwipe = (direction) => {
+        if (direction === 'left' && selectedLogo < logosData.length - 1) {
+            swipeAnimation('left');
+            setSelectedLogo((prevReview) => prevReview + 1);
+        } else if (direction === 'right' && selectedReview > 0) {
+            swipeAnimation('right');
+            setSelectedLogo((prevReview) => prevReview - 1);
+        }
+    };
+
+    const swipeAnimation = async (direction) => {
+        const cardWidth = 300; // Adjust as needed
+        const offset = direction === 'left' ? -cardWidth : cardWidth * 2;
+
+        await controls.start({ x: offset, opacity: 0 });
+
+        // Reset animation
+        controls.set({ x: 0, opacity: 1, transition: { duration: 0.2 } });
+    }
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth <= 900);
+        };
+
+        handleResize(); // Initial check
+        window.addEventListener('resize', handleResize);
+
+        // Auto-swipe on small screens
+        let swipeInterval;
+
+        if (isSmallScreen) {
+            swipeInterval = setInterval(() => {
+                if (selectedLogo === logosData.length - 1) {
+                    // Reset to the first review when all reviews have been swiped
+                    setSelectedLogo(0);
+                } else {
+                    handleSwipe('left');
+                }
+            }, 2000);
+        }
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            clearInterval(swipeInterval); // Clear the interval when the component is unmounted or the screen size changes
+        };
+    }, [isSmallScreen, selectedLogo]);
+
     return (
-        <section className="p-8">
+        <motion.section className="p-8">
             <div className="flex flex-col items-center md:flex-row md:justify-center container mx-auto">
-                <h2 className="text-3xl font-bold mb-6">Trusted by 2000+ companies worldwide.</h2>
+                <h2 className="text-3xl font-bold mb-6">
+                    "Your Path to Success: Meet Our Top Recruiters.
+                </h2>
 
                 {/* Image container */}
-                <div className="flex items-center w-full md:flex-row md:items-start md:justify-center md:w-[80%] overflow-hidden">
+                <div
+                    className="flex items-center justify-center w-full md:flex-row md:items-start md:justify-center md:w-[80%] overflow-hidden"
+                    {...handlers}
+                    animate={controls}
+                >
                     {/* Company logos */}
-                    <img
-                        src="/images/section_02/company_01.png"
-                        alt="Company 01"
-                        className="h-16 w-32 md:w-auto mb-4 md:mb-0 md:mr-4"
-                    />
-                    <img
-                        src="/images/section_02/company_02.png"
-                        alt="Company 02"
-                        className="h-16 w-32 md:w-auto mb-4 md:mb-0 md:mr-4"
-                    />
-                    <img
-                        src="/images/section_02/company_03.png"
-                        alt="Company 03"
-                        className="h-16 w-32 md:w-auto mb-4 md:mb-0 md:mr-4"
-                    />
+                    {logosData
+                        .filter((_, index) => (isSmallScreen ? index === selectedLogo : true))
+                        .map((logo) => (
+                            <motion.img
+                                key={logo.id}
+                                src={logo.url}
+                                alt={logo.alt}
+                                initial={{ x: 0, opacity: 1 }}
+                                whileHover={{ scale: 1.05 }}
+                                className="h-16 w-48 md:w-32 md:w-auto mb-4 md:mb-0 md:mr-4"
+                            />
+                        ))
+                    }
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 };
 

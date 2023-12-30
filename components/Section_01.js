@@ -1,8 +1,14 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Section_01 = () => {
     return (
-        <div className="flex flex-col items-center md:flex-row mt-[10px] md:mt-0">
+        <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+            className="flex flex-col items-center md:flex-row mt-[10px] md:mt-0"
+        >
             <div className="w-full md:w-1/2 p-8 mb-4 md:mb-0">
                 <h2 className="text-3xl font-bold mb-4">Learn New Skills Online with Ease</h2>
                 <p className="text-gray-400">
@@ -17,14 +23,17 @@ const Section_01 = () => {
                     </button>
                 </div>
             </div>
-            <div className="w-full md:w-1/2  mb-[210px] md:mb-[0px] relative z-0" style={{ paddingBottom: '45.57%' }}>
-                <img
+            <div
+                className="w-full md:w-1/2  mb-[210px] md:mb-[0px] relative z-0"
+                style={{ paddingBottom: '45.57%' }}
+            >
+                <motion.img
                     src="/images/section_01/posterImage.jpg"
                     alt="Learning Section"
                     className="absolute z-0 inset-0 w-full h-auto object-cover max-w-full md:w-full md:h-auto"
                 />
             </div>
-        </div>
+        </motion.div>
     );
 };
 

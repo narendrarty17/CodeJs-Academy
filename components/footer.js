@@ -19,8 +19,10 @@ const Footer = () => {
                     </button>
                 </div>
             </div>
+
             {/* Horizontal line separator */}
             <div className="mt-20 w-full h-[2px] bg-gray-500" />
+
             {/* Middle section with company information and social media icons */}
             <div className="mt-5 flex flex-wrap justify-center md:justify-start gap-10">
                 <div className="flex flex-col gap-4">
@@ -87,8 +89,10 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+
             {/* Horizontal line separator */}
             <div className="mt-10 w-full h-[2px] bg-gray-500" />
+
             {/* Copyright information */}
             <div className="flex flex-col items-center justify-center ml-auto text-white mt-10">
                 Copyright@2023. All Rights Reserved.

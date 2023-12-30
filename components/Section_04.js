@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useSwipeable } from 'react-swipeable';
+import React, { useState } from 'react';
 
 const courseData = [
     {
@@ -34,7 +33,6 @@ const courseData = [
 
 const Section_04 = () => {
     const [selectedButton, setSelectedButton] = useState('Popular');
-    const [selectedCourse, setSelectedCourse] = useState(0);
 
     return (
         <section className="container mx-auto p-8">

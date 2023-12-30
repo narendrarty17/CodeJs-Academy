@@ -104,7 +104,7 @@ const Header = () => {
                         <img src="/images/header/menu.svg" alt="Menu" className="h-6 w-6" />
                     </button>
 
-                    {/* Navigation Links */}
+                    {/* Navigation Links Only show in big screens */}
                     {!showMenu && (
                         <>
                             <NavLink
