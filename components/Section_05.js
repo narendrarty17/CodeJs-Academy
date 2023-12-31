@@ -99,7 +99,7 @@ const Section_05 = () => {
                 } else {
                     handleSwipe('left');
                 }
-            }, 2000);
+            }, 5000);
         }
 
         return () => {
