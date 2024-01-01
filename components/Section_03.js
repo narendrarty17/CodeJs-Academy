@@ -52,7 +52,7 @@ const Section_03 = () => {
                     whileHover="hover"
                     variants={buttonVariant_01}
                 >
-                    Explore Courses
+                    Enroll Now
                 </motion.button>
             </motion.div>
 
