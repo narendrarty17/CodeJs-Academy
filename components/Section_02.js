@@ -108,7 +108,7 @@ const Section_02 = () => {
                                 alt={logo.alt}
                                 initial={{ x: 0, opacity: 1 }}
                                 whileHover={{ scale: 1.05 }}
-                                className="h-32 w-auto md:w-auto md:h-16 mb-4 md:mb-0 md:mr-4"
+                                className="h-28 w-auto md:w-auto md:h-16 mb-4 md:mb-0 md:mr-4"
                             />
                         ))
                     }
