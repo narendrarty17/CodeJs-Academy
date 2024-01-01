@@ -1,14 +1,37 @@
+import { motion } from 'framer-motion';
+
 const Footer = () => {
+    const darkerBlueColor = '#2563EB'; // Adjust this color to your preference
+
+    const buttonVariant_01 = {
+        hover: {
+            backgroundColor: darkerBlueColor, // New background color on hover
+            color: '#FFFFFF', // New text color on hover
+            transition: {
+                duration: 0.3,
+            },
+        },
+    };
+
     return (
         // Main container for the footer with styling
-        <footer className="overflow-hidden pt-10 pb-5 px-10 bg-gray-900">
+        <motion.footer
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+            className="overflow-hidden pt-10 pb-5 px-10 bg-gray-900"
+        >
             {/* Top section with "Let's Connect" heading and enrollment button */}
             <div className="flex flex-col gap-3 items-center md:items-start md:flex-row justify-between">
                 <div className="text-white text-3xl font-bold">
                     Lets Connect there
                 </div>
                 {/* Enrollment button with icon */}
-                <div className="flex items-center px-3 pb-3 pt-1 md:px-6 md:w-[200px] md:h-[60px] font-medium rounded-full bg-blue-500 text-white text-xl">
+                <motion.div
+                    className="flex items-center px-3 pb-3 pt-1 md:px-6 md:w-[200px] md:h-[60px] font-medium rounded-full bg-blue-500 text-white text-xl"
+                    whileHover="hover"
+                    variants={buttonVariant_01}
+                >
                     <button className="flex justify-center items-center pl-3 pt-1.5 gap-1">
                         <p>Enroll Now</p>
                         <img
@@ -17,7 +40,7 @@ const Footer = () => {
                             alt="Up right arrow"
                         />
                     </button>
-                </div>
+                </motion.div>
             </div>
 
             {/* Horizontal line separator */}
@@ -98,7 +121,7 @@ const Footer = () => {
             <div className="flex flex-col items-center justify-center ml-auto text-white mt-10">
                 Copyright@2023. All Rights Reserved.
             </div>
-        </footer>
+        </motion.footer>
     );
 }
 
