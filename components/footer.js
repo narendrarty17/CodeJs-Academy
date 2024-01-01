@@ -37,9 +37,10 @@ const Footer = () => {
                     </div>
                     {/* Company description */}
                     <div className="hidden md:inline text-white max-w-xl">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue
-                        interdum ligula a dignissim. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit. Sed lobortis orci elementum egestas lobortis.
+                        At CodeJS, we take pride in being your premier destination for comprehensive
+                        web development education. Our platform offers a meticulously curated array
+                        of expert-led online courses, providing learners with an immersive and
+                        transformative experience.
                     </div>
                     {/* Social media icons */}
                     <div className="flex gap-2">
@@ -48,6 +49,16 @@ const Footer = () => {
                         <img src="/images/footer/socialMediaIcons/whatsapp.svg" alt="WhatsApp" />
                         <img src="/images/footer/socialMediaIcons/twitter.svg" alt="Twitter" />
                         <img src="/images/footer/socialMediaIcons/instagram.svg" alt="Instagram" />
+                    </div>
+                </div>
+                {/* Contact information section */}
+                <div className="flex flex-col gap-3">
+                    <header className="text-blue-500 font-bold">
+                        Contact
+                    </header>
+                    <div className="text-white flex flex-col gap-2">
+                        <div>+91-9919748714</div>
+                        <div>narendrarty17@gmail.com</div>
                     </div>
                 </div>
                 {/* Navigation links section */}
@@ -61,16 +72,6 @@ const Footer = () => {
                         <div>Service</div>
                         <div>Resume</div>
                         <div>Project</div>
-                    </div>
-                </div>
-                {/* Contact information section */}
-                <div className="flex flex-col gap-3">
-                    <header className="text-blue-500 font-bold">
-                        Contact
-                    </header>
-                    <div className="text-white flex flex-col gap-2">
-                        <div>+91-9919748714</div>
-                        <div>narendrarty17@gmail.com</div>
                     </div>
                 </div>
                 {/* Newsletter subscription section */}

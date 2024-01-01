@@ -7,27 +7,27 @@ const courseData = [
         image: '/images/section_04/course_01.png',
         category: 'Design',
         rating: 5.0,
-        title: 'Your 1st Course',
-        description: 'Course description text goes here. Course description text goes here.',
-        enrollButton: '$430',
+        title: 'UX/UI Design',
+        description: 'Elevate your design skills with our Figma UI/UX course for creating sleek and user-friendly interfaces.',
+        enrollButton: 'INR 499',
     },
     {
         id: 1,
         image: '/images/section_04/course_02.png',
-        category: 'Management',
-        rating: 4.5,
-        title: 'Your 2nd Course',
-        description: 'Another course description. More text goes here.',
-        enrollButton: '$250',
+        category: 'Programming',
+        rating: 4,
+        title: 'Introduction to Python',
+        description: 'Explore the fundamentals of Python programming in our beginner-friendly course, paving the way for versatile coding proficiency.',
+        enrollButton: 'INR 399',
     },
     {
         id: 2,
         image: '/images/section_04/course_03.png',
-        category: 'Programming',
-        rating: 4.5,
-        title: 'Your 3rd Course',
-        description: 'Another course description. More text goes here.',
-        enrollButton: '$250',
+        category: 'Business',
+        rating: 5,
+        title: 'Data Analysis for Beginners',
+        description: 'Embark on your data analysis journey with our beginner-friendly course, equipping you with essential skills to decipher and derive insights from data sets',
+        enrollButton: 'INR 799',
     },
     // Add more courses as needed
 ];
@@ -102,7 +102,7 @@ const Section_04 = () => {
                     .map((course) => (
                         <motion.div
                             key={course.id}
-                            className="bg-white shadow-md w-80 mb-8"
+                            className="bg-gray-200 shadow-md w-80 mb-8"
                             variants={courseVariants}
                             whileHover={{ scale: 1.05 }} // Add this line for hover effect
                         >
@@ -116,9 +116,13 @@ const Section_04 = () => {
                             {/* Section 2: Category and Rating */}
                             <div className="px-4 mb-2 text-gray-500 flex justify-between items-center">
                                 <span>{course.category}</span>
-                                <div>
-                                    <span className="mx-2">&bull;</span>
-                                    <span>Rating: {course.rating}</span>
+                                <div className="flex flex-row">
+                                    <span className="mx-2">
+                                        <img src="/images/section_04/star.svg" />
+                                    </span>
+                                    <span>
+                                        {course.rating}
+                                    </span>
                                 </div>
                             </div>
 

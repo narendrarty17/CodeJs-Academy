@@ -94,7 +94,7 @@ const Section_02 = () => {
 
                 {/* Image container */}
                 <div
-                    className="flex items-center justify-center w-full md:flex-row md:items-start md:justify-center md:w-[80%] overflow-hidden"
+                    className="flex items-center gap-2 justify-center w-full md:flex-row md:items-start md:justify-center md:w-[80%] overflow-hidden"
                     {...handlers}
                     animate={controls}
                 >
