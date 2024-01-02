@@ -164,16 +164,18 @@ const Section_05 = () => {
             </motion.div>
 
             {/* Part 3: review Dots */}
-            <div className="flex justify-center mb-6">
-                {reviewsData.map((_, index) => (
-                    <div
-                        key={index}
-                        className={`w-3 h-3 rounded-full mx-1 ${selectedReview === index ? 'bg-white' : 'bg-gray-600'
-                            }`}
-                        onClick={() => setSelectedReview(index)}
-                    />
-                ))}
-            </div>
+            {isSmallScreen && (
+                <div className="flex justify-center mb-6">
+                    {reviewsData.map((_, index) => (
+                        <div
+                            key={index}
+                            className={`w-3 h-3 rounded-full mx-1 ${selectedReview === index ? 'bg-white' : 'bg-gray-600'
+                                }`}
+                            onClick={() => setSelectedInstructor(index)}
+                        />
+                    ))}
+                </div>
+            )}
 
             {/* Part 4: View All Button */}
             <div className="flex justify-center">
