@@ -44,7 +44,7 @@ const Section_01 = () => {
                         whileHover="hover"
                         variants={buttonVariant_01}
                     >
-                        Enroll Now
+                        Get Started
                     </motion.button>
                     <motion.button
                         className="bg-gray-800 text-white px-4 py-2 rounded w-200"
