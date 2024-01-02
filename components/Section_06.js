@@ -19,12 +19,12 @@ const Section_06 = () => {
                         className="p-6 w-1/2 rounded-md"
                     />
 
-                    <div>
-                        <div className="p-4">
-                            <strong className="text-xl">Max Doe</strong>
+                    <div className="flex flex-col gap-2">
+                        <div className="px-4">
+                            <strong className="text-2xl">Max Doe</strong>
                             <p>Founder & Web Developer</p>
                         </div>
-                        <div className="flex justify-center items-center mt-4">
+                        <div className="flex justify-center gap-2 items-center mt-4">
                             <a href="https://twitter.com/maxdoe" target="_blank" rel="noopener noreferrer">
                                 <img src="/images/section_06/twitter.svg" alt="Twitter" className="w-6 h-6 mr-2" />
                             </a>
@@ -43,15 +43,15 @@ const Section_06 = () => {
                     <img
                         src="/images/section_06/instructor_01.webp"
                         alt="Max"
-                        className="p-6 w-1/2 rounded-2xl"
+                        className="p-6 w-1/2 rounded-md"
                     />
 
-                    <div>
-                        <div className="p-4">
-                            <strong className="text-xl">Max Doe</strong>
+                    <div className="flex flex-col gap-2">
+                        <div className="px-4">
+                            <strong className="text-2xl">Max Doe</strong>
                             <p>Founder & Web Developer</p>
                         </div>
-                        <div className="flex justify-center items-center mt-4">
+                        <div className="flex justify-center gap-2 items-center mt-4">
                             <a href="https://twitter.com/maxdoe" target="_blank" rel="noopener noreferrer">
                                 <img src="/images/section_06/twitter.svg" alt="Twitter" className="w-6 h-6 mr-2" />
                             </a>
