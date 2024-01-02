@@ -68,13 +68,13 @@ const Section_06 = () => {
         <motion.div className="text-center py-8">
             {/* Part 1: Heading and Description */}
             <div className="mb-8 px-8">
-                <h2 className="text-3xl font-bold">MEET YOUR INSTRUCTORS</h2>
+                <h2 className="text-3xl font-bold mb-2">MEET YOUR INSTRUCTORS</h2>
                 <p className="text-gray-400">All our courses are taught by us - Max & Manuel. Because we love what we do.</p>
             </div>
 
             {/* Part 2: Instructor Cards */}
             <motion.div
-                className="flex justify-center space-x-8 mb-4"
+                className="flex justify-center gap-5 mb-4 mx-8"
                 {...handlers}
                 animate={controls}
             >
@@ -84,7 +84,7 @@ const Section_06 = () => {
                     .map((instructor) => (
                         <motion.div
                             key={instructor.id}
-                            className="flex items-center justify-center text-center w-[90%] md:w-[400px] bg-gray-800 rounded-md"
+                            className="flex items-center justify-start text-center bg-gray-800 rounded-md"
                             onClick={() => setSelectedReview(review.id)}
                             initial={{ x: 0, opacity: 1 }}
                             whileHover={{ scale: 1.05 }}
