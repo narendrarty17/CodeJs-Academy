@@ -11,7 +11,7 @@ const instructorsData = [
     },
     {
         id: 1,
-        image: "/images/section_06/instructor_02.webp",
+        image: "/images/section_06/instructor_01.webp",
         name: "Vishal",
         role: "Founder & Web Developer"
     }
@@ -65,7 +65,7 @@ const Section_06 = () => {
 
 
     return (
-        <div className="text-center py-8">
+        <motion.div className="text-center py-8">
             {/* Part 1: Heading and Description */}
             <div className="mb-8 px-8">
                 <h2 className="text-3xl font-bold">MEET YOUR INSTRUCTORS</h2>
@@ -73,7 +73,7 @@ const Section_06 = () => {
             </div>
 
             {/* Part 2: Instructor Cards */}
-            <div
+            <motion.div
                 className="flex justify-center space-x-8 mb-4"
                 {...handlers}
                 animate={controls}
@@ -82,9 +82,12 @@ const Section_06 = () => {
                 {instructorsData
                     .filter((_, index) => (isSmallScreen ? index === selectedInstructor : true))
                     .map((instructor) => (
-                        <div
+                        <motion.div
                             key={instructor.id}
                             className="flex items-center justify-center text-center w-[90%] md:w-[400px] bg-gray-800 rounded-md"
+                            onClick={() => setSelectedReview(review.id)}
+                            initial={{ x: 0, opacity: 1 }}
+                            whileHover={{ scale: 1.05 }}
                         >
                             <img
                                 src={instructor.image}
@@ -109,9 +112,9 @@ const Section_06 = () => {
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-            </div>
+            </motion.div>
 
             {/* Part 3: Dots */}
             {isSmallScreen && (
@@ -126,7 +129,7 @@ const Section_06 = () => {
                     ))}
                 </div>
             )}
-        </div>
+        </motion.div>
     );
 };
 
