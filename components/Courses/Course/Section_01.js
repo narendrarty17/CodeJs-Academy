@@ -9,7 +9,7 @@ const YouTubeEmbed = ({ embedId }) => {
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullScreen
             ></iframe>
             <div
                 className="hidden lg:flex md:flex-col md:w-1/3"
