@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const NavLink = ({ link, activeLink, onClick, children }) => {
+const NavLink = ({ link, type, activeLink, onClick, children, url }) => {
+    console.log('link text in NavLink: ', link);
+    console.log('activeLink text in NavLink: ', activeLink);
+
     return (
         <a
-            href="#"
+            href={url}
             style={{ display: 'block' }}
-            className={`text-white hover:text-gray-300 ${activeLink === link ? 'underline' : ''}`}
+            className={`text-white hover:text-gray-300 
+                        ${activeLink === link ? 'underline' : ''}
+                        ${type === 'auth' ? 'font-semibold' : ''}`
+            }
             onClick={() => onClick(link)}
         >
             {children}
@@ -14,23 +20,24 @@ const NavLink = ({ link, activeLink, onClick, children }) => {
     );
 };
 
-const Sidebar = ({ activeLink, onLinkClick }) => {
+
+const Sidebar = ({ linksList, activeLink, onLinkClick }) => {
     return (
-        <aside className="flex flex-col pt-[100px] items-center bg-blue-500 h-screen w-36 text-white p-4 fixed top-0 left-0 overflow-y-auto z-10">
+        <aside className="flex flex-col items-center bg-blue-500 text-white p-4 left-0 w-full h-auto overflow-y-auto z-10">
             {/* Sidebar content */}
             <nav className="space-y-4">
-                <NavLink link="home" activeLink={activeLink} onClick={onLinkClick}>
-                    Home
-                </NavLink>
-                <NavLink link="about" activeLink={activeLink} onClick={onLinkClick}>
-                    About Us
-                </NavLink>
-                <NavLink link="courses" activeLink={activeLink} onClick={onLinkClick}>
-                    Courses
-                </NavLink>
-                <NavLink link="contact" activeLink={activeLink} onClick={onLinkClick}>
-                    Contact
-                </NavLink>
+                {linksList.map((link) => (
+                    <NavLink
+                        link={link.link}
+                        type={link.type}
+                        activeLink={activeLink}
+                        onClick={onLinkClick}
+                        url={link.url}
+                        key={link.id}
+                    >
+                        {link.linkText}
+                    </NavLink>
+                ))}
             </nav>
         </aside>
     );
@@ -48,7 +55,7 @@ Sidebar.propTypes = {
     onLinkClick: PropTypes.func.isRequired,
 };
 
-const Header = () => {
+const Header = ({ linksList }) => {
     // State to track the current active link
     const [activeLink, setActiveLink] = useState('home');
     const [showMenu, setShowMenu] = useState(false);
@@ -96,7 +103,7 @@ const Header = () => {
 
                 {/* Navigation Links (Middle Section) */}
                 <nav className="flex justify-center space-x-4">
-                    {/* Only show on small screens */}
+                    {/* Menu for Sidebar Only show on small screens */}
                     <button
                         className="md:hidden text-white"
                         onClick={toggleMenu}
@@ -107,26 +114,14 @@ const Header = () => {
                     {/* Navigation Links Only show in big screens */}
                     {!showMenu && (
                         <>
-                            <NavLink
-                                link="home"
-                                activeLink={activeLink}
-                                onClick={handleLinkClick}
-                            >Home</NavLink>
-                            <NavLink
-                                link="about"
-                                activeLink={activeLink}
-                                onClick={handleLinkClick}
-                            >About Us</NavLink>
-                            <NavLink
-                                link="courses"
-                                activeLink={activeLink}
-                                onClick={handleLinkClick}
-                            >Courses</NavLink>
-                            <NavLink
-                                link="contact"
-                                activeLink={activeLink}
-                                onClick={handleLinkClick}
-                            >Contact</NavLink>
+                            {linksList.map((link) => (
+                                <NavLink
+                                    link={link.link}
+                                    activeLink={activeLink}
+                                    onClick={handleLinkClick}
+                                    url={link.url}
+                                >{link.linkText}</NavLink>
+                            ))}
                         </>
                     )}
                 </nav>
@@ -141,7 +136,11 @@ const Header = () => {
             </header>
             {/* Sidebar */}
             {showSidebar && (
-                <Sidebar activeLink={activeLink} onLinkClick={handleLinkClick} />
+                <Sidebar
+                    linksList={linksList}
+                    activeLink={activeLink}
+                    onLinkClick={handleLinkClick}
+                />
             )}
         </div>
     );
