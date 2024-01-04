@@ -19,7 +19,7 @@ const VideoComponent = ({ embedCode, title, description }) => (
 
 
 const Section_01 = () => {
-    const embedCode = '<iframe width="410" height="315" src="https://www.youtube.com/embed/7NMEbvbVck8?si=SIFAbmnJ_3X44Fg5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+    const embedCode = '<iframe width="410" height="340" src="https://www.youtube.com/embed/7NMEbvbVck8?si=SIFAbmnJ_3X44Fg5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
     const title = 'Title of the Video';
     const description = 'Description of the video goes here.';
 
