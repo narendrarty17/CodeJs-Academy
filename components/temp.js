@@ -1,74 +1,56 @@
-import React, { useEffect, useState } from 'react';
-import { useSwipeable } from 'react-swipeable';
+// ... (imports and PropTypes definitions)
 
-// ... (rest of your code)
-
-const Section_05 = () => {
-    const [selectedReview, setSelectedReview] = useState(0);
-    const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-    const handlers = useSwipeable({
-        onSwipedLeft: () => handleSwipe('left'),
-        onSwipedRight: () => handleSwipe('right'),
-        preventDefaultTouchmoveEvent: true,
-        trackMouse: true,
-    });
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsSmallScreen(window.innerWidth <= 600);
-        };
-
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
-    const handleSwipe = (direction) => {
-        if (direction === 'left' && selectedReview < reviewsData.length - 1) {
-            setSelectedReview(selectedReview + 1);
-        } else if (direction === 'right' && selectedReview > 0) {
-            setSelectedReview(selectedReview - 1);
-        }
-    };
-
+const Sidebar = ({ linksList, activeLink, onLinkClick }) => {
     return (
-        <section className="container mx-auto p-8">
-            {/* ... (rest of your code) */}
-
-            {/* Part 2: Review Cards */}
-            <div className={`flex flex-wrap justify-center mx-auto space-x-4`} {...handlers}>
-                {reviewsData
-                    .filter((_, index) => isSmallScreen ? index === selectedReview : true)
-                    .map((review, index) => (
-                        <div
-                            key={index}
-                            className={`bg-white shadow-md w-full sm:w-96 h-80 mb-8 cursor-pointer rounded-md overflow-hidden flex-shrink-0 ${selectedReview === index ? 'border border-blue-500' : ''}`}
-                            onClick={() => setSelectedReview(index)}
-                        >
-                            {/* Section 1: Rating */}
-                            <div className="p-4 text-2xl text-black font-bold">
-                                <RatingComponent rating={review.rating} />
-                            </div>
-
-                            {/* Section 2: Review Text */}
-                            <p className="px-4 text-gray-600 h-24 overflow-hidden">
-                                {review.reviewText}
-                            </p>
-
-                            {/* Section 3: Reviewer Information */}
-                            <div className="flex items-center justify-start p-4 h-16">
-                                {/* ... (rest of the reviewer information section) */}
-                            </div>
-                        </div>
-                    ))}
-            </div>
-
-            {/* ... (rest of your code) */}
-        </section>
+        <aside className="fixed top-0 left-0 w-full h-full bg-blue-500 text-white p-4 z-50">
+            {/* Sidebar content */}
+            <nav className="space-y-4">
+                {linksList.map((link) => (
+                    <NavLink
+                        link={link.link}
+                        type={link.type}
+                        activeLink={activeLink}
+                        onClick={onLinkClick}
+                        url={link.url}
+                        key={link.id}
+                    >
+                        {link.linkText}
+                    </NavLink>
+                ))}
+            </nav>
+        </aside>
     );
 };
 
-export default Section_05;
+// ... (PropTypes definitions)
+
+const Header = ({ linksList }) => {
+    // ... (other code)
+
+    return (
+        <div>
+            <div className="relative">
+                {/* Your existing header code */}
+                <header className="bg-blue-500 p-4 flex justify-between items-center">
+                    {/* ... (header content) */}
+                </header>
+
+                {/* Sidebar */}
+                {showSidebar && (
+                    <Sidebar
+                        linksList={linksList}
+                        activeLink={activeLink}
+                        onLinkClick={handleLinkClick}
+                    />
+                )}
+            </div>
+
+            {/* The rest of your content */}
+            <main className={`pt-[100px] ${showSidebar ? 'hidden' : ''}`}>
+                {/* ... (the rest of your content) */}
+            </main>
+        </div>
+    );
+};
+
+// ... (export statement)

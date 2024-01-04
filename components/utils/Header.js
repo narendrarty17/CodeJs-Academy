@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const NavLink = ({ link, type, activeLink, onClick, children, url }) => {
-    console.log('link text in NavLink: ', link);
-    console.log('activeLink text in NavLink: ', activeLink);
-
     return (
         <a
             href={url}
