@@ -4,7 +4,7 @@ const YouTubeEmbed = ({ embedId }) => {
     return (
         <div className="flex flex-row justify-between aspect-w-16 aspect-h-9 w-full h-auto">
             <iframe
-                className="w-full h-[235px] md:w-2/3 md:h-[480px] bg-gray-200"
+                className="w-full h-[233px] md:w-2/3 md:h-[480px] bg-gray-200"
                 src="https://www.youtube.com/embed/7NMEbvbVck8?si=4RMeKVMlID8OiSSP"
                 title="YouTube video player"
                 frameborder="0"
