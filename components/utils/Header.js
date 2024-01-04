@@ -111,14 +111,16 @@ const Header = ({ linksList }) => {
                     {/* Navigation Links Only show in big screens */}
                     {!showMenu && (
                         <>
-                            {linksList.map((link) => (
-                                <NavLink
-                                    link={link.link}
-                                    activeLink={activeLink}
-                                    onClick={handleLinkClick}
-                                    url={link.url}
-                                >{link.linkText}</NavLink>
-                            ))}
+                            {linksList
+                                .filter((link) => link.type != 'auth')
+                                .map((link) => (
+                                    <NavLink
+                                        link={link.link}
+                                        activeLink={activeLink}
+                                        onClick={handleLinkClick}
+                                        url={link.url}
+                                    >{link.linkText}</NavLink>
+                                ))}
                         </>
                     )}
                 </nav>
