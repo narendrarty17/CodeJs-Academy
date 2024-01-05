@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const courseData = [
     {
         id: 0,
-        image: '/images/section_04/course_01.png',
+        image: '/images/landingPage/section_04/course_01.png',
         category: 'Design',
         rating: 5.0,
         title: 'UX/UI Design',
@@ -13,7 +13,7 @@ const courseData = [
     },
     {
         id: 1,
-        image: '/images/section_04/course_02.png',
+        image: '/images/landingPage/section_04/course_02.png',
         category: 'Programming',
         rating: 4,
         title: 'Introduction to Python',
@@ -22,7 +22,7 @@ const courseData = [
     },
     {
         id: 2,
-        image: '/images/section_04/course_03.png',
+        image: '/images/landingPage/section_04/course_03.png',
         category: 'Business',
         rating: 5,
         title: 'Data Analysis for Beginners',
@@ -118,7 +118,7 @@ const Section_04 = () => {
                                 <span>{course.category}</span>
                                 <div className="flex flex-row">
                                     <span className="mx-2">
-                                        <img src="/images/section_04/star.svg" />
+                                        <img src="/images/landingPage/section_04/star.svg" />
                                     </span>
                                     <span>
                                         {course.rating}

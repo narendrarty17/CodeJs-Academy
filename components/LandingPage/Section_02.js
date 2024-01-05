@@ -5,22 +5,22 @@ import { motion, useAnimation } from 'framer-motion';
 const logosData = [
     {
         id: 0,
-        url: "/images/section_02/company_01.png",
+        url: "/images/landingPage/section_02/company_01.png",
         alt: "company 01"
     },
     {
         id: 1,
-        url: "/images/section_02/company_02.png",
+        url: "/images/landingPage/section_02/company_02.png",
         alt: "company 02"
     },
     {
         id: 2,
-        url: "/images/section_02/company_03.png",
+        url: "/images/landingPage/section_02/company_03.png",
         alt: "company 03"
     },
     {
         id: 3,
-        url: "/images/section_02/company_04.png",
+        url: "/images/landingPage/section_02/company_04.png",
         alt: "company 04"
     }
 ]

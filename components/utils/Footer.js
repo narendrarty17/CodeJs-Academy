@@ -36,7 +36,7 @@ const Footer = () => {
                         <p>Enroll Now</p>
                         <img
                             className="w-8"
-                            src="/images/footer/up-right-arrow.png"
+                            src="/images/utils/footer/up-right-arrow.png"
                             alt="Up right arrow"
                         />
                     </button>
@@ -52,7 +52,7 @@ const Footer = () => {
                     {/* Company logo and name */}
                     <div className="flex items-center">
                         <img
-                            src="/images/header/brandLogo.svg"
+                            src="/images/utils/footer/brandLogo.svg"
                             alt="Company Logo"
                             className="h-8 w-8 mr-2"
                         />
@@ -67,11 +67,11 @@ const Footer = () => {
                     </div>
                     {/* Social media icons */}
                     <div className="flex gap-2">
-                        <img src="/images/footer/socialMediaIcons/facebook.svg" alt="Facebook" />
-                        <img src="/images/footer/socialMediaIcons/youtube.svg" alt="YouTube" />
-                        <img src="/images/footer/socialMediaIcons/whatsapp.svg" alt="WhatsApp" />
-                        <img src="/images/footer/socialMediaIcons/twitter.svg" alt="Twitter" />
-                        <img src="/images/footer/socialMediaIcons/instagram.svg" alt="Instagram" />
+                        <img src="/images/utils/footer/socialMediaIcons/facebook.svg" alt="Facebook" />
+                        <img src="/images/utils/footer/socialMediaIcons/youtube.svg" alt="YouTube" />
+                        <img src="/images/utils/footer/socialMediaIcons/whatsapp.svg" alt="WhatsApp" />
+                        <img src="/images/utils/footer/socialMediaIcons/twitter.svg" alt="Twitter" />
+                        <img src="/images/utils/footer/socialMediaIcons/instagram.svg" alt="Instagram" />
                     </div>
                 </div>
                 {/* Contact information section */}
@@ -108,7 +108,7 @@ const Footer = () => {
                             placeholder="Email Address"
                         />
                         <div className="flex justify-center items-center bg-blue-500 w-10 h-8 rounded-r-lg">
-                            <img src="images/footer/right-ar.svg" alt="Right arrow" />
+                            <img src="/images/utils/footer/right-ar.svg" alt="Right arrow" />
                         </div>
                     </div>
                 </div>

@@ -7,7 +7,7 @@ const reviewsData = [
         id: 0,
         rating: 4,
         reviewText: 'The courses provided valuable insights, and the hands-on projects were a game-changer for me. Great community and helpful resources.',
-        reviewerImage: '/images/section_05/reviewer_02.png',
+        reviewerImage: '/images/landingPage/section_05/reviewer_02.png',
         reviewerName: 'Jane Smith',
         role: 'UX Designer',
         companyName: 'Company B',
@@ -16,7 +16,7 @@ const reviewsData = [
         id: 1,
         rating: 5,
         reviewText: 'I had an amazing learning experience with comprehensive courses. The instructors were knowledgeable and supportive. Highly recommended!',
-        reviewerImage: '/images/section_05/reviewer_01.png',
+        reviewerImage: '/images/landingPage/section_05/reviewer_01.png',
         reviewerName: 'John Doe',
         role: 'Developer',
         companyName: 'Company A',
@@ -25,7 +25,7 @@ const reviewsData = [
         id: 2,
         rating: 5,
         reviewText: 'I found the platform user-friendly, and the course content was engaging. The support from the community and instructors made the journey enjoyable.',
-        reviewerImage: '/images/section_05/reviewer_03.png',
+        reviewerImage: '/images/landingPage/section_05/reviewer_03.png',
         reviewerName: 'Alex Johnson',
         role: 'Software Engineer',
         companyName: 'Company C',
@@ -39,7 +39,7 @@ const RatingComponent = ({ rating }) => {
             {Array.from({ length: rating }, (_, index) => (
                 <img
                     key={index + 1}
-                    src="/images/section_05/star.svg"
+                    src="/images/landingPage/section_05/star.svg"
                     alt={`Star ${index + 1}`}
                     className="mr-2" // Add some margin between stars (adjust as needed)
                 />

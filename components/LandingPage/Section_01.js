@@ -60,7 +60,7 @@ const Section_01 = () => {
                 style={{ paddingBottom: '45.57%' }}
             >
                 <motion.img
-                    src="/images/section_01/posterImage.jpg"
+                    src="/images/landingPage/section_01/posterImage.jpg"
                     alt="Learning Section"
                     className="absolute z-0 inset-0 w-full h-auto object-cover max-w-full md:w-full md:h-auto"
                 />

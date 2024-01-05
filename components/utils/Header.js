@@ -91,7 +91,7 @@ const Header = ({ linksList }) => {
                 {/* Company Logo with Name (Left Section) */}
                 <div className="flex items-center">
                     <img
-                        src="/images/header/brandLogo.svg"
+                        src="/images/utils/header/brandLogo.svg"
                         alt="Company Logo"
                         className="h-8 w-8 mr-2"
                     />
@@ -105,7 +105,7 @@ const Header = ({ linksList }) => {
                         className="md:hidden text-white"
                         onClick={toggleMenu}
                     >
-                        <img src="/images/header/menu.svg" alt="Menu" className="h-6 w-6" />
+                        <img src="/images/utils/header/menu.svg" alt="Menu" className="h-6 w-6" />
                     </button>
 
                     {/* Navigation Links Only show in big screens */}

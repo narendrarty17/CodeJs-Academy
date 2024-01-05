@@ -5,13 +5,13 @@ import { motion, useAnimation } from 'framer-motion';
 const instructorsData = [
     {
         id: 0,
-        image: "/images/section_06/instructor_01.webp",
+        image: "/images/landingPage/section_06/instructors/instructor_01.JPG",
         name: "Narendra",
         role: "Founder & Web Developer"
     },
     {
         id: 1,
-        image: "/images/section_06/instructor_01.webp",
+        image: "/images/landingPage/section_06/instructors/instructor_02.JPG",
         name: "Vishal",
         role: "Founder & Web Developer"
     }
@@ -69,7 +69,7 @@ const Section_06 = () => {
             {/* Part 1: Heading and Description */}
             <div className="mb-8 px-8">
                 <h2 className="text-3xl font-bold mb-2">MEET YOUR INSTRUCTORS</h2>
-                <p className="text-gray-400">All our courses are taught by us - Max & Manuel. Because we love what we do.</p>
+                <p className="text-gray-400">All our courses are taught by us - Narendra & Vishal. Because we love what we do.</p>
             </div>
 
             {/* Part 2: Instructor Cards */}
@@ -78,7 +78,7 @@ const Section_06 = () => {
                 {...handlers}
                 animate={controls}
             >
-                {/* Instructor 1 */}
+                {/* Instructors */}
                 {instructorsData
                     .filter((_, index) => (isSmallScreen ? index === selectedInstructor : true))
                     .map((instructor) => (
@@ -92,7 +92,7 @@ const Section_06 = () => {
                             <img
                                 src={instructor.image}
                                 alt="Max"
-                                className="p-6 w-1/2 rounded-md"
+                                className="p-6 w-1/2 h-auto rounded-md"
                             />
 
                             <div className="flex flex-col gap-2">
@@ -102,13 +102,13 @@ const Section_06 = () => {
                                 </div>
                                 <div className="flex justify-center gap-2 items-center mt-4">
                                     <a href="https://twitter.com/maxdoe" target="_blank" rel="noopener noreferrer">
-                                        <img src="/images/section_06/twitter.svg" alt="Twitter" className="w-6 h-6 mr-2" />
+                                        <img src="/images/landingPage/section_06/twitter.svg" alt="Twitter" className="w-6 h-6 mr-2" />
                                     </a>
                                     <a href="https://linkedin.com/in/maxdoe" target="_blank" rel="noopener noreferrer">
-                                        <img src="/images/section_06/linkedin.svg" alt="LinkedIn" className="w-6 h-6 mr-2" />
+                                        <img src="/images/landingPage/section_06/linkedin.svg" alt="LinkedIn" className="w-6 h-6 mr-2" />
                                     </a>
                                     <a href="https://youtube.com/maxdoe" target="_blank" rel="noopener noreferrer">
-                                        <img src="/images/section_06/youtube.svg" alt="YouTube" className="w-6 h-6" />
+                                        <img src="/images/landingPage/section_06/youtube.svg" alt="YouTube" className="w-6 h-6" />
                                     </a>
                                 </div>
                             </div>

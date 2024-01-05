@@ -59,7 +59,7 @@ const Section_03 = () => {
             {/* Image */}
             <motion.div className="flex justify-center md:w-1/2 mt-10 md:mt-4" variants={imageVariants}>
                 <img
-                    src="/images/section_03/posterImage.jpg"  // Update the image path
+                    src="/images/landingPage/section_03/posterImage.jpg"  // Update the image path
                     alt="Section Image"
                     className="w-full md:w-full lg:w-2/3 h-auto object-cover"
                 />
