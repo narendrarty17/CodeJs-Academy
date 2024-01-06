@@ -6,6 +6,33 @@ import courseContent from '@/public/data/courseContent.json';
 import ContentList from './ContentList';
 import YouTubeEmbed from './YouTubeEmbed';
 
+const QuestionsAndAnswers = () => {
+    return (
+        <div className="mx-3 md:mx-56 mt-10 space-y-6">
+            <div className="space-y-4">
+                <h1 className="font-bold text-2xl">
+                    Questions and Doubt Solving
+                </h1>
+                <p>
+                    <span>
+                        Students can ask their questions
+                        and doubts by mailing us in
+                    </span>
+                    <span>
+                        <b>Email</b>: <i>"narendrarty17@gmail.com"</i>.
+                    </span>
+                    <span>
+                        <b>Join the discord community</b>: <i>"discord@narendra.dis"</i>
+                    </span>
+                    <span>
+                        <b>Join us in whatsapp</b>: <i>"whatsapp.ca/23434/narendra"</i>
+                    </span>
+                </p>
+            </div>
+        </div>
+    )
+}
+
 const Overview = () => {
     return (
         <div className="mx-3 md:mx-56 mt-10 space-y-6">
@@ -230,6 +257,11 @@ const Section_01 = () => {
             {/* Overview Section */}
             {selectedButton === "overview" && (
                 <Overview />
+            )}
+
+            {/* Questions and Answers */}
+            {selectedButton === 'q&a' && (
+                <QuestionsAndAnswers />
             )}
         </div>
     );

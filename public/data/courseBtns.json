@@ -10,5 +10,11 @@
     "btnTxt": "Overview",
     "link": "overview",
     "btnUrl": "#"
+  },
+  {
+    "id": 2,
+    "btnTxt": "Q&A",
+    "link": "q&a",
+    "btnUrl": "#"
   }
 ]
