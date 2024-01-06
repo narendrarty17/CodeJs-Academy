@@ -1,0 +1,306 @@
+[
+  {
+    "sectionId": 0,
+    "sectionTitle": "Welcome, Welcome, Welcome!",
+    "contentCount": 4,
+    "contentLength": "45 mins",
+    "videosData": [
+      {
+        "id": 0,
+        "srNo": 1,
+        "title": "Course Structure and Projects",
+        "type": "video",
+        "url": "#",
+        "metaData": "5 min"
+      },
+      {
+        "id": 1,
+        "srNo": 2,
+        "title": "Read Before You Start!",
+        "type": "video",
+        "url": "#",
+        "metaData": "2 min"
+      },
+      {
+        "id": 2,
+        "srNo": 3,
+        "title": "Watch Before You Start!",
+        "type": "video",
+        "url": "#",
+        "metaData": "3 min"
+      },
+      {
+        "id": 3,
+        "srNo": 4,
+        "title": "Setting Up Our Code Editor",
+        "type": "video",
+        "url": "#",
+        "metaData": "4 min"
+      }
+    ]
+  },
+  {
+    "sectionId": 1,
+    "sectionTitle": "JavaScript Fundamentals-Part 1",
+    "contentCount": 4,
+    "contentLength": "45 mins",
+    "videosData": [
+      {
+        "id": 0,
+        "srNo": 5,
+        "title": "Section Intro",
+        "type": "video",
+        "url": "#",
+        "metaData": "5 min"
+      },
+      {
+        "id": 1,
+        "srNo": 6,
+        "title": "Hello World!",
+        "type": "video",
+        "url": "#",
+        "metaData": "2 min"
+      },
+      {
+        "id": 2,
+        "srNo": 7,
+        "title": "Brief Introduction to JavaScript",
+        "type": "video",
+        "url": "#",
+        "metaData": "3 min"
+      },
+      {
+        "id": 3,
+        "srNo": 8,
+        "title": "Linking a JavaScript File",
+        "type": "video",
+        "url": "#",
+        "metaData": "4 min"
+      },
+      {
+        "id": 4,
+        "srNo": 9,
+        "title": "Values and Variables",
+        "type": "video",
+        "url": "#",
+        "metaData": "4 min"
+      },
+      {
+        "id": 5,
+        "srNo": 10,
+        "title": "Practice Assignments",
+        "type": "video",
+        "url": "#",
+        "metaData": "4 min"
+      },
+      {
+        "id": 6,
+        "srNo": 11,
+        "title": "Data Types",
+        "type": "video",
+        "url": "#",
+        "metaData": "4 min"
+      },
+      {
+        "id": 7,
+        "srNo": 12,
+        "title": "let, const and var",
+        "type": "video",
+        "url": "#",
+        "metaData": "4 min"
+      },
+      {
+        "id": 8,
+        "srNo": 13,
+        "title": "Basic Operators",
+        "type": "video",
+        "url": "#",
+        "metaData": "4 min"
+      },
+      {
+        "id": 9,
+        "srNo": 14,
+        "title": "Operator Precedence",
+        "type": "video",
+        "url": "#",
+        "metaData": "4 min"
+      },
+      {
+        "id": 10,
+        "srNo": 15,
+        "title": "A Note About Challenges",
+        "type": "video",
+        "url": "#",
+        "metaData": "4 min"
+      }
+    ]
+  },
+  {
+    "sectionId": 2,
+    "sectionTitle": "JavaScript Fundamentals-Part 2",
+    "contentCount": 4,
+    "contentLength": "45 mins",
+    "videosData": [
+      {
+        "id": 0,
+        "srNo": 16,
+        "title": "Section Intro",
+        "type": "video",
+        "url": "#",
+        "metaData": "5 min"
+      },
+      {
+        "id": 1,
+        "srNo": 17,
+        "title": "Activating Strict Mode",
+        "type": "video",
+        "url": "#",
+        "metaData": "2 min"
+      },
+      {
+        "id": 2,
+        "srNo": 18,
+        "title": "Functions",
+        "type": "video",
+        "url": "#",
+        "metaData": "3 min"
+      },
+      {
+        "id": 3,
+        "srNo": 19,
+        "title": "Functions Declarations vs. Expressions",
+        "type": "video",
+        "url": "#",
+        "metaData": "4 min"
+      },
+      {
+        "id": 4,
+        "srNo": 20,
+        "title": "Arrow Functions",
+        "type": "video",
+        "url": "#",
+        "metaData": "4 min"
+      },
+      {
+        "id": 5,
+        "srNo": 21,
+        "title": "Functions Calling Other Functions",
+        "type": "video",
+        "url": "#",
+        "metaData": "4 min"
+      },
+      {
+        "id": 6,
+        "srNo": 22,
+        "title": "Reviewing Functions",
+        "type": "video",
+        "url": "#",
+        "metaData": "4 min"
+      }
+    ]
+  },
+  {
+    "sectionId": 3,
+    "sectionTitle": "How to Navigate This Course",
+    "contentCount": 4,
+    "contentLength": "45 mins",
+    "videosData": [
+      {
+        "id": 0,
+        "srNo": 23,
+        "title": "Pathways and Section Roadmaps",
+        "type": "video",
+        "url": "#",
+        "metaData": "5 min"
+      },
+      {
+        "id": 1,
+        "srNo": 24,
+        "title": "Course Pathways",
+        "type": "video",
+        "url": "#",
+        "metaData": "2 min"
+      }
+    ]
+  },
+  {
+    "sectionId": 4,
+    "sectionTitle": "Developer Skills & Editor Setup",
+    "contentCount": 4,
+    "contentLength": "45 mins",
+    "videosData": [
+      {
+        "id": 0,
+        "srNo": 25,
+        "title": "Section Intro",
+        "type": "video",
+        "url": "#",
+        "metaData": "5 min"
+      },
+      {
+        "id": 1,
+        "srNo": 26,
+        "title": "Section Roadmap",
+        "type": "video",
+        "url": "#",
+        "metaData": "2 min"
+      },
+      {
+        "id": 2,
+        "srNo": 27,
+        "title": "Setting up Prettier and VS Code",
+        "type": "video",
+        "url": "#",
+        "metaData": "3 min"
+      },
+      {
+        "id": 3,
+        "srNo": 28,
+        "title": "Installing Node.js and Setting Up a Dev Environment",
+        "type": "video",
+        "url": "#",
+        "metaData": "4 min"
+      },
+      {
+        "id": 4,
+        "srNo": 29,
+        "title": "Learning How to Code",
+        "type": "video",
+        "url": "#",
+        "metaData": "4 min"
+      },
+      {
+        "id": 5,
+        "srNo": 30,
+        "title": "How to Think Like a Developer: Become a Problem Solver!",
+        "type": "video",
+        "url": "#",
+        "metaData": "4 min"
+      },
+      {
+        "id": 6,
+        "srNo": 31,
+        "title": "Using Google, StackOverflow and MDN",
+        "type": "video",
+        "url": "#",
+        "metaData": "4 min"
+      },
+      {
+        "id": 7,
+        "srNo": 32,
+        "title": "DEbugging [Fixing Errors]",
+        "type": "video",
+        "url": "#",
+        "metaData": "4 min"
+      },
+      {
+        "id": 8,
+        "srNo": 33,
+        "title": "Debugging withh the Console and Breakpoints",
+        "type": "video",
+        "url": "#",
+        "metaData": "4 min"
+      }
+    ]
+  }
+]

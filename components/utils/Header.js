@@ -23,8 +23,9 @@ const Sidebar = ({ linksList, activeLink, onLinkClick }) => {
         <aside className="flex flex-col items-center bg-blue-500 text-white p-4 left-0 w-full h-auto overflow-y-auto z-10">
             {/* Sidebar content */}
             <nav className="space-y-4">
-                {linksList.map((link) => (
+                {linksList.map((link, index) => (
                     <NavLink
+                        key={index}
                         link={link.link}
                         type={link.type}
                         activeLink={activeLink}
@@ -113,8 +114,9 @@ const Header = ({ linksList }) => {
                         <>
                             {linksList
                                 .filter((link) => link.type != 'auth')
-                                .map((link) => (
+                                .map((link, index) => (
                                     <NavLink
+                                        key={index}
                                         link={link.link}
                                         activeLink={activeLink}
                                         onClick={handleLinkClick}
