@@ -29,7 +29,6 @@ const ContentList = ({ sections, selectedSection, handleSectionSelection }) => {
                         <span className="mx-2">
                             {selectedSection[section.sectionId] ?
                                 <img
-                                    onClick={() => handleSectionSelection(section.sectionId)}
                                     className="w-[30px] h-auto"
                                     src="/images/courses/course/upArrow.svg"
                                 /> :
@@ -49,7 +48,7 @@ const ContentList = ({ sections, selectedSection, handleSectionSelection }) => {
                                     key={video.srNo}
                                     className="h-16 space-y-1 hover:bg-gray-600"
                                 >
-                                    <div className='space-x-2'>
+                                    <div className='flex flex-row items-end space-x-2'>
                                         &nbsp;&nbsp;&nbsp;
                                         <input type="checkbox" id="checkbox1" />
                                         <label htmlFor="checkbox1">
