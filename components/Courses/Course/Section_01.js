@@ -21,7 +21,7 @@ const Overview = () => {
             <hr
                 className="border-t border-gray-500"
             />
-            <div className="flex space-x-20">
+            <div className="flex space-x-3 md:space-x-20">
                 <span>By the numbers</span>
                 <ul>
                     <li>Skill level: All Levels</li>
@@ -37,7 +37,7 @@ const Overview = () => {
             <hr
                 className="border-t border-gray-500"
             />
-            <div className="flex space-x-20">
+            <div className="flex space-x-5 md:space-x-20">
                 <span>Certificates</span>
                 <span className="flex flex-col space-y-4">
                     <p>Get CodeJs certificate by completing entire course</p>
@@ -49,7 +49,7 @@ const Overview = () => {
             <hr
                 className="border-t border-gray-500"
             />
-            <div className="flex space-x-20">
+            <div className="flex space-x-5 md:space-x-20">
                 <span>Description</span>
                 <span className="flex flex-col space-y-4">
                     <div className="space-y-4">
@@ -115,7 +115,7 @@ const Overview = () => {
             <hr
                 className="border-t border-gray-500"
             />
-            <div className="flex space-x-20">
+            <div className="flex space-x-5 md:space-x-20">
                 <span>Instructor</span>
                 <span className="flex flex-col space-y-4">
                     <div className="flex space-x-4">
