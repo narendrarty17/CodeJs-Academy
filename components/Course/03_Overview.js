@@ -1,15 +1,3 @@
-import React, { useState, useEffect } from 'react';
-
-{/* Importing Data */ }
-import courseBtns from '@/public/data/courseBtns';
-import courseContent from '@/public/data/courseContent.json';
-
-{/* Importing Components */ }
-import ContentList from './ContentList';
-import YouTubeEmbed from './YouTubeEmbed';
-import QuestionsAndAnswers from './QuestionsAndAnswers';
-
-
 const Overview = () => {
     return (
         <div className="mx-3 md:mx-56 mt-10 space-y-6">
@@ -161,87 +149,6 @@ const Overview = () => {
             </div>
         </div>
     );
-}
-
-const Section_01 = () => {
-    // State to track the selected button
-    const [selectedButton, setSelectedButton] = useState('courseContent');
-    const [selectedSection, setSelectedSection] = useState(Array(courseContent.length).fill(false));
-
-    // Fetching srNo of the last video in the last element
-    const lastSection = courseContent[courseContent.length - 1];
-    const lastVideo = lastSection.videosData[lastSection.videosData.length - 1];
-    const numVideo = lastVideo.srNo;
-
-    const [selectedVideo, setSelectedVideo] = useState(Array(numVideo).fill(false));
-
-    const handleVideoSelection = (srNo) => {
-        setSelectedVideo(prevSelectedVideo => {
-            const videoIndex = srNo - 1;
-            const updatedSelectedVideo = [...prevSelectedVideo];
-            updatedSelectedVideo[videoIndex] = !updatedSelectedVideo[videoIndex];
-            console.log(updatedSelectedVideo); // Log the updated state
-            return updatedSelectedVideo;
-        });
-    };
-
-    const handleSectionSelection = (id) => {
-        setSelectedSection(prevSelectedSection => {
-            const temp = !prevSelectedSection[id];
-            const updatedSelectedSection = [...prevSelectedSection];
-            updatedSelectedSection[id] = temp;
-            console.log(updatedSelectedSection); // Log the updated state
-            return updatedSelectedSection;
-        });
-    };
-
-    return (
-        <div className="mb-4">
-            {/* Youtube video in video player */}
-            <YouTubeEmbed embedId="4RMeKVMlID8OiSSP" />
-
-            {/* Buttons for course content, overview, Q&A, and Reviews */}
-            <div
-                className="flex justify-start mt-8 space-x-4 mx-2 md:mx-48 font-bold"
-            >
-                {courseBtns.map((link, index) => (
-                    <button
-                        key={index}
-                        className={`text-lg pb-3 ${selectedButton === link.link ? 'border-b-[3px] border-blue-500' : ''}`}
-                        onClick={() => setSelectedButton(link.link)}
-                    >
-                        {link.btnTxt}
-                    </button>
-                ))}
-            </div>
-
-            {/* Horizontal Gray Line */}
-            <hr
-                className="mx-2 md:mx-48 border-t border-gray-500"
-            />
-
-            {/* Course Content section */}
-            {selectedButton === "courseContent" && (
-                <ContentList
-                    sections={courseContent}
-                    selectedSection={selectedSection}
-                    selectedVideo={selectedVideo}
-                    handleSectionSelection={handleSectionSelection}
-                    handleVideoSelection={handleVideoSelection}
-                />
-            )}
-
-            {/* Overview Section */}
-            {selectedButton === "overview" && (
-                <Overview />
-            )}
-
-            {/* Questions and Answers */}
-            {selectedButton === 'q&a' && (
-                <QuestionsAndAnswers />
-            )}
-        </div>
-    );
 };
 
-export default Section_01;
+export default Overview;

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const NavLink = ({ link, type, activeLink, onClick, children, url }) => {
+import linksList from '@/public/data/linksList.json';
+
+const NavLink = ({ link, activeLink, onClick, children, url }) => {
     return (
         <a
             href={url}
@@ -24,7 +26,6 @@ const Sidebar = ({ linksList, activeLink, onLinkClick }) => {
                     <NavLink
                         key={index}
                         link={link.link}
-                        type={link.type}
                         activeLink={activeLink}
                         onClick={onLinkClick}
                         url={link.url}
@@ -49,7 +50,7 @@ Sidebar.propTypes = {
     onLinkClick: PropTypes.func.isRequired,
 };
 
-const Header = ({ linksList }) => {
+const Header = () => {
     // State to track the current active link
     const [activeLink, setActiveLink] = useState('home');
     const [showMenu, setShowMenu] = useState(false);
@@ -101,7 +102,6 @@ const Header = ({ linksList }) => {
                     {!showMenu && (
                         <>
                             {linksList
-                                .filter((link) => link.type != 'auth')
                                 .map((link, index) => (
                                     <NavLink
                                         key={index}
