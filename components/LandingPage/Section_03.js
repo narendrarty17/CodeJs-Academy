@@ -44,7 +44,7 @@ const Section_03 = () => {
                 <p className="text-gray-400 mb-2">
                     Embarking on your web development journey with us means learning from a faculty of seasoned instructors who are not just teachers but mentors on your path to mastery. Our instructors don't simply cover the syllabus; they curate an immersive curriculum designed to equip you with the skills demanded by the ever-evolving tech industry.
                 </p>
-                <p className="text-gray-400 mb-2">
+                <p className="hidden md:flex text-gray-400 mb-2">
                     Their commitment to your success is evident in their personalized approach to teaching, fostering an environment where questions are encouraged, collaboration is celebrated, and the pursuit of excellence is a shared endeavor between instructor and student.
                 </p>
                 <motion.button
