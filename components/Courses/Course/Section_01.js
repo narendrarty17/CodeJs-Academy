@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import courseBtns from '@/public/data/courseBtns';
 
 import courseContent from '@/public/data/courseContent.json';
@@ -7,7 +7,7 @@ const truncateText = (text, maxLength) => {
     return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
 }
 
-const ContentList = ({ sections, selectedSection, handleSectionSelection }) => {
+const ContentList = ({ sections, selectedSection, selectedVideo, handleSectionSelection, handleVideoSelection }) => {
     return (
         <div className="mx-3 md:mx-56 mt-10 bg-gray-900">
             {/* Title with Down Arrow */}
@@ -50,7 +50,12 @@ const ContentList = ({ sections, selectedSection, handleSectionSelection }) => {
                                 >
                                     <div className='flex flex-row items-end space-x-2'>
                                         &nbsp;&nbsp;&nbsp;
-                                        <input type="checkbox" id="checkbox1" />
+                                        <input
+                                            onChange={() => handleVideoSelection(video.srNo)}
+                                            type="checkbox"
+                                            checked={selectedVideo[video.srNo - 1] ? true : false}
+                                            id="checkbox1"
+                                        />
                                         <label htmlFor="checkbox1">
                                             <a href="#">
                                                 {truncateText(`${video.srNo}. ${video.title}`, 40)}
@@ -98,13 +103,37 @@ const Section_01 = () => {
     const [selectedButton, setSelectedButton] = useState('courseContent');
     const [selectedSection, setSelectedSection] = useState(Array(courseContent.length).fill(false));
 
+    // Fetching srNo of the last video in the last element
+    const lastSection = courseContent[courseContent.length - 1];
+    const lastVideo = lastSection.videosData[lastSection.videosData.length - 1];
+    const numVideo = lastVideo.srNo;
+
+    const [selectedVideo, setSelectedVideo] = useState(Array(numVideo).fill(false));
+
+    const handleVideoSelection = (srNo) => {
+        setSelectedVideo(prevSelectedVideo => {
+            const videoIndex = srNo - 1;
+            const updatedSelectedVideo = [...prevSelectedVideo];
+            updatedSelectedVideo[videoIndex] = !updatedSelectedVideo[videoIndex];
+            console.log(updatedSelectedVideo); // Log the updated state
+            return updatedSelectedVideo;
+        });
+    };
+
     const handleSectionSelection = (id) => {
-        const numberOfSections = courseContent.length;
-        const temp = !selectedSection[id];
-        const initialSelectedSectionState = Array(numberOfSections).fill(false);
-        initialSelectedSectionState[id] = temp;
-        setSelectedSection(initialSelectedSectionState);
-    }
+        setSelectedSection(prevSelectedSection => {
+            const temp = !prevSelectedSection[id];
+            const updatedSelectedSection = [...prevSelectedSection];
+            updatedSelectedSection[id] = temp;
+            console.log(updatedSelectedSection); // Log the updated state
+            return updatedSelectedSection;
+        });
+    };
+
+
+    useEffect(() => {
+        console.log('useEffect ran');
+    }, [selectedVideo]);
 
     return (
         <div className="mb-4">
@@ -131,8 +160,10 @@ const Section_01 = () => {
             {/* Course Content section */}
             <ContentList
                 sections={courseContent}
-                handleSectionSelection={handleSectionSelection}
                 selectedSection={selectedSection}
+                selectedVideo={selectedVideo}
+                handleSectionSelection={handleSectionSelection}
+                handleVideoSelection={handleVideoSelection}
             />
         </div>
     );
