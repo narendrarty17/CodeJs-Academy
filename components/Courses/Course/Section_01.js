@@ -13,7 +13,7 @@ const QuestionsAndAnswers = () => {
                 <h1 className="font-bold text-2xl">
                     Questions and Doubt Solving
                 </h1>
-                <p>
+                <div className="flex flex-col space-y-2">
                     <span>
                         Students can ask their questions
                         and doubts by mailing us in
@@ -27,7 +27,7 @@ const QuestionsAndAnswers = () => {
                     <span>
                         <b>Join us in whatsapp</b>: <i>"whatsapp.ca/23434/narendra"</i>
                     </span>
-                </p>
+                </div>
             </div>
         </div>
     )
