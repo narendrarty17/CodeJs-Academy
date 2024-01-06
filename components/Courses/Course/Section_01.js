@@ -1,102 +1,163 @@
 import React, { useState, useEffect } from 'react';
-import courseBtns from '@/public/data/courseBtns';
 
+import courseBtns from '@/public/data/courseBtns';
 import courseContent from '@/public/data/courseContent.json';
 
-const truncateText = (text, maxLength) => {
-    return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
-}
+import ContentList from './ContentList';
+import YouTubeEmbed from './YouTubeEmbed';
 
-const ContentList = ({ sections, selectedSection, selectedVideo, handleSectionSelection, handleVideoSelection }) => {
+const Overview = () => {
     return (
-        <div className="mx-3 md:mx-56 mt-10 bg-gray-900">
-            {/* Title with Down Arrow */}
-            {/* Horizontal Gray Line */}
+        <div className="mx-3 md:mx-56 mt-10 space-y-6">
+            <div className="space-y-4">
+                <h1 className="font-bold text-2xl">
+                    About this course
+                </h1>
+                <p>
+                    The modern JavaScript course for everyone! Master JavaScript
+                    with projects.
+                </p>
+            </div>
             <hr
                 className="border-t border-gray-500"
             />
-            {/* Section 1 starts here */}
-            {sections.map((section) => (
-                <div key={section.sectionId}>
-                    <section
-                        className="flex items-center justify-between cursor-pointer px-4 py-4"
-                        onClick={() => handleSectionSelection(section.sectionId)}
-                    >
-                        <div className="flex flex-col gap-2">
-                            <h1 className="font-bold">Section {section.sectionId + 1}: {section.sectionTitle}</h1>
-                            <p className="text-sm">0 / {section.contentCount} | {section.contentLength}</p>
-                        </div>
-                        <span className="mx-2">
-                            {selectedSection[section.sectionId] ?
-                                <img
-                                    className="w-[30px] h-auto"
-                                    src="/images/courses/course/upArrow.svg"
-                                /> :
-                                <img
-                                    className="w-[22px] h-auto"
-                                    src="/images/courses/course/downArrow.svg"
-                                />
-                            }
-                        </span>
-                    </section>
-                    {/* Checkboxes - Conditionally Rendered */}
-                    {selectedSection[section.sectionId] && (
-                        <ul className="bg-black">
-                            {/* Render your checkboxes here */}
-                            {section.videosData.map((video) => (
-                                <li
-                                    key={video.srNo}
-                                    className="h-16 space-y-1 hover:bg-gray-600"
-                                >
-                                    <div className='flex flex-row items-end space-x-2'>
-                                        &nbsp;&nbsp;&nbsp;
-                                        <input
-                                            onChange={() => handleVideoSelection(video.srNo)}
-                                            type="checkbox"
-                                            checked={selectedVideo[video.srNo - 1] ? true : false}
-                                            id="checkbox1"
-                                        />
-                                        <label htmlFor="checkbox1">
-                                            <a href="#">
-                                                {truncateText(`${video.srNo}. ${video.title}`, 40)}
-                                            </a>
-                                        </label>
-                                    </div>
-                                    <div className="flex space-x-2 px-1">
-                                        &nbsp;&nbsp;&nbsp;
-                                        <img
-                                            className="ml-5 w-4"
-                                            src="/images/courses/course/video.svg"
-                                        />
-                                        <p className="text-[12px]">{video.metaData}</p>
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                    {/* Horizontal Gray Line */}
-                    <hr
-                        className="border-t border-gray-500"
-                    />
-                </div>
-            ))}
-        </div>
-    );
-};
+            <div className="flex space-x-20">
+                <span>By the numbers</span>
+                <ul>
+                    <li>Skill level: All Levels</li>
+                    <li>Students: 869440</li>
+                    <li>Languages: English</li>
+                    <li>Captions: Yes</li>
+                </ul>
+                <ul>
+                    <li>Lectures: 320</li>
+                    <li>Video: 68.5 total hours</li>
+                </ul>
+            </div>
+            <hr
+                className="border-t border-gray-500"
+            />
+            <div className="flex space-x-20">
+                <span>Certificates</span>
+                <span className="flex flex-col space-y-4">
+                    <p>Get CodeJs certificate by completing entire course</p>
+                    <button className="border-2 border-white py-2">
+                        CodeJs Certificate
+                    </button>
+                </span>
+            </div>
+            <hr
+                className="border-t border-gray-500"
+            />
+            <div className="flex space-x-20">
+                <span>Description</span>
+                <span className="flex flex-col space-y-4">
+                    <div className="space-y-4">
+                        <h1 className="font-bold">
+                            The #1 bestselling JavaScript course
+                        </h1>
+                        <p>
+                            <i>
+                                "Really, really well made course. Super in-depth,
+                                with great challenges and projects that will solidify
+                                your Javascript understanding. I found the lectures
+                                were paced perfectly -- Jonas doesn't skip over
+                                anything that might be useful to a JS developer"
+                                — Vishal Sharma (Senior Web developer in Natomi)
 
-const YouTubeEmbed = ({ embedId }) => {
-    return (
-        <div className="flex justify-center aspect-w-16 aspect-h-9 w-full h-auto">
-            <iframe
-                className="w-full h-[232px] md:h-[480px]"
-                src={`https://www.youtube.com/embed/7NMEbvbVck8?si=${embedId}&rel=0`}
-                title="YouTube video player"
-                allow="accelerometer; gyroscope;"
-                allowFullScreen
-            ></iframe>
+                            </i>
+                        </p>
+                        <p>
+                            JavaScript is the most popular programming language
+                            in the world. It powers the entire modern web.
+                            It provides millions of high-paying
+                            jobs all over the world.
+                            <br />
+                            That's why you want to learn JavaScript too.
+                            And you came to the right place!
+                        </p>
+                    </div>
+                    <div className="space-y-4">
+                        <h1 className="font-bold">
+                            Why is this the right JavaScript course for you?
+                        </h1>
+                        <p>
+                            <i>
+                                This is the most complete and in-depth JavaScript
+                                course on Udemy (and maybe the entire internet!).
+                                It's an all-in-one package that will take you from
+                                the very fundamentals of JavaScript, all the way
+                                to building modern and complex applications.
+                            </i>
+                        </p>
+                        <p>
+                            You will learn modern JavaScript from the very
+                            beginning, step-by-step. I will guide you through
+                            <b>practical and fun code examples, important theory</b>
+                            about how JavaScript works behind the scenes,
+                            and <b>beautiful and complete projects</b>.
+                        </p>
+                        <p>
+                            You will become ready to continue learning
+                            advanced <b>front-end frameworks</b> like React,
+                            Vue, Angular, or Svelte.
+                        </p>
+                        <p>
+                            You will also learn how to think like a developer,
+                            how to plan application features, how to architect
+                            your code, how to debug code, and a lot of other
+                            real-world skills that you will need in your
+                            developer job.
+                        </p>
+                    </div>
+                </span>
+            </div>
+            <hr
+                className="border-t border-gray-500"
+            />
+            <div className="flex space-x-20">
+                <span>Instructor</span>
+                <span className="flex flex-col space-y-4">
+                    <div className="flex space-x-4">
+                        <img
+                            className="w-12 h-auto rounded-full"
+                            src="/images/courses/course/instructor_01.JPG"
+                        />
+                        <div>
+                            <h1 className="font-bold text-xl">Narendra Kumar</h1>
+                            <span>Web Developer, Designer, and Teacher</span>
+                        </div>
+                    </div>
+                    <div className="space-y-4">
+                        <p>
+                            Hi, I'm Jonas! I'm one of Udemy's Top
+                            Instructors and all my premium courses
+                            have earned the best-selling status for
+                            outstanding performance and student
+                            satisfaction.
+                        </p>
+                        <p>
+                            I'm a full-stack web developer and
+                            designer with a passion for building
+                            beautiful web interfaces from scratch.
+                            I've been building websites and apps
+                            since 2010 and also have a Master's
+                            degree in Engineering.
+                        </p>
+                        <p>
+                            I discovered my passion for teaching
+                            and helping others by sharing everything
+                            I knew during college. This passion led
+                            me to Udemy in 2015, where I now have the
+                            privilege of training <b>1,500,000+</b>
+                            learners in the field of web development.
+                        </p>
+                    </div>
+                </span>
+            </div>
         </div>
     );
-};
+}
 
 const Section_01 = () => {
     // State to track the selected button
@@ -130,15 +191,11 @@ const Section_01 = () => {
         });
     };
 
-
-    useEffect(() => {
-        console.log('useEffect ran');
-    }, [selectedVideo]);
-
     return (
         <div className="mb-4">
             {/* Youtube video in video player */}
             <YouTubeEmbed embedId="4RMeKVMlID8OiSSP" />
+
             {/* Buttons for course content, overview, Q&A, and Reviews */}
             <div
                 className="flex justify-start mt-8 space-x-4 mx-2 md:mx-48 font-bold"
@@ -153,18 +210,27 @@ const Section_01 = () => {
                     </button>
                 ))}
             </div>
+
             {/* Horizontal Gray Line */}
             <hr
                 className="mx-2 md:mx-48 border-t border-gray-500"
             />
+
             {/* Course Content section */}
-            <ContentList
-                sections={courseContent}
-                selectedSection={selectedSection}
-                selectedVideo={selectedVideo}
-                handleSectionSelection={handleSectionSelection}
-                handleVideoSelection={handleVideoSelection}
-            />
+            {selectedButton === "courseContent" && (
+                <ContentList
+                    sections={courseContent}
+                    selectedSection={selectedSection}
+                    selectedVideo={selectedVideo}
+                    handleSectionSelection={handleSectionSelection}
+                    handleVideoSelection={handleVideoSelection}
+                />
+            )}
+
+            {/* Overview Section */}
+            {selectedButton === "overview" && (
+                <Overview />
+            )}
         </div>
     );
 };

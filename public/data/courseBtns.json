@@ -2,17 +2,12 @@
   {
     "id": 0,
     "btnTxt": "Course Content",
+    "link": "courseContent",
     "btnUrl": "#"
   },
   {
     "id": 1,
     "btnTxt": "Overview",
-    "link": "courseContent",
-    "btnUrl": "#"
-  },
-  {
-    "id": 2,
-    "btnTxt": "Q&A",
     "link": "overview",
     "btnUrl": "#"
   }
