@@ -6,10 +6,7 @@ const NavLink = ({ link, type, activeLink, onClick, children, url }) => {
         <a
             href={url}
             style={{ display: 'block' }}
-            className={`text-white hover:text-gray-300 
-                        ${activeLink === link ? 'underline' : ''}
-                        ${type === 'auth' ? 'font-semibold' : ''}`
-            }
+            className={`text-white hover:text-gray-300 ${activeLink === link ? 'underline' : ''}`}
             onClick={() => onClick(link)}
         >
             {children}
@@ -31,7 +28,6 @@ const Sidebar = ({ linksList, activeLink, onLinkClick }) => {
                         activeLink={activeLink}
                         onClick={onLinkClick}
                         url={link.url}
-                        key={link.id}
                     >
                         {link.linkText}
                     </NavLink>
@@ -101,14 +97,6 @@ const Header = ({ linksList }) => {
 
                 {/* Navigation Links (Middle Section) */}
                 <nav className="flex justify-center space-x-4">
-                    {/* Menu for Sidebar Only show on small screens */}
-                    <button
-                        className="md:hidden text-white"
-                        onClick={toggleMenu}
-                    >
-                        <img src="/images/utils/header/menu.svg" alt="Menu" className="h-6 w-6" />
-                    </button>
-
                     {/* Navigation Links Only show in big screens */}
                     {!showMenu && (
                         <>
@@ -128,22 +116,32 @@ const Header = ({ linksList }) => {
                 </nav>
 
                 {/* Login and Signup Button (Right Section) */}
-                <div className={`flex items-center ${showMenu ? 'hidden' : 'md:flex'}`}>
+                <div className="flex items-center">
                     <button className="text-white hover:text-gray-300 mr-4">Login</button>
                     <button className="bg-gray-700 text-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
                         Sign Up
                     </button>
                 </div>
-            </header>
+
+                {/* Menu for Sidebar Only show on small screens */}
+                <button
+                    className="md:hidden text-white"
+                    onClick={toggleMenu}
+                >
+                    <img src="/images/utils/header/menu.svg" alt="Menu" className="h-6 w-6" />
+                </button>
+            </header >
             {/* Sidebar */}
-            {showSidebar && (
-                <Sidebar
-                    linksList={linksList}
-                    activeLink={activeLink}
-                    onLinkClick={handleLinkClick}
-                />
-            )}
-        </div>
+            {
+                showSidebar && (
+                    <Sidebar
+                        linksList={linksList}
+                        activeLink={activeLink}
+                        onLinkClick={handleLinkClick}
+                    />
+                )
+            }
+        </div >
     );
 };
 

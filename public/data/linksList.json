@@ -26,19 +26,5 @@
     "linkText": "Contact",
     "url": "#",
     "type": "normal"
-  },
-  {
-    "id": 4,
-    "link": "login",
-    "linkText": "Login",
-    "url": "#",
-    "type": "auth"
-  },
-  {
-    "id": 5,
-    "link": "signup",
-    "linkText": "Sign Up",
-    "url": "#",
-    "type": "auth"
   }
 ]

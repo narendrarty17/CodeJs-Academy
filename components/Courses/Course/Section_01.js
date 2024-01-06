@@ -1,37 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
+{/* Importing Data */ }
 import courseBtns from '@/public/data/courseBtns';
 import courseContent from '@/public/data/courseContent.json';
 
+{/* Importing Components */ }
 import ContentList from './ContentList';
 import YouTubeEmbed from './YouTubeEmbed';
+import QuestionsAndAnswers from './QuestionsAndAnswers';
 
-const QuestionsAndAnswers = () => {
-    return (
-        <div className="mx-3 md:mx-56 mt-10 space-y-6">
-            <div className="space-y-4">
-                <h1 className="font-bold text-2xl">
-                    Questions and Doubt Solving
-                </h1>
-                <div className="flex flex-col space-y-2">
-                    <span>
-                        Students can ask their questions
-                        and doubts by mailing us in
-                    </span>
-                    <span>
-                        <b>Email</b>: <i>"narendrarty17@gmail.com"</i>.
-                    </span>
-                    <span>
-                        <b>Join the discord community</b>: <i>"discord@narendra.dis"</i>
-                    </span>
-                    <span>
-                        <b>Join us in whatsapp</b>: <i>"whatsapp.ca/23434/narendra"</i>
-                    </span>
-                </div>
-            </div>
-        </div>
-    )
-}
 
 const Overview = () => {
     return (
