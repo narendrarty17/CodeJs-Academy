@@ -1,5 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+
+
 
 const courseData = [
     {
@@ -10,6 +13,7 @@ const courseData = [
         title: 'UX/UI Design',
         description: 'Elevate your design skills with our Figma UI/UX course for creating sleek and user-friendly interfaces.',
         enrollButton: 'INR 499',
+        url: '/course'
     },
     {
         id: 1,
@@ -19,6 +23,7 @@ const courseData = [
         title: 'Introduction to Python',
         description: 'Explore the fundamentals of Python programming in our beginner-friendly course, paving the way for versatile coding proficiency.',
         enrollButton: 'INR 399',
+        url: '/course'
     },
     {
         id: 2,
@@ -28,6 +33,7 @@ const courseData = [
         title: 'Data Analysis for Beginners',
         description: 'Embark on your data analysis journey with our beginner-friendly course, equipping you with essential skills to decipher and derive insights from data sets',
         enrollButton: 'INR 799',
+        url: '/course'
     },
     // Add more courses as needed
 ];
@@ -109,14 +115,16 @@ const Section_04 = () => {
 
                             {/* Section 5: Buttons */}
                             <div className="pl-4 pb-4 flex justify-start items-center">
-                                <motion.button
-                                    className="bg-blue-500 text-white px-4 py-2 rounded"
-                                    whileHover="hover"
-                                    variants={buttonVariant_01}
-                                >
-                                    Enroll Now
-                                </motion.button>
-                                <button className="text-gray-700 px-4 py-2 font-semibold">{course.enrollButton}</button>
+                                <Link href="/course">
+                                    <motion.button
+                                        className="bg-blue-500 text-white px-4 py-2 rounded"
+                                        whileHover="hover"
+                                        variants={buttonVariant_01}
+                                    >
+                                        Enroll Now
+                                    </motion.button>
+                                </Link>
+                                <div className="text-gray-700 px-4 py-2 font-semibold">{course.enrollButton}</div>
                             </div>
                         </motion.div>
                     ))}
