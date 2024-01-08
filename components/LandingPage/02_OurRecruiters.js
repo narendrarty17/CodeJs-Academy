@@ -2,28 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { motion, useAnimation } from 'framer-motion';
 
-const logosData = [
-    {
-        id: 0,
-        url: "/images/landingPage/section_02/company_01.png",
-        alt: "company 01"
-    },
-    {
-        id: 1,
-        url: "/images/landingPage/section_02/company_02.png",
-        alt: "company 02"
-    },
-    {
-        id: 2,
-        url: "/images/landingPage/section_02/company_03.png",
-        alt: "company 03"
-    },
-    {
-        id: 3,
-        url: "/images/landingPage/section_02/company_04.png",
-        alt: "company 04"
-    }
-]
+import logosData from '@/public/data/logosData.json';
 
 const Section_02 = () => {
     const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -108,7 +87,7 @@ const Section_02 = () => {
                                 alt={logo.alt}
                                 initial={{ x: 0, opacity: 1 }}
                                 whileHover={{ scale: 1.05 }}
-                                className="h-28 w-auto md:w-auto md:h-16 mb-4 md:mb-0 md:mr-4"
+                                className="h-20 w-auto md:h-16 mb-4 md:mb-0 md:mr-4"
                             />
                         ))
                     }
