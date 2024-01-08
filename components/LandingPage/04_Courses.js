@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const courseData = [
@@ -33,7 +33,6 @@ const courseData = [
 ];
 
 const Section_04 = () => {
-    const [selectedButton, setSelectedButton] = useState('Popular');
 
     const darkerBlueColor = '#2563EB'; // Adjust this color to your preference
 
@@ -68,32 +67,6 @@ const Section_04 = () => {
             <div className="text-center mb-6">
                 <h2 className="text-3xl font-bold">Courses</h2>
                 <p className="text-gray-600">Your Ultimate Guide to Learning</p>
-            </div>
-
-            {/* Part 2: Buttons */}
-            <div className="flex justify-center space-x-4 mb-8">
-                {/* Your buttons code here */}
-                <button
-                    className={`text-gray-600 hover:text-blue-500 focus:text-blue-500 focus:underline ${selectedButton === 'Popular' && 'text-blue-600 underline' // Conditionally apply styles
-                        }`}
-                    onClick={() => setSelectedButton('Popular')}
-                >
-                    Popular
-                </button>
-                <button
-                    className={`text-gray-600 hover:text-blue-500 focus:text-blue-500 focus:underline ${selectedButton === 'Recommended' && 'text-blue-500 underline' // Conditionally apply styles
-                        }`}
-                    onClick={() => setSelectedButton('Recommended')}
-                >
-                    Recommended
-                </button>
-                <button
-                    className={`text-gray-600 hover:text-blue-500 focus:text-blue-500 focus:underline ${selectedButton === 'Best Price' && 'text-blue-500 underline' // Conditionally apply styles
-                        }`}
-                    onClick={() => setSelectedButton('Best Price')}
-                >
-                    Best Price
-                </button>
             </div>
 
             {/* Part 3: Courses */}
@@ -150,11 +123,13 @@ const Section_04 = () => {
             </motion.div>
 
             {/* Part 4: View All Button */}
-            <div className="flex justify-center">
-                <button className="text-white border border-white text-base leading-6 whitespace-nowrap justify-center items-stretch border px-4 py-2 rounded-md border-solid">
-                    View All Courses
-                </button>
-            </div>
+            {/* 
+                <div className="flex justify-center">
+                    <button className="text-white border border-white text-base leading-6 whitespace-nowrap justify-center items-stretch border px-4 py-2 rounded-md border-solid">
+                        View All Courses
+                    </button>
+                </div> 
+            */}
         </motion.section>
     );
 };
