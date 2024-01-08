@@ -2,8 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-
-
 const courseData = [
     {
         id: 0,
@@ -64,6 +62,7 @@ const Section_04 = () => {
 
     return (
         <motion.section
+            id="courses"
             className="container mx-auto p-8"
             variants={containerVariants}
             initial="hidden"

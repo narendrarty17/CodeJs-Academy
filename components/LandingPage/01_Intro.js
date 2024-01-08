@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const Section_01 = () => {
     const darkerBlueColor = '#2563EB'; // Adjust this color to your preference
@@ -46,13 +47,15 @@ const Section_01 = () => {
                     >
                         Get Started
                     </motion.button>
-                    <motion.button
-                        className="bg-gray-800 text-white px-4 py-2 rounded w-200"
-                        whileHover="hover"
-                        variants={buttonVariant_02}
-                    >
-                        Explore Courses
-                    </motion.button>
+                    <Link href="/#courses">
+                        <motion.button
+                            className="bg-gray-800 text-white px-4 py-2 rounded w-200"
+                            whileHover="hover"
+                            variants={buttonVariant_02}
+                        >
+                            Explore Courses
+                        </motion.button>
+                    </Link>
                 </div>
             </div>
             <div
