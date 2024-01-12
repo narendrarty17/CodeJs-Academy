@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 {/* Importing Data */ }
-import linksList from '@/public/data/linksList.json';
 import courseBtns from '@/public/data/courseBtns';
 import courseContent from '@/public/data/courseContent.json';
 
@@ -20,6 +19,10 @@ const Section_01 = () => {
     // State to track the selected button
     const [selectedButton, setSelectedButton] = useState('courseContent');
     const [selectedSection, setSelectedSection] = useState(Array(courseContent.length).fill(false));
+    const [courseData, setCourseData] = useState(null);
+    const [videoId, setVideoId] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     // Fetching srNo of the last video in the last element
     const lastSection = courseContent[courseContent.length - 1];
@@ -33,7 +36,6 @@ const Section_01 = () => {
             const videoIndex = srNo - 1;
             const updatedSelectedVideo = [...prevSelectedVideo];
             updatedSelectedVideo[videoIndex] = !updatedSelectedVideo[videoIndex];
-            console.log(updatedSelectedVideo); // Log the updated state
             return updatedSelectedVideo;
         });
     };
@@ -43,17 +45,92 @@ const Section_01 = () => {
             const temp = !prevSelectedSection[id];
             const updatedSelectedSection = [...prevSelectedSection];
             updatedSelectedSection[id] = temp;
-            console.log(updatedSelectedSection); // Log the updated state
             return updatedSelectedSection;
         });
     };
+
+    const handleVideoClick = (srNo) => {
+        const video = findVideoBySr(srNo);
+        const videoId = video.videoId;
+        console.log("videoId: ", videoId);
+        if (videoId) {
+            setVideoId(videoId);
+            console.log("setVideoId: ", videoId);
+        }
+    }
+
+    const findVideoBySr = (srNo) => {
+        console.log("video srNo: ", srNo);
+        let foundVideo = null;
+
+        // Iterate through sections
+        for (const section of courseData.sections) {
+            // Iterate through lectures in each section
+            for (const lecture of section.lectures) {
+                // Check if the videoId matches
+                if (lecture.lectureSr === srNo) {
+                    foundVideo = lecture;
+                    break; // Stop iterating once the video is found
+                }
+            }
+
+            // Break the outer loop if the video is found
+            if (foundVideo) {
+                break;
+            }
+        }
+        console.log("found video: ", foundVideo);
+
+        return foundVideo;
+    };
+
+    const fetchData = async () => {
+        try {
+            const response = await fetch('http://localhost:8000/api/v1/courses/');
+            const result = await response.json();
+
+            // Assuming the title you're looking for is "JavaScript Tutorials for Beginners"
+            const titleToFind = "JavaScript Tutorials for Beginners";
+
+            // Find the course object with the specified title
+            const foundCourse = result.data.data.find(course => course.title === titleToFind);
+
+            setCourseData(foundCourse);
+            setVideoId(foundCourse.sections[0].lectures[0].videoId);
+
+        } catch (error) {
+            setError(error);
+        } finally {
+            setLoading(false);
+        };
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+
+    if (error) {
+        return <p>Error: {error.message}</p>;
+    }
+
+    if (!courseData) {
+        return <p>Course not found.</p>
+    }
+
+    if (courseData) {
+        console.log("Course Data: ", courseData);
+    }
 
     return (
         <>
             <Header />
             <div className="mb-4">
                 {/* Youtube video in video player */}
-                <YouTubeEmbed embedId="4RMeKVMlID8OiSSP" />
+                <YouTubeEmbed embedId={videoId} />
 
                 {/* Buttons for course content, overview, Q&A, and Reviews */}
                 <div
@@ -78,11 +155,12 @@ const Section_01 = () => {
                 {/* Course Content section */}
                 {selectedButton === "courseContent" && (
                     <ContentList
-                        sections={courseContent}
+                        sections={courseData.sections}
                         selectedSection={selectedSection}
                         selectedVideo={selectedVideo}
                         handleSectionSelection={handleSectionSelection}
                         handleVideoSelection={handleVideoSelection}
+                        handleVideoClick={handleVideoClick}
                     />
                 )}
 

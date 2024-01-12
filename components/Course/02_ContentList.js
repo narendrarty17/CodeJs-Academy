@@ -7,8 +7,10 @@ const ContentList = ({
     selectedSection,
     selectedVideo,
     handleSectionSelection,
-    handleVideoSelection
+    handleVideoSelection,
+    handleVideoClick
 }) => {
+
     return (
         <div className="mx-3 md:mx-56 mt-10 bg-gray-900">
             {/* Title with Down Arrow */}
@@ -17,18 +19,18 @@ const ContentList = ({
                 className="border-t border-gray-500"
             />
             {/* Section 1 starts here */}
-            {sections.map((section) => (
-                <div key={section.sectionId}>
+            {sections.map((section, index) => (
+                <div key={section.index}>
                     <section
                         className="flex items-center justify-between cursor-pointer px-4 py-4"
-                        onClick={() => handleSectionSelection(section.sectionId)}
+                        onClick={() => handleSectionSelection(index)}
                     >
                         <div className="flex flex-col gap-2">
-                            <h1 className="font-bold">Section {section.sectionId + 1}: {section.sectionTitle}</h1>
-                            <p className="text-sm">0 / {section.contentCount} | {section.contentLength}</p>
+                            <h1 className="font-bold">Section {index + 1}: {section.title}</h1>
+                            <p className="text-sm">0 / {section.lectures.length} | 40 min</p>
                         </div>
                         <span className="mx-2">
-                            {selectedSection[section.sectionId] ?
+                            {selectedSection[index] ?
                                 <img
                                     className="w-[30px] h-auto"
                                     src="/images/courses/course/upArrow.svg"
@@ -41,25 +43,30 @@ const ContentList = ({
                         </span>
                     </section>
                     {/* Checkboxes - Conditionally Rendered */}
-                    {selectedSection[section.sectionId] && (
+                    {selectedSection[index] && (
                         <ul className="bg-black">
                             {/* Render your checkboxes here */}
-                            {section.videosData.map((video) => (
+                            {section.lectures.map((lecture, index) => (
                                 <li
-                                    key={video.srNo}
+                                    key={index}
                                     className="h-16 space-y-1 hover:bg-gray-600"
                                 >
                                     <div className='flex flex-row items-end space-x-2'>
                                         &nbsp;&nbsp;&nbsp;
                                         <input
-                                            onChange={() => handleVideoSelection(video.srNo)}
+                                            onChange={() => {
+                                                handleVideoSelection(lecture.lectureSr);
+                                            }}
                                             type="checkbox"
-                                            checked={selectedVideo[video.srNo - 1] ? true : false}
+                                            checked={selectedVideo[lecture.lectureSr - 1] ? true : false}
                                             id="checkbox1"
                                         />
                                         <label htmlFor="checkbox1">
-                                            <a href="#">
-                                                {truncateText(`${video.srNo}. ${video.title}`, 40)}
+                                            <a
+                                                onClick={() => handleVideoClick(lecture.lectureSr)}
+                                                href="#"
+                                            >
+                                                {truncateText(`${lecture.lectureSr}. ${lecture.title}`, 40)}
                                             </a>
                                         </label>
                                     </div>
@@ -69,7 +76,7 @@ const ContentList = ({
                                             className="ml-5 w-4"
                                             src="/images/courses/course/video.svg"
                                         />
-                                        <p className="text-[12px]">{video.metaData}</p>
+                                        <p className="text-[12px]">3 min</p>
                                     </div>
                                 </li>
                             ))}
