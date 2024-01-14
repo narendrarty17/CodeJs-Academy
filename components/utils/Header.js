@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import linksList from '@/public/data/linksList.json';
+import linksList from '@/public/data/navLinkList.json';
 
 const NavLink = ({ link, activeLink, onClick, children, url }) => {
     return (

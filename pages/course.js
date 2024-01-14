@@ -20,6 +20,14 @@ import NotFound from '@/components/ui/NotFound';
 import Loading from '@/components/ui/Loading';
 
 const Section_01 = () => {
+    // Use the useRouter hook
+    const router = useRouter();
+
+    // Access the query parameters
+    const { courseId } = router.query;
+
+    console.log('courseId fetched from url: ', courseId);
+
     // State to track the selected button we used 200 as dummy count of videos later on correct it
     const [selectedButton, setSelectedButton] = useState('courseContent');
 
@@ -31,15 +39,16 @@ const Section_01 = () => {
     const [currentVideo, setCurrentVideo] = useState(1);
     const [selectedVideo, setSelectedVideo] = useState([]);
 
-    const router = useRouter();
-
     // Effect to fetch data on component mount
     useEffect(() => {
         // Currently I am fetching data from locally stored json file so for while fetData() from server is commented out
         // fetchData();
         // I am fetching data locally so this function for now i.e. fetchDataLocally()
-        fetchDataLocally();
-    }, []);
+        if (courseId) {
+            // Fetch data only if courseId is available
+            fetchDataLocally();
+        }
+    }, [courseId]);
 
     // Fetch course data from local json file
     const fetchDataLocally = async () => {
@@ -49,9 +58,9 @@ const Section_01 = () => {
             // Assuming the title you're looking for is "JavaScript Tutorials for Beginners"
             const titleToFind = "JavaScript Tutorials for Beginners";
 
+            console.log("result[0].courseId: ", result[0].courseId);
             // Find the course object with the specified title
-            const foundCourse = result.find(course => course.title === titleToFind);
-
+            const foundCourse = result.find(course => course.courseId === parseInt(courseId));
             setCourseData(foundCourse);
             setVideoId(foundCourse.sections[0].lectures[0].videoId);
             setSelectedSection(Array(foundCourse.numSections).fill(false));
@@ -114,7 +123,7 @@ const Section_01 = () => {
         if (videoId) {
             setVideoId(videoId);
             setCurrentVideo(srNo);
-            router.push('/course#');
+            router.push(`/course?courseId=${courseId}#`);
         }
     }
 

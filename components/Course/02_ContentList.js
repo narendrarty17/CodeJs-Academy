@@ -101,7 +101,7 @@ const ContentList = ({
                         <ul className="bg-black">
                             {section.lectures.map((lecture, index) => (
                                 <LectureItem
-                                    index={index}
+                                    index={`${section.index}` + index}
                                     currentVideo={currentVideo}
                                     lectureSr={lecture.lectureSr}
                                     handleVideoSelection={handleVideoSelection}
