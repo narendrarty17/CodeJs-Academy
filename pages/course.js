@@ -181,7 +181,7 @@ const Section_01 = () => {
 
                 {/* Buttons for course content, overview, Q&A, and Reviews */}
                 <div
-                    className="flex justify-start mt-8 space-x-4 mx-2 md:mx-48 font-bold"
+                    className="flex justify-start mt-8 space-x-4 mx-2 md:mx-48 font-bold text-white"
                 >
                     {courseBtns.map((link, index) => (
                         <button

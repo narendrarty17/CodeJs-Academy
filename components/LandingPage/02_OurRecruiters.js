@@ -67,7 +67,7 @@ const Section_02 = () => {
     return (
         <motion.section className="p-8">
             <div className="flex flex-col items-center md:flex-row md:justify-center container mx-auto">
-                <h2 className="text-3xl font-bold mb-6">
+                <h2 className="text-3xl font-bold mb-6 text-white">
                     Your Path to Success: Meet Our Top Recruiters.
                 </h2>
 

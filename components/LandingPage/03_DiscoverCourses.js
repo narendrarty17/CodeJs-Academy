@@ -38,7 +38,7 @@ const Section_03 = () => {
         >
             {/* Content */}
             <motion.div className="md:w-1/2 md:pr-8" variants={contentVariants}>
-                <h2 className="text-3xl font-bold mb-4">
+                <h2 className="text-3xl font-bold mb-4 text-white">
                     Discover a wide range of courses covering a variety of subjects, taught by expert instructors.
                 </h2>
                 <p className="text-gray-400 mb-2">

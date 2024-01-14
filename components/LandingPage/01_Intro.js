@@ -35,7 +35,7 @@ const Section_01 = () => {
             className="flex flex-col items-center md:flex-row mt-[10px] md:mt-0"
         >
             <div className="w-full md:w-1/2 p-8 mb-4 md:mb-0">
-                <h2 className="text-3xl font-bold mb-4">Learn New Skills Online with Ease</h2>
+                <h2 className="text-3xl font-bold mb-4 text-white">Learn New Skills Online with Ease</h2>
                 <p className="text-gray-400">
                     Explore a world of knowledge with our extensive selection of online courses.
                 </p>
