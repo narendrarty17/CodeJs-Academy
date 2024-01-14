@@ -1,36 +1,92 @@
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
-{/* Importing Data */ }
+// Importing Data
 import courseBtns from '@/public/data/courseBtns';
-import courseContent from '@/public/data/courseContent.json';
+import courseContent from '@/public/data/courseContent';
 
-{/* Importing Course Components */ }
+// Importing Course Components
 import ContentList from '@/components/Course/02_ContentList';
 import YouTubeEmbed from '@/components/Course/01_YouTubeEmbed';
 import Overview from '@/components/Course/03_Overview';
 import QuestionsAndAnswers from '@/components/Course/04_QuestionsAndAnswers';
 
-{/* Importing utils Components */ }
+// Importing Utils Components
 import Footer from '@/components/utils/Footer';
 import Header from '@/components/utils/Header';
 
+// Importing UI Components
+import NotFound from '@/components/ui/NotFound';
+import Loading from '@/components/ui/Loading';
 
 const Section_01 = () => {
-    // State to track the selected button
+    // State to track the selected button we used 200 as dummy count of videos later on correct it
     const [selectedButton, setSelectedButton] = useState('courseContent');
-    const [selectedSection, setSelectedSection] = useState(Array(courseContent.length).fill(false));
+
+    const [selectedSection, setSelectedSection] = useState([]);
     const [courseData, setCourseData] = useState(null);
     const [videoId, setVideoId] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [currentVideo, setCurrentVideo] = useState(1);
+    const [selectedVideo, setSelectedVideo] = useState([]);
 
-    // Fetching srNo of the last video in the last element
-    const lastSection = courseContent[courseContent.length - 1];
-    const lastVideo = lastSection.videosData[lastSection.videosData.length - 1];
-    const numVideo = lastVideo.srNo;
+    const router = useRouter();
 
-    const [selectedVideo, setSelectedVideo] = useState(Array(numVideo).fill(false));
+    // Effect to fetch data on component mount
+    useEffect(() => {
+        // Currently I am fetching data from locally stored json file so for while fetData() from server is commented out
+        // fetchData();
+        // I am fetching data locally so this function for now i.e. fetchDataLocally()
+        fetchDataLocally();
+    }, []);
 
+    // Fetch course data from local json file
+    const fetchDataLocally = async () => {
+        try {
+            const result = courseContent;
+
+            // Assuming the title you're looking for is "JavaScript Tutorials for Beginners"
+            const titleToFind = "JavaScript Tutorials for Beginners";
+
+            // Find the course object with the specified title
+            const foundCourse = result.find(course => course.title === titleToFind);
+
+            setCourseData(foundCourse);
+            setVideoId(foundCourse.sections[0].lectures[0].videoId);
+            setSelectedSection(Array(foundCourse.numSections).fill(false));
+            setSelectedVideo(Array(foundCourse.numLectures).fill(false));
+        } catch (error) {
+            setError(error);
+        } finally {
+            setLoading(false);
+        }
+    }
+
+    // Fetch course data from server
+    const fetchData = async () => {
+        try {
+            const response = await fetch('http://localhost:8000/api/v1/courses/');
+            const result = await response.json();
+
+            // Assuming the title you're looking for is "JavaScript Tutorials for Beginners"
+            const titleToFind = "JavaScript Tutorials for Beginners";
+
+            // Find the course object with the specified title
+            const foundCourse = result.data.data.find(course => course.title === titleToFind);
+
+            setCourseData(foundCourse);
+            setVideoId(foundCourse.sections[0].lectures[0].videoId);
+            setSelectedSection(Array(foundCourse.numSections).fill(false));
+            setSelectedVideo(Array(foundCourse.numLectures).fill(false));
+        } catch (error) {
+            setError(error);
+        } finally {
+            setLoading(false);
+        }
+    }
+
+    // Hnadle video selection
     const handleVideoSelection = (srNo) => {
         setSelectedVideo(prevSelectedVideo => {
             const videoIndex = srNo - 1;
@@ -40,6 +96,7 @@ const Section_01 = () => {
         });
     };
 
+    // Handle section selection
     const handleSectionSelection = (id) => {
         setSelectedSection(prevSelectedSection => {
             const temp = !prevSelectedSection[id];
@@ -49,16 +106,19 @@ const Section_01 = () => {
         });
     };
 
+    // Handle video click
     const handleVideoClick = (srNo) => {
         const video = findVideoBySr(srNo);
         const videoId = video.videoId;
         console.log("videoId: ", videoId);
         if (videoId) {
             setVideoId(videoId);
-            console.log("setVideoId: ", videoId);
+            setCurrentVideo(srNo);
+            router.push('/course#');
         }
     }
 
+    // Find video by srNo
     const findVideoBySr = (srNo) => {
         console.log("video srNo: ", srNo);
         let foundVideo = null;
@@ -79,51 +139,29 @@ const Section_01 = () => {
                 break;
             }
         }
-        console.log("found video: ", foundVideo);
 
         return foundVideo;
     };
 
-    const fetchData = async () => {
-        try {
-            const response = await fetch('http://localhost:8000/api/v1/courses/');
-            const result = await response.json();
-
-            // Assuming the title you're looking for is "JavaScript Tutorials for Beginners"
-            const titleToFind = "JavaScript Tutorials for Beginners";
-
-            // Find the course object with the specified title
-            const foundCourse = result.data.data.find(course => course.title === titleToFind);
-
-            setCourseData(foundCourse);
-            setVideoId(foundCourse.sections[0].lectures[0].videoId);
-
-        } catch (error) {
-            setError(error);
-        } finally {
-            setLoading(false);
-        };
-    }
-
-    useEffect(() => {
-        fetchData();
-    }, []);
-
+    // Loading state
     if (loading) {
-        return <p>Loading...</p>;
+        return (
+            <Loading />
+        );
     }
 
+    // Error state
     if (error) {
-        return <p>Error: {error.message}</p>;
+        return (
+            <NotFound message={error.message} />
+        );
     }
 
+    // Course not found state
     if (!courseData) {
         return <p>Course not found.</p>
     }
 
-    if (courseData) {
-        console.log("Course Data: ", courseData);
-    }
 
     return (
         <>
@@ -158,6 +196,7 @@ const Section_01 = () => {
                         sections={courseData.sections}
                         selectedSection={selectedSection}
                         selectedVideo={selectedVideo}
+                        currentVideo={currentVideo}
                         handleSectionSelection={handleSectionSelection}
                         handleVideoSelection={handleVideoSelection}
                         handleVideoClick={handleVideoClick}
