@@ -19,7 +19,7 @@ const NavLink = ({ link, activeLink, onClick, children, url }) => {
 
 const Sidebar = ({ linksList, activeLink, onLinkClick }) => {
     return (
-        <aside className="flex flex-col items-center bg-blue-500 text-white p-4 left-0 w-full h-auto overflow-y-auto z-10">
+        <aside className="absolute flex flex-col items-center bg-blue-500 text-white p-4 right-0 w-1/2 h-auto overflow-y-auto z-10">
             {/* Sidebar content */}
             <nav className="space-y-4">
                 {linksList.map((link, index) => (
@@ -81,7 +81,7 @@ const Header = () => {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, []);
+    }, [showSidebar]);
 
     return (
         <div>
@@ -131,6 +131,8 @@ const Header = () => {
                     <img src="/images/utils/header/menu.svg" alt="Menu" className="h-6 w-6" />
                 </button>
             </header >
+
+
             {/* Sidebar */}
             {
                 showSidebar && (

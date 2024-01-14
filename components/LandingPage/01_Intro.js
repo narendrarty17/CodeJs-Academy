@@ -41,7 +41,7 @@ const Section_01 = () => {
                 </p>
                 <div className="mt-4 flex flex-wrap gap-y-5 gap-x-3 md:gap-x-5">
                     <motion.button
-                        className="bg-blue-500 text-white px-4 py-2 rounded w-200"
+                        className="bg-blue-500 px-4 py-2 rounded w-200"
                         whileHover="hover"
                         variants={buttonVariant_01}
                     >

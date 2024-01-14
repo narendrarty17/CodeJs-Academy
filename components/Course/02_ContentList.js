@@ -86,7 +86,7 @@ const ContentList = ({
     handleVideoClick,
 }) => {
     return (
-        <div className="mx-3 mt-10 bg-gray-900 md:mx-56 text-white">
+        <div className="mx-3 mt-10 bg-gray-900 md:mx-56">
             <hr className="border-t border-gray-500" />
             {sections.map((section, index) => (
                 <div key={section.index}>

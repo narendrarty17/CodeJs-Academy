@@ -13,7 +13,7 @@ import Instructors from '@/components/LandingPage/06_Instructors';
 
 export default function Home() {
   return (
-    <div className="bg-black">
+    <div className="bg-black text-white">
       <Header />
       <Intro />
       <OurRecruiters />
