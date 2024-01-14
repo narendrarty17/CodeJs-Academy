@@ -173,7 +173,7 @@ const Section_01 = () => {
 
 
     return (
-        <>
+        <div className="bg-black">
             <Header />
             <div className="mb-4">
                 {/* Youtube video in video player */}
@@ -223,7 +223,7 @@ const Section_01 = () => {
                 )}
             </div>
             <Footer />
-        </>
+        </div>
     );
 };
 
