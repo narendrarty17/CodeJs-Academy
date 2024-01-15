@@ -5,6 +5,24 @@ import React, { useState } from 'react';
 
 const SignUp = () => {
     const [rememberMe, setRememberMe] = useState(false);
+    const [usernameFocused, setUsernameFocused] = useState(false);
+    const [passwordFocused, setPasswordFocused] = useState(false);
+
+    const handleUsernameFocus = () => {
+        setUsernameFocused((prevUsernameFocused) => !prevUsernameFocused);
+    }
+
+    const handleUsernameBlur = () => {
+        setUsernameFocused((prevUsernameFocused) => !prevUsernameFocused);
+    }
+
+    const handlePasswordFocus = () => {
+        setPasswordFocused((prevPasswordFocused) => !prevPasswordFocused);
+    }
+
+    const handlePasswordBlur = () => {
+        setPasswordFocused((prevPasswordFocused) => !prevPasswordFocused);
+    }
 
     const handleRememberMeChange = () => {
         setRememberMe((prevRememberMe) => !prevRememberMe);
@@ -27,19 +45,25 @@ const SignUp = () => {
                         <div className="flex flex-col space-y-2">
                             <div className="text-white">Username</div>
                             <input
-                                className="border-2 border-gray-300 rounded-md p-2"
+                                className={`border-2 rounded-md p-2 ${usernameFocused ? 'border-blue-300' : 'border-gray-300'}`}
                                 name="username"
                                 placeholder="deniel123@gmail.com"
                                 type="email"
+                                onFocus={handleUsernameFocus}
+                                onBlur={handleUsernameBlur}
+                                style={{ outline: 'none' }} // Remove default focus
                             />
                         </div>
                         <div className="flex flex-col space-y-2">
                             <div className="text-white">Password</div>
                             <input
-                                className="border-2 border-gray-300 rounded-md p-2"
+                                className={`border-2 rounded-md p-2 ${passwordFocused ? 'border-blue-300' : 'border-gray-300'}`}
                                 name="password"
                                 placeholder="**********"
                                 type="password"
+                                onFocus={handlePasswordFocus}
+                                onBlur={handlePasswordBlur}
+                                style={{ outline: 'none' }} // Remove default focus
                             />
                         </div>
                     </div>
@@ -71,13 +95,13 @@ const SignUp = () => {
                     </div>
 
                     <div className="flex justify-between mx-10 mt-4">
-                        <div className="border-2 border-blue-700 rounded-md px-4 py-2">
+                        <div className="border-2 border-blue-300 rounded-md px-4 py-2">
                             <img className="w-8 h-8" alt="" src="/images/signup/01_google.svg" />
                         </div>
-                        <div className="border-2 border-blue-700 rounded-md px-4 py-2">
+                        <div className="border-2 border-blue-300 rounded-md px-4 py-2">
                             <img className="w-8 h-8" alt="" src="/images/signup/02_facebook.svg" />
                         </div>
-                        <div className="border-2 border-blue-700 rounded-md px-4 py-2">
+                        <div className="border-2 border-blue-300 rounded-md px-4 py-2">
                             <img className="w-8 h-8" alt="" src="/images/signup/03_apple.svg" />
                         </div>
                     </div>
