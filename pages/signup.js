@@ -31,7 +31,7 @@ const SignUp = () => {
     return (
         <div>
             <Header />
-            <div className="flex justify-center items-center space-x-40 m-8 bg-black">
+            <div className="flex justify-center items-center space-x-40 mx-8 my-20 bg-black">
                 <div className="w-96">
                     <div className="mb-8">
                         <div className="text-xl font-bold">WELCOME BACK!</div>
@@ -45,7 +45,7 @@ const SignUp = () => {
                         <div className="flex flex-col space-y-2">
                             <div className="text-white">Username</div>
                             <input
-                                className={`border-2 rounded-md p-2 bg-black ${usernameFocused ? 'border-blue-300' : 'border-gray-300'}`}
+                                className={`border-2 rounded-md p-2 text-black ${usernameFocused ? 'border-blue-300' : 'border-gray-300'}`}
                                 name="username"
                                 placeholder="deniel123@gmail.com"
                                 type="email"
@@ -57,7 +57,7 @@ const SignUp = () => {
                         <div className="flex flex-col space-y-2">
                             <div className="text-white">Password</div>
                             <input
-                                className={`border-2 rounded-md p-2 ${passwordFocused ? 'border-blue-300' : 'border-gray-300'}`}
+                                className={`border-2 rounded-md p-2 text-black ${passwordFocused ? 'border-blue-300' : 'border-gray-300'}`}
                                 name="password"
                                 placeholder="**********"
                                 type="password"
