@@ -1,31 +1,14 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 // Importing utils components
 import Footer from '@/components/utils/Footer';
 import Header from '@/components/utils/Header';
 
-const SignUp = () => {
+const SignIn = () => {
     const [rememberMe, setRememberMe] = useState(false);
-    const [firstnameFocused, setFirstnameFocused] = useState(false);
-    const [lastnameFocused, setLastnameFocused] = useState(false);
     const [emailFocused, setEmailFocused] = useState(false);
     const [passwordFocused, setPasswordFocused] = useState(false);
-
-    const handleFirstnameFocus = () => {
-        setFirstnameFocused((prevFirstnameFocused) => !prevFirstnameFocused);
-    }
-
-    const handleFirstnameBlur = () => {
-        setFirstnameFocused((prevFirstnameFocused) => !prevFirstnameFocused);
-    }
-
-    const handleLastnameFocus = () => {
-        setLastnameFocused((prevLastnameFocused) => !prevLastnameFocused);
-    }
-
-    const handleLastnameBlur = () => {
-        setLastnameFocused((prevLastnameFocused) => !prevLastnameFocused);
-    }
 
     const handleEmailFocus = () => {
         setEmailFocused((prevEmailFocused) => !prevEmailFocused);
@@ -55,35 +38,15 @@ const SignUp = () => {
                     <div className="mb-8">
                         <div className="text-xl font-bold">WELCOME BACK!</div>
                         <div className="text-gray-500">
-                            Fill the form to signup
+                            Don’t have an account,
+                            <Link
+                                href="/signup"
+                                className="text-blue-700"
+                            >Sign up</Link>
                         </div>
                     </div>
 
                     <div className="mb-4 space-y-4">
-                        <div className="flex flex-col space-y-2">
-                            <div className="text-white">First name</div>
-                            <input
-                                className={`border-2 rounded-md p-2 text-black ${firstnameFocused ? 'border-blue-300' : 'border-gray-300'}`}
-                                name="firstname"
-                                placeholder="Danial"
-                                type="email"
-                                onFocus={handleFirstnameFocus}
-                                onBlur={handleFirstnameBlur}
-                                style={{ outline: 'none' }} // Remove default focus
-                            />
-                        </div>
-                        <div className="flex flex-col space-y-2">
-                            <div className="text-white">Last name</div>
-                            <input
-                                className={`border-2 rounded-md p-2 text-black ${lastnameFocused ? 'border-blue-300' : 'border-gray-300'}`}
-                                name="lastname"
-                                placeholder="Kruger"
-                                type="email"
-                                onFocus={handleLastnameFocus}
-                                onBlur={handleLastnameBlur}
-                                style={{ outline: 'none' }} // Remove default focus
-                            />
-                        </div>
                         <div className="flex flex-col space-y-2">
                             <div className="text-white">Email</div>
                             <input
@@ -159,4 +122,4 @@ const SignUp = () => {
     );
 }
 
-export default SignUp;
+export default SignIn;
