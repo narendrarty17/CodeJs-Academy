@@ -31,7 +31,7 @@ const SignUp = () => {
     return (
         <div>
             <Header />
-            <div className="flex justify-center items-center space-x-40 mx-8 my-20 bg-black">
+            <div className="flex justify-center items-center space-x-40 mx-8 mt-20 mb-40 bg-black">
                 <div className="w-96">
                     <div className="mb-8">
                         <div className="text-xl font-bold">WELCOME BACK!</div>
