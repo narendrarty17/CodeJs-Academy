@@ -45,7 +45,7 @@ const SignUp = () => {
                         <div className="flex flex-col space-y-2">
                             <div className="text-white">Username</div>
                             <input
-                                className={`border-2 rounded-md p-2 ${usernameFocused ? 'border-blue-300' : 'border-gray-300'}`}
+                                className={`border-2 rounded-md p-2 bg-black ${usernameFocused ? 'border-blue-300' : 'border-gray-300'}`}
                                 name="username"
                                 placeholder="deniel123@gmail.com"
                                 type="email"
