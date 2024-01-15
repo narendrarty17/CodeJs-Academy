@@ -55,9 +55,6 @@ const Section_01 = () => {
         try {
             const result = courseContent;
 
-            // Assuming the title you're looking for is "JavaScript Tutorials for Beginners"
-            const titleToFind = "JavaScript Tutorials for Beginners";
-
             console.log("result[0].courseId: ", result[0].courseId);
             // Find the course object with the specified title
             const foundCourse = result.find(course => course.courseId === parseInt(courseId));

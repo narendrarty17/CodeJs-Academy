@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import linksList from '@/public/data/navLinkList.json';
+import Link from 'next/link';
 
 const NavLink = ({ link, activeLink, onClick, children, url }) => {
     return (
@@ -118,9 +119,11 @@ const Header = () => {
                 {/* Login and Signup Button (Right Section) */}
                 <div className="flex items-center">
                     <button className="text-white hover:text-gray-300 mr-4">Login</button>
-                    <button className="bg-gray-700 text-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
-                        Sign Up
-                    </button>
+                    <Link href="/signup">
+                        <button className="bg-gray-700 text-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
+                            Sign Up
+                        </button>
+                    </Link>
                 </div>
 
                 {/* Menu for Sidebar Only show on small screens */}

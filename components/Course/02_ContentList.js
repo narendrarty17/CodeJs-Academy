@@ -12,7 +12,7 @@ const SectionHeader = ({ index,
         className="flex cursor-pointer  items-center justify-between px-4 py-4"
         onClick={() => handleSectionSelection(index)}
     >
-        <div class="flex flex-col gap-2">
+        <div className="flex flex-col gap-2">
             <h1 className="font-bold">
                 Section {index + 1}: {title}
             </h1>
@@ -28,7 +28,6 @@ const SectionHeader = ({ index,
 );
 
 const LectureItem = ({
-    index,
     currentVideo,
     lectureSr,
     handleVideoSelection,
@@ -36,7 +35,7 @@ const LectureItem = ({
     handleVideoClick, title
 }) => (
     <li
-        key={index}
+        key={lectureSr}
         className={`h-16 space-y-1 ${currentVideo === lectureSr ? "bg-gray-600" : ""} hover:bg-gray-600`}
     >
         <div className="flex flex-row items-end space-x-2">
@@ -89,7 +88,7 @@ const ContentList = ({
         <div className="mx-3 mt-10 bg-gray-900 md:mx-56">
             <hr className="border-t border-gray-500" />
             {sections.map((section, index) => (
-                <div key={section.index}>
+                <div key={section.title}>
                     <SectionHeader
                         index={index}
                         handleSectionSelection={handleSectionSelection}
@@ -99,9 +98,9 @@ const ContentList = ({
                     />
                     {selectedSection[index] && (
                         <ul className="bg-black">
-                            {section.lectures.map((lecture, index) => (
+                            {section.lectures.map((lecture) => (
                                 <LectureItem
-                                    index={`${section.index}` + index}
+                                    key={lecture.lectureSr}
                                     currentVideo={currentVideo}
                                     lectureSr={lecture.lectureSr}
                                     handleVideoSelection={handleVideoSelection}

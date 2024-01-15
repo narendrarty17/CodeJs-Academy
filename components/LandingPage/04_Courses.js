@@ -47,7 +47,7 @@ const Section_04 = () => {
             <motion.div className="flex flex-wrap justify-around" variants={containerVariants} initial="hidden" animate="visible">
                 {courseData
                     .map((course) => (
-                        <Link href={course.url}>
+                        <Link key={course.id} href={course.url}>
                             <motion.div
                                 key={course.id}
                                 className="bg-gray-200 shadow-md w-80 mb-8"
