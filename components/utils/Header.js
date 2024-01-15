@@ -3,22 +3,22 @@ import PropTypes from 'prop-types';
 
 import linksList from '@/public/data/navLinkList.json';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-const NavLink = ({ link, activeLink, onClick, children, url }) => {
+const NavLink = ({ link, activeLink, children, url }) => {
     return (
-        <a
+        <Link
             href={url}
             style={{ display: 'block' }}
             className={`text-white hover:text-gray-300 ${activeLink === link ? 'underline' : ''}`}
-            onClick={() => onClick(link)}
         >
             {children}
-        </a>
+        </Link>
     );
 };
 
 
-const Sidebar = ({ linksList, activeLink, onLinkClick }) => {
+const Sidebar = ({ linksList, activeLink }) => {
     return (
         <aside className="absolute flex flex-col items-center bg-blue-500 text-white p-4 right-0 w-1/2 h-auto overflow-y-auto z-10">
             {/* Sidebar content */}
@@ -28,7 +28,6 @@ const Sidebar = ({ linksList, activeLink, onLinkClick }) => {
                         key={index}
                         link={link.link}
                         activeLink={activeLink}
-                        onClick={onLinkClick}
                         url={link.url}
                     >
                         {link.linkText}
@@ -53,9 +52,14 @@ Sidebar.propTypes = {
 
 const Header = () => {
     // State to track the current active link
-    const [activeLink, setActiveLink] = useState('home');
+    const [activeLink, setActiveLink] = useState(null);
     const [showMenu, setShowMenu] = useState(false);
     const [showSidebar, setShowSidebar] = useState(false);
+
+    const router = useRouter();
+
+    // If you only want the path without query parameters
+    const currentPath = router.pathname;
 
     const handleLinkClick = (link) => {
         setActiveLink(link);
@@ -65,7 +69,16 @@ const Header = () => {
         setShowSidebar((prevShowSidebar) => !prevShowSidebar);
     };
 
+    const settingActiveLinkByURL = () => {
+        // Setting active link as per as the url
+        if (currentPath === '/') {
+            setActiveLink('home')
+        }
+    }
+
     useEffect(() => {
+        settingActiveLinkByURL();
+
         const handleResize = () => {
             // Set showMenu to true when screen size is below md breakpoint
             setShowMenu(window.innerWidth < 768); // 768px is the md breakpoint
@@ -88,14 +101,14 @@ const Header = () => {
         <div>
             <header className="bg-blue-500 p-4 flex justify-between items-center">
                 {/* Company Logo with Name (Left Section) */}
-                <div className="flex items-center">
+                <Link href="/" className="flex items-center">
                     <img
                         src="/images/utils/header/brandLogo.svg"
                         alt="Company Logo"
                         className="h-8 w-8 mr-2"
                     />
                     <span className="text-white text-lg font-bold">CodeJS</span>
-                </div>
+                </Link>
 
                 {/* Navigation Links (Middle Section) */}
                 <nav className="flex justify-center space-x-4">
@@ -108,7 +121,6 @@ const Header = () => {
                                         key={index}
                                         link={link.link}
                                         activeLink={activeLink}
-                                        onClick={handleLinkClick}
                                         url={link.url}
                                     >{link.linkText}</NavLink>
                                 ))}
@@ -118,12 +130,18 @@ const Header = () => {
 
                 {/* Login and Signup Button (Right Section) */}
                 <div className="flex items-center">
-                    <Link href="/signin">
+                    <Link
+                        onClick={() => handleLinkClick(null)}
+                        href="/signin"
+                    >
                         <button className="text-white hover:text-gray-300 mr-4">
                             Login
                         </button>
                     </Link>
-                    <Link href="/signup">
+                    <Link
+                        onClick={() => handleLinkClick(null)}
+                        href="/signup"
+                    >
                         <button className="bg-gray-600 text-blue-500 hover:bg-gray-700 text-white py-2 px-4 rounded">
                             Sign Up
                         </button>
@@ -146,7 +164,6 @@ const Header = () => {
                     <Sidebar
                         linksList={linksList}
                         activeLink={activeLink}
-                        onLinkClick={handleLinkClick}
                     />
                 )
             }
