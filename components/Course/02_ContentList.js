@@ -1,3 +1,6 @@
+import { useAuth0 } from "@auth0/auth0-react";
+import Link from "next/link";
+
 const truncateText = (text, maxLength) => {
     return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
 };
@@ -20,7 +23,7 @@ const SectionHeader = ({ index,
         </div>
         <span className="mx-2">
             <img
-                className="h-auto w-[30px]"
+                className={`h-auto ${selectedSection ? 'w-[30px]' : 'w-[20px]'}`}
                 src={`/images/courses/course/${selectedSection ? 'upArrow' : 'downArrow'}.svg`}
             />
         </span>
@@ -33,47 +36,61 @@ const LectureItem = ({
     handleVideoSelection,
     selectedVideo,
     handleVideoClick, title
-}) => (
-    <li
-        key={lectureSr}
-        className={`h-16 space-y-1 ${currentVideo === lectureSr ? "bg-gray-600" : ""} hover:bg-gray-600`}
-    >
-        <div className="flex flex-row items-end space-x-2">
-            &nbsp;&nbsp;&nbsp;
-            <input
-                onChange={() => {
-                    handleVideoSelection(lectureSr);
-                }}
-                type="checkbox"
-                checked={
-                    selectedVideo[lectureSr - 1] ? true : false
-                }
-                id="checkbox1"
-            />
-            <label
-                onClick={() => {
-                    handleVideoClick(lectureSr);
-                }}
-                htmlFor="checkbox1"
-            >
-                <a href="#">
-                    {truncateText(
-                        `${lectureSr}. ${title}`,
-                        40,
-                    )}
-                </a>
-            </label>
-        </div>
-        <div className="flex space-x-2 px-1">
-            &nbsp;&nbsp;&nbsp;
-            <img
-                className="ml-5 w-4"
-                src="/images/courses/course/video.svg"
-            />
-            <p className="text-[12px]">3 min</p>
-        </div>
-    </li>
-)
+}) => {
+    const { isAuthenticated } = useAuth0();
+
+    return (
+        <li
+            key={lectureSr}
+            className={`relative h-16 space-y-1 ${currentVideo === lectureSr ? "bg-gray-600" : ""} hover:bg-gray-600`}
+        >
+            <div className="flex flex-row items-end space-x-2">
+                &nbsp;&nbsp;&nbsp;
+                <input
+                    onChange={() => {
+                        handleVideoSelection(lectureSr);
+                    }}
+                    type="checkbox"
+                    checked={
+                        selectedVideo[lectureSr - 1] ? true : false
+                    }
+                    id="checkbox1"
+                />
+                <label
+                    onClick={() => {
+                        {/* Here we are showing only first 3 videos if user is unauthenticated */ }
+                        if (isAuthenticated || lectureSr < 4) {
+                            handleVideoClick(lectureSr);
+                        }
+                    }}
+                    htmlFor="checkbox1"
+                >
+                    <Link className="flex items-center justify-between" href="#">
+                        <div>
+                            {truncateText(`${lectureSr}. ${title}`, 40)}
+                        </div>
+                        <div>
+                            {!(isAuthenticated || lectureSr < 4) && (
+                                <img
+                                    className="w-4 absolute right-8"
+                                    src="/images/courses/course/locked.svg"
+                                />
+                            )}
+                        </div>
+                    </Link>
+                </label>
+            </div>
+            <div className="flex space-x-2 px-1">
+                &nbsp;&nbsp;&nbsp;
+                <img
+                    className="ml-5 w-4"
+                    src="/images/courses/course/video.svg"
+                />
+                <p className="text-[12px]">3 min</p>
+            </div>
+        </li>
+    );
+}
 
 const ContentList = ({
     sections,
@@ -84,6 +101,7 @@ const ContentList = ({
     handleVideoSelection,
     handleVideoClick,
 }) => {
+
     return (
         <div className="mx-3 mt-10 bg-gray-900 md:mx-56">
             <hr className="border-t border-gray-500" />

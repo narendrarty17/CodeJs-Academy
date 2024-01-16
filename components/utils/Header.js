@@ -116,10 +116,10 @@ const Header = () => {
                 </nav>
 
                 {/* Login and Signup Button (Right Section) */}
-                <div className="flex items-center gap-5">
+                <div className="flex items-center gap-3 md:gap-5">
                     {isAuthenticated ?
                         <img
-                            className="w-12 rounded-full"
+                            className="w-8 md:w-12 rounded-full"
                             src={user.picture}
                             alt={user.name}
                         /> : ''}
