@@ -1,69 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { useAuth0 } from '@auth0/auth0-react';
 
 import linksList from '@/public/data/navLinkList.json';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
-const NavLink = ({ link, activeLink, children, url }) => {
-    return (
-        <Link
-            href={url}
-            style={{ display: 'block' }}
-            className={`text-white hover:text-gray-300 ${activeLink === link ? 'underline' : ''}`}
-        >
-            {children}
-        </Link>
-    );
-};
-
-
-const Sidebar = ({ linksList, activeLink }) => {
-    return (
-        <aside className="absolute flex flex-col items-center bg-blue-500 text-white p-4 right-0 w-1/2 h-auto overflow-y-auto z-10">
-            {/* Sidebar content */}
-            <nav className="space-y-4">
-                {linksList.map((link, index) => (
-                    <NavLink
-                        key={index}
-                        link={link.link}
-                        activeLink={activeLink}
-                        url={link.url}
-                    >
-                        {link.linkText}
-                    </NavLink>
-                ))}
-            </nav>
-        </aside>
-    );
-};
-
-NavLink.propTypes = {
-    link: PropTypes.string.isRequired,
-    activeLink: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired,
-    children: PropTypes.node.isRequired,
-};
-
-Sidebar.propTypes = {
-    activeLink: PropTypes.string.isRequired,
-    onLinkClick: PropTypes.func.isRequired,
-};
+import LoginButton from '../Auth/Login';
+import LogoutButton from '../Auth/Logout';
 
 const Header = () => {
     // State to track the current active link
-    const [activeLink, setActiveLink] = useState(null);
+    const [activeLink, setActiveLink] = useState();
     const [showMenu, setShowMenu] = useState(false);
     const [showSidebar, setShowSidebar] = useState(false);
+
+    const { user, isAuthenticated, isLoading } = useAuth0();
 
     const router = useRouter();
 
     // If you only want the path without query parameters
     const currentPath = router.pathname;
-
-    const handleLinkClick = (link) => {
-        setActiveLink(link);
-    };
 
     const toggleMenu = () => {
         setShowSidebar((prevShowSidebar) => !prevShowSidebar);
@@ -75,6 +30,38 @@ const Header = () => {
             setActiveLink('home')
         }
     }
+
+    const NavLink = ({ link, children, url }) => {
+        return (
+            <Link
+                href={url}
+                style={{ display: 'block' }}
+                className={`text-white hover:text-gray-300 ${activeLink === link ? 'underline' : ''}`}
+            >
+                {children}
+            </Link>
+        );
+    };
+
+    const Sidebar = ({ linksList, activeLink }) => {
+        return (
+            <aside className="absolute flex flex-col items-center bg-blue-500 text-white p-4 right-0 w-1/2 h-auto overflow-y-auto z-10">
+                {/* Sidebar content */}
+                <nav className="space-y-4">
+                    {linksList.map((link, index) => (
+                        <NavLink
+                            key={index}
+                            link={link.link}
+                            activeLink={activeLink}
+                            url={link.url}
+                        >
+                            {link.linkText}
+                        </NavLink>
+                    ))}
+                </nav>
+            </aside>
+        );
+    };
 
     useEffect(() => {
         settingActiveLinkByURL();
@@ -129,23 +116,14 @@ const Header = () => {
                 </nav>
 
                 {/* Login and Signup Button (Right Section) */}
-                <div className="flex items-center">
-                    <Link
-                        onClick={() => handleLinkClick(null)}
-                        href="/signin"
-                    >
-                        <button className="text-white hover:text-gray-300 mr-4">
-                            Login
-                        </button>
-                    </Link>
-                    <Link
-                        onClick={() => handleLinkClick(null)}
-                        href="/signup"
-                    >
-                        <button className="bg-gray-600 text-blue-500 hover:bg-gray-700 text-white py-2 px-4 rounded">
-                            Sign Up
-                        </button>
-                    </Link>
+                <div className="flex items-center gap-5">
+                    {isAuthenticated ?
+                        <img
+                            className="w-12 rounded-full"
+                            src={user.picture}
+                            alt={user.name}
+                        /> : ''}
+                    {isAuthenticated ? <LogoutButton /> : <LoginButton />}
                 </div>
 
                 {/* Menu for Sidebar Only show on small screens */}

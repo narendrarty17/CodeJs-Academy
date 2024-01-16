@@ -99,7 +99,7 @@ const SignIn = () => {
                         <div className="border-t border-gray-300 flex-1"></div>
                     </div>
 
-                    <div className="flex justify-between mx-10 mt-4">
+                    <div className="flex justify-between mt-4">
                         <div className="border-2 border-blue-300 rounded-md px-4 py-2">
                             <img className="w-8 h-8" alt="" src="/images/signup/01_google.svg" />
                         </div>
