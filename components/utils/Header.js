@@ -13,7 +13,7 @@ const Header = () => {
     const [showMenu, setShowMenu] = useState(false);
     const [showSidebar, setShowSidebar] = useState(false);
 
-    const { user, isAuthenticated, isLoading } = useAuth0();
+    const { user, isAuthenticated } = useAuth0();
 
     const router = useRouter();
 
