@@ -9,7 +9,7 @@ const CoreOfferings = () => {
                 </h1>
                 <p className="text-md text-center text-gray-400">The right access model for every learner.</p>
             </div>
-            <div className="flex justify-center flex-wrap gap-2 md:mx-10">
+            <div className="flex justify-center flex-wrap gap-2 md:gap-6 md:mx-10">
                 <section className="flex items-center w-[325px] md:w-[400px] gap-5 bg-gray-800 rounded-md p-4">
                     <img
                         className="w-14 h-auto"
