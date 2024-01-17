@@ -8,23 +8,16 @@
   },
   {
     "id": 1,
-    "link": "about",
-    "linkText": "About Us",
-    "url": "#",
+    "link": "mycourses",
+    "linkText": "My Courses",
+    "url": "mycourses",
     "type": "normal"
   },
   {
     "id": 2,
-    "link": "courses",
-    "linkText": "Courses",
-    "url": "#",
-    "type": "normal"
-  },
-  {
-    "id": 3,
     "link": "contact",
     "linkText": "Contact",
-    "url": "#",
+    "url": "contact",
     "type": "normal"
   }
 ]

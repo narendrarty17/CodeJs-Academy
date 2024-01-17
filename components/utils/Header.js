@@ -13,7 +13,7 @@ const Header = () => {
     const [showMenu, setShowMenu] = useState(false);
     const [showSidebar, setShowSidebar] = useState(false);
 
-    const { user, isAuthenticated } = useAuth0();
+    const { isAuthenticated } = useAuth0();
 
     const router = useRouter();
 
@@ -28,6 +28,8 @@ const Header = () => {
         // Setting active link as per as the url
         if (currentPath === '/') {
             setActiveLink('home')
+        } else if (currentPath === '/mycourses') {
+            setActiveLink('mycourses');
         }
     }
 
