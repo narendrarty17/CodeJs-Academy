@@ -42,7 +42,7 @@ const LectureItem = ({
     return (
         <li
             key={lectureSr}
-            className={`relative h-16 space-y-1 ${currentVideo === lectureSr ? "bg-gray-600" : ""} hover:bg-gray-600`}
+            className={`relative h-16 space-y-1 ${currentVideo === lectureSr ? "bg-gray-600" : "bg-gray-900"} hover:bg-gray-600`}
         >
             <div className="flex flex-row items-end space-x-2">
                 &nbsp;&nbsp;&nbsp;
