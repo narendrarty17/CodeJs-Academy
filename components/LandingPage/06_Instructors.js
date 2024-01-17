@@ -67,7 +67,7 @@ const Section_06 = () => {
     return (
         <motion.div className="text-center py-8">
             {/* Part 1: Heading and Description */}
-            <div className="mb-8 px-8">
+            <div className="mb-6 px-8">
                 <h2 className="text-3xl font-bold mb-2">MEET YOUR INSTRUCTORS</h2>
                 <p className="text-gray-400">All our courses are taught by us - Narendra & Vishal. Because we love what we do.</p>
             </div>

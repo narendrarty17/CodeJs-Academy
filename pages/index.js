@@ -9,7 +9,7 @@ import DiscoverCourses from '@/components/LandingPage/03_DiscoverCourses';
 import Courses from '@/components/LandingPage/04_Courses';
 import Reviews from '@/components/LandingPage/05_Reviews';
 import Instructors from '@/components/LandingPage/06_Instructors';
-
+import CoreOfferings from '@/components/LandingPage/07_CoreOfferings';
 
 export default function Home() {
   return (
@@ -17,8 +17,8 @@ export default function Home() {
       <Header />
       <Intro />
       <OurRecruiters />
-      <DiscoverCourses />
       <Courses />
+      <CoreOfferings />
       <Reviews />
       <Instructors />
       <Footer />

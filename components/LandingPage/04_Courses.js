@@ -40,7 +40,7 @@ const Section_04 = () => {
             {/* Part 1: Heading and Description */}
             <div className="text-center mb-6">
                 <h2 className="text-3xl font-bold">Courses</h2>
-                <p className="text-gray-600">Your Ultimate Guide to Learning</p>
+                <p className="text-gray-400">Your Ultimate Guide to Learning</p>
             </div>
 
             {/* Part 3: Courses */}
