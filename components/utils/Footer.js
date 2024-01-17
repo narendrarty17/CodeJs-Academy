@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const Footer = () => {
     const darkerBlueColor = '#2563EB'; // Adjust this color to your preference
@@ -32,14 +33,16 @@ const Footer = () => {
                     whileHover="hover"
                     variants={buttonVariant_01}
                 >
-                    <button className="flex justify-center items-center pl-3 pt-1.5 gap-1">
-                        <p>Enroll Now</p>
-                        <img
-                            className="w-8"
-                            src="/images/utils/footer/up-right-arrow.png"
-                            alt="Up right arrow"
-                        />
-                    </button>
+                    <Link href="/#courses">
+                        <button className="flex justify-center items-center pl-3 pt-1.5 gap-1">
+                            <p>Enroll Now</p>
+                            <img
+                                className="w-8"
+                                src="/images/utils/footer/up-right-arrow.png"
+                                alt="Up right arrow"
+                            />
+                        </button>
+                    </Link>
                 </motion.div>
             </div>
 

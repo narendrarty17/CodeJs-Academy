@@ -40,16 +40,9 @@ const Section_01 = () => {
                     Explore a world of knowledge with our extensive selection of online courses.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-y-5 gap-x-3 md:gap-x-5">
-                    <motion.button
-                        className="bg-blue-500 px-4 py-2 rounded w-200"
-                        whileHover="hover"
-                        variants={buttonVariant_01}
-                    >
-                        Get Started
-                    </motion.button>
                     <Link href="/#courses">
                         <motion.button
-                            className="bg-gray-800 text-white px-4 py-2 rounded w-200"
+                            className="bg-blue-500 px-4 py-2 rounded w-200"
                             whileHover="hover"
                             variants={buttonVariant_02}
                         >
