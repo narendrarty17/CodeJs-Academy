@@ -19,7 +19,7 @@ const Footer = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: 'easeOut' }}
-            className="overflow-hidden pt-10 pb-5 px-10 bg-gray-900"
+            className="overflow-hidden pt-10 pb-5 px-10 bg-gray-800"
         >
             {/* Top section with "Let's Connect" heading and enrollment button */}
             <div className="flex flex-col gap-3 items-center md:items-start md:flex-row justify-between">
