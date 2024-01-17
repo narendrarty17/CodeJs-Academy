@@ -111,9 +111,9 @@ const Section_05 = () => {
     return (
         <motion.section className="container mx-auto p-8">
             {/* Part 1: Heading and Description */}
-            <div className="flex flex-col gap-1 mb-6">
+            <div className="text-center flex flex-col gap-1 mb-6">
                 <h2 className="text-3xl font-bold text-white">What Our Students Say</h2>
-                <p className="text-gray-400">Students love our courses: dynamic, transformative, and beyond expectations.</p>
+                <p className="text-gray-400">Students love our courses.</p>
             </div>
 
             {/* Part 2: Review Cards */}
