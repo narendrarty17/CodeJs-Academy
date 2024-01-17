@@ -19,10 +19,10 @@ const ContactPage = () => {
                             Feel free to contact us:-
                         </span>
                         <span>
-                            <b>Email</b>: <i>"narendrarty17@gmail.com"</i>.
+                            <b>Email</b>:<br /> <i>"narendrarty17@gmail.com"</i>.
                         </span>
                         <span>
-                            <b>Join the discord community</b>: <i>"discord@narendra.dis"</i>
+                            <b>Join the discord community</b>:<br /> <i>"discord@narendra.dis"</i>
                         </span>
                         <span>
                             <b>Join us in whatsapp</b>:<br /> <i>"whatsapp.ca/23434/narendra"</i>
