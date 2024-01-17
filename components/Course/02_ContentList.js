@@ -103,7 +103,7 @@ const ContentList = ({
 }) => {
 
     return (
-        <div className="mx-3 mt-10 bg-gray-900 md:mx-56">
+        <div className="mx-3 mt-10 bg-gray-900 mb-20 md:mx-56">
             <hr className="border-t border-gray-500" />
             {sections.map((section, index) => (
                 <div key={section.title}>

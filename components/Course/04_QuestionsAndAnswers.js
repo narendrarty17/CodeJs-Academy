@@ -1,6 +1,6 @@
 const QuestionsAndAnswers = () => {
     return (
-        <div className="mx-3 md:mx-56 mt-10 space-y-6">
+        <div className="mx-3 md:mx-56 mt-10 space-y-6 mb-20">
             <div className="space-y-4">
                 <h1 className="font-bold text-2xl">
                     Questions and Doubt Solving
