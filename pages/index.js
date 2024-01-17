@@ -12,7 +12,7 @@ import CoreOfferings from '@/components/LandingPage/07_CoreOfferings';
 
 export default function Home() {
   return (
-    <div className="bg-gray-900 text-white">
+    <div className="font-poppins bg-gray-900 text-white">
       <Header />
       <Intro />
       <OurRecruiters />

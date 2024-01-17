@@ -116,7 +116,7 @@ const Header = () => {
                 </nav>
 
                 {/* Login and Signup Button (Right Section) */}
-                <div className="flex items-center mr-[-30px] gap-3 md:gap-5">
+                <div className="flex items-center mr-[-30px] md:mr-0 gap-3 md:gap-5">
                     {isAuthenticated ?
                         <img
                             className="w-8 md:w-12 rounded-full"

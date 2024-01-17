@@ -171,7 +171,7 @@ const Section_01 = () => {
 
 
     return (
-        <div className="bg-gray-900 text-white">
+        <div className="font-poppins bg-gray-900 text-white">
             <Header />
             <div className="mb-4">
                 {/* Youtube video in video player */}
