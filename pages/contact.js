@@ -9,7 +9,7 @@ const ContactPage = () => {
     return (
         <div>
             <Header />
-            <div className="text-center mt-40 space-y-6 mb-80">
+            <div className="text-center mt-40 space-y-6 mb-80 bg-gray-900">
                 <div className="space-y-4">
                     <h1 className="font-bold text-2xl">
                         Contact us
