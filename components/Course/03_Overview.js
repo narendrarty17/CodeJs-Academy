@@ -112,7 +112,7 @@ const Overview = () => {
                 <span className="flex flex-col space-y-4">
                     <div className="flex space-x-4">
                         <img
-                            className="w-12 h-auto rounded-full"
+                            className="w-12 h-12 rounded-full"
                             src="/images/courses/course/instructor_01.JPG"
                         />
                         <div>
