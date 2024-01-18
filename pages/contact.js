@@ -9,7 +9,7 @@ const ContactPage = () => {
     return (
         <div>
             <Header />
-            <div className="flex justify-center items-center text-center h-screen space-y-6 bg-gray-900">
+            <div className="flex justify-center pt-40 text-center h-screen space-y-6 bg-gray-900">
                 <div className="space-y-4">
                     <h1 className="font-bold text-2xl">
                         Contact us
