@@ -13,7 +13,9 @@ const Header = () => {
     const [showMenu, setShowMenu] = useState(false);
     const [showSidebar, setShowSidebar] = useState(false);
 
-    const { isAuthenticated } = useAuth0();
+    // for now I am setting isAuthenticated be true as auth0 is not working later I will find appropriate solutions
+    // const { isAuthenticated } = useAuth0();
+    const isAuthenticated = true;
 
     const router = useRouter();
 
@@ -118,9 +120,10 @@ const Header = () => {
                 </nav>
 
                 {/* Login and Signup Button (Right Section) */}
-                <div className="flex items-center mr-[-30px] md:mr-0 gap-3 md:gap-5">
+                {/* For now I am hiding login and logout button as auth0 is not working for now */}
+                {/* <div className="flex items-center mr-[-30px] md:mr-0 gap-3 md:gap-5">
                     {isAuthenticated ? <LogoutButton /> : <LoginButton />}
-                </div>
+                </div> */}
 
                 {/* Menu for Sidebar Only show on small screens */}
                 <button
