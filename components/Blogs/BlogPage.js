@@ -132,7 +132,7 @@ const BlogPage = () => {
 
     return (
         <div className='flex flex-col lg:flex-row'>
-            <div className="flex-1 border-r border-gray-800 px-8 py-8">
+            <div className="flex-1 border-r border-gray-800 px-4 py-8">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-6">
                     {/* Author Info */}
