@@ -3,28 +3,24 @@
     "id": 0,
     "link": "home",
     "linkText": "Home",
-    "url": "/",
-    "type": "normal"
+    "url": "/"
   },
   {
     "id": 1,
     "link": "mycourses",
     "linkText": "My Courses",
-    "url": "mycourses",
-    "type": "normal"
+    "url": "mycourses"
   },
   {
     "id": 2,
     "link": "contact",
     "linkText": "Contact",
-    "url": "contact",
-    "type": "normal"
+    "url": "contact"
   },
   {
     "id": 3,
     "link": "blogs",
     "linkText": "Blogs",
-    "url": "blogs",
-    "type": "normal"
+    "url": "blogs"
   }
 ]
