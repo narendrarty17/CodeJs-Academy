@@ -68,7 +68,7 @@ const SuggestedReads = ({ isSmallScreen }) => {
 
     return (
         limitedSuggestedReads.map((read) => (
-            <li key={read.id} className="flex items-start mb-4 mr-4 w-[400px] lg:w-auto lg:mb-4 lg:mr-0">
+            <li key={read.id} className="flex items-start mb-4 mr-4 w-[350px] lg:w-auto lg:mb-4 lg:mr-0">
                 {/* Suggested Read Image (Left) */}
                 <div className="pr-4">
                     <img
