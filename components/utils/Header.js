@@ -27,17 +27,12 @@ const Header = () => {
     };
 
     const settingActiveLinkByURL = () => {
-        // Setting active link as per as the url
-        if (currentPath === '/') {
-            setActiveLink('home')
-        } else if (currentPath === '/mycourses') {
-            setActiveLink('mycourses');
-        } else if (currentPath === '/contact') {
-            setActiveLink('contact');
-        } else if (currentPath === '/blogs') {
-            setActiveLink('blogs')
+        const currentLink = linksList.find(link => link.url === currentPath);
+
+        if (currentLink) {
+            setActiveLink(currentLink.link);
         }
-    }
+    };
 
     const NavLink = ({ link, children, url }) => {
         return (
