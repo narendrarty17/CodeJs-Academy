@@ -6,24 +6,24 @@ const Blog_01 = () => {
 
             {/* Cover Image */}
             <img
-                className='w-full mb-4 rounded-lg'
+                className='w-full mb-3 rounded-lg'
                 src="/images/blogs/blog/blog_01/cover.png"
                 alt="cover image"
             />
             {/* Main Heading */}
-            <h1 className="text-xl font-bold mb-6">Understanding React.js: An Introduction</h1>
+            <h1 className="text-xl font-bold mb-3">Understanding React.js: An Introduction</h1>
 
             {/* Introduction */}
-            <section className="mb-6">
-                <h2 className="text-lg font-bold mb-4">Introduction</h2>
+            <section className="mb-3">
+                <h2 className="text-lg font-bold mb-3">Introduction</h2>
                 <p className="text-md">
                     In the ever-evolving landscape of web development, React.js has emerged as a powerful and widely-used JavaScript library for building user interfaces. Developed and maintained by Facebook, React.js, commonly referred to as React, provides developers with a declarative and efficient way to create dynamic, interactive, and scalable user interfaces.
                 </p>
             </section>
 
             {/* What is React.js? */}
-            <section className="mb-6">
-                <h2 className="text-lg font-bold mb-4">What is React.js?</h2>
+            <section className="mb-3">
+                <h2 className="text-lg font-bold mb-3">What is React.js?</h2>
                 <p className="text-md mb-3">
                     React.js is an open-source JavaScript library used for building user interfaces, especially for single-page applications where the content is dynamically updated as the user interacts with the application. Introduced by Jordan Walke, a software engineer at Facebook, React was first deployed on Facebook's newsfeed in 2011 and later made open-source.
                 </p>
@@ -36,8 +36,8 @@ const Blog_01 = () => {
             </section>
 
             {/* Key Concepts */}
-            <section className="mb-6">
-                <h2 className="text-lg font-bold mb-4">Key Concepts</h2>
+            <section className="mb-3">
+                <h2 className="text-lg font-bold mb-3">Key Concepts</h2>
                 <p className="text-md">
                     <strong>Components</strong>
                 </p>
@@ -59,8 +59,8 @@ const Blog_01 = () => {
             </section>
 
             {/* React's Benefits */}
-            <section className="mb-6">
-                <h2 className="text-lg font-bold mb-4">React's Benefits</h2>
+            <section className="mb-3">
+                <h2 className="text-lg font-bold mb-3">React's Benefits</h2>
                 <p className="text-md">
                     <strong>Reusability and Maintainability</strong>
                 </p>
@@ -82,8 +82,8 @@ const Blog_01 = () => {
             </section>
 
             {/* Getting Started with React */}
-            <section className="mb-6">
-                <h2 className="text-lg font-bold mb-4">Getting Started with React</h2>
+            <section className="mb-3">
+                <h2 className="text-lg font-bold mb-3">Getting Started with React</h2>
                 <p className="text-md">
                     <strong>Installation</strong>
                 </p>
@@ -105,8 +105,8 @@ const Blog_01 = () => {
             </section>
 
             {/* Conclusion */}
-            <section className="mb-6">
-                <h2 className="text-lg font-bold mb-4">Conclusion</h2>
+            <section className="mb-3">
+                <h2 className="text-lg font-bold mb-3">Conclusion</h2>
                 <p className="text-md mb-3">
                     React.js has revolutionized the way developers approach building user interfaces, providing a powerful and efficient solution for creating dynamic and interactive web applications. Its component-based architecture, use of JSX, virtual DOM, and thriving community make React a go-to choice for developers seeking a modern and scalable front-end solution.
                 </p>
