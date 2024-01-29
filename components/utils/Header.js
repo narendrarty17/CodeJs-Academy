@@ -34,6 +34,8 @@ const Header = () => {
             setActiveLink('mycourses');
         } else if (currentPath === '/contact') {
             setActiveLink('contact');
+        } else if (currentPath === '/blogs') {
+            setActiveLink('blogs')
         }
     }
 
