@@ -9,18 +9,17 @@
     "id": 1,
     "link": "mycourses",
     "linkText": "My Courses",
-    "url": "mycourses"
+    "url": "/mycourses"
   },
   {
     "id": 2,
-    "link": "contact",
     "linkText": "Contact",
-    "url": "contact"
+    "url": "/contact"
   },
   {
     "id": 3,
     "link": "blogs",
     "linkText": "Blogs",
-    "url": "blogs"
+    "url": "/blogs"
   }
 ]
