@@ -69,7 +69,7 @@ const Footer = () => {
                         transformative experience.
                     </div>
                     {/* Social media icons */}
-                    <div className="flex gap-2">
+                    <div className="flex justify-center md:justify-start gap-2">
                         <img src="/images/utils/footer/socialMediaIcons/facebook.svg" alt="Facebook" />
                         <img src="/images/utils/footer/socialMediaIcons/youtube.svg" alt="YouTube" />
                         <img src="/images/utils/footer/socialMediaIcons/whatsapp.svg" alt="WhatsApp" />
@@ -78,11 +78,11 @@ const Footer = () => {
                     </div>
                 </div>
                 {/* Contact information section */}
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col items-center md:items-start gap-3">
                     <header className="text-blue-500 font-bold">
                         Contact
                     </header>
-                    <div className="text-white flex flex-col gap-2">
+                    <div className="text-white flex flex-col items-center md:items-start gap-2">
                         <div>+91-9919748714</div>
                         <div>narendrarty17@gmail.com</div>
                     </div>
