@@ -140,7 +140,7 @@ const BlogPage = () => {
                     <div className="flex items-center">
                         <img src="/images/blogs/blogpage/authorLogo.png" alt="Author Logo" className="w-10 h-10 rounded-full mr-4" />
                         <div>
-                            <h2 className="text-sm font-bold">Maria Lawrence</h2>
+                            <h2 className="text-sm font-bold">Vishal Sharma</h2>
                             <p className="text-[12px] text-gray-500">5 July, 2023</p>
                         </div>
                     </div>
@@ -173,7 +173,7 @@ const BlogPage = () => {
                         <img src="/images/blogs/blogpage/authorLogo.png" alt="Author Logo" className="w-10 h-10 rounded-full mr-4" />
                         {/* Author Info */}
                         <div>
-                            <h2 className="text-sm font-bold">Maria Lawrence</h2>
+                            <h2 className="text-sm font-bold">Vishal Sharma</h2>
                             <p className="text-[12px] text-gray-500">267k followers</p>
                         </div>
                     </div>
