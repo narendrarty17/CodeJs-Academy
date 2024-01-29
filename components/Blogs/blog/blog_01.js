@@ -6,7 +6,7 @@ const Blog_01 = () => {
 
             {/* Cover Image */}
             <img
-                className='mb-4 rounded-xl'
+                className='w-full mb-4 rounded-xl'
                 src="/images/blogs/blog/blog_01/cover.png"
                 alt="cover image"
             />
