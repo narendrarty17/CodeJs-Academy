@@ -1,6 +1,7 @@
 // BlogPage.js
 
 import React, { useState, useEffect } from 'react';
+import Blog_01 from './blog/blog_01';
 
 const socialMediaIconData = [
     {
@@ -153,11 +154,7 @@ const BlogPage = () => {
 
                 {/* Blog Content */}
                 <div className="mb-8">
-                    {/* Blog Title */}
-                    <h1 className="text-3xl font-bold mb-4">Blog Title</h1>
-
-                    {/* Blog Content Goes Here */}
-                    <p>This is where your blog content will be.</p>
+                    <Blog_01 />
                 </div>
             </div>
             {/* Sidebar (only visible on large screens) */}
