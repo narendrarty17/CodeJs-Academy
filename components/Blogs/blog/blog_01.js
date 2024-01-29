@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blog_01 = () => {
     return (
-        <div className="px-2">
+        <div className="px-1">
 
             {/* Cover Image */}
             <img
