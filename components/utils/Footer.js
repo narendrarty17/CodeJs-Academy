@@ -59,7 +59,7 @@ const Footer = () => {
                             alt="Company Logo"
                             className="h-8 w-8 mr-2"
                         />
-                        <span className="text-white text-2xl font-bold">CodeJS</span>
+                        <span className="text-white text-2xl font-bold">CodeSamjho</span>
                     </div>
                     {/* Company description */}
                     <div className="hidden md:inline text-white max-w-xl">

@@ -97,7 +97,7 @@ const Header = () => {
                         alt="Company Logo"
                         className="h-8 w-8 mr-2"
                     />
-                    <span className="text-white text-lg font-bold">CodeJS</span>
+                    <span className="text-white text-lg font-bold">CodeSamjho</span>
                 </Link>
 
                 {/* Navigation Links (Middle Section) */}
