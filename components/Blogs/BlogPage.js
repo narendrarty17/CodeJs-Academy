@@ -1,68 +1,10 @@
 // BlogPage.js
 
 import React, { useState, useEffect } from 'react';
-import Blog_01 from './blog/blog_01';
+import socialMediaIconData from '@/public/data/blogs/socialMediaIcons';
+import suggestedReadData from '@/public/data/blogs/suggestedReadData';
 
-const socialMediaIconData = [
-    {
-        "id": 0,
-        "alt": "facebook",
-        "src": "/images/blogs/blogpage/socialMedia/facebook.svg"
-    },
-    {
-        "id": 1,
-        "alt": "linkedin",
-        "src": "/images/blogs/blogpage/socialMedia/linkedin.svg"
-    },
-    {
-        "id": 2,
-        "alt": "twitter",
-        "src": "/images/blogs/blogpage/socialMedia/twitter.svg"
-    },
-    {
-        "id": 3,
-        "alt": "bookmark",
-        "src": "/images/blogs/blogpage/socialMedia/bookmark.svg"
-    }
-];
-
-const suggestedReadData = [
-    {
-        "id": 0,
-        "imageSrc": "/images/blogs/blogpage/suggestedReads/read_01.png",
-        "authorSrc": "/images/blogs/blogpage/suggestedReads/author_01.png",
-        "authorName": "Andrew Joe",
-        "readTitle": "As a Google Maps PM, how can you improve it?"
-    },
-    {
-        "id": 1,
-        "imageSrc": "/images/blogs/blogpage/suggestedReads/read_02.png",
-        "authorSrc": "/images/blogs/blogpage/suggestedReads/author_02.png",
-        "authorName": "Andrea",
-        "readTitle": "Tools I use as a lead UX Designer at Microsoft."
-    },
-    {
-        "id": 2,
-        "imageSrc": "/images/blogs/blogPage/suggestedReads/read_03.png",
-        "authorSrc": "/images/blogs/blogPage/suggestedReads/author_03.png",
-        "authorName": "Dave",
-        "readTitle": "5 Types of Product Managers in High Demand Right Now"
-    },
-    {
-        "id": 3,
-        "imageSrc": "/images/blogs/blogpage/suggestedReads/read_04.png",
-        "authorSrc": "/images/blogs/blogpage/suggestedReads/author_04.png",
-        "authorName": "Henry Anderson",
-        "readTitle": "How to overcome imposter syndrome at your firm"
-    },
-    {
-        "id": 4,
-        "imageSrc": "/images/blogs/blogpage/suggestedReads/read_05.png",
-        "authorSrc": "/images/blogs/blogpage/suggestedReads/author_05.png",
-        "authorName": "Emilia Joe",
-        "readTitle": "As a Google Maps PM, how can you improve it?"
-    }
-];
+import Blog_01 from './blogContent/blog_01_content';
 
 const SuggestedReads = ({ isSmallScreen }) => {
     const limitedSuggestedReads = suggestedReadData.slice(0, isSmallScreen ? 3 : suggestedReadData.length);
@@ -100,6 +42,47 @@ const SuggestedReads = ({ isSmallScreen }) => {
         ))
     )
 };
+
+const Sidebar = ({ isSmallScreen }) => {
+    return (
+        <div className="w-full lg:w-1/5 px-4 py-8">
+            {/* Search Bar */}
+            <div className="mb-6 hidden lg:block">
+                {/* Add your search bar component here */}
+                <input type="text" placeholder="Search..." className="w-full px-4 py-2 border border-gray-300 rounded-3xl" />
+            </div>
+
+            {/* Author Details */}
+            <div className="mb-6 hidden lg:block">
+                {/* Author Info */}
+                <div className="flex items-center mb-4">
+                    {/* Author Logo */}
+                    <img src="/images/blogs/blogpage/authorLogo.png" alt="Author Logo" className="w-10 h-10 rounded-full mr-4" />
+                    {/* Author Info */}
+                    <div>
+                        <h2 className="text-sm font-bold">Vishal Sharma</h2>
+                        <p className="text-[12px] text-gray-500">267k followers</p>
+                    </div>
+                </div>
+
+                {/* Short Paragraph about the Author */}
+                <p className='text-[12px] text-gray-400'>
+                    Lead UX Designer @ Slack. Loves travelling and lives for backstage action!
+                    Love to design user centric products and understanding consumer behaviour
+                </p>
+            </div>
+
+            {/* Suggested Reads */}
+            <div>
+                <h2 className="text-lg font-bold mb-4">Suggested Reads</h2>
+                {/* Add your suggested reads links or components here */}
+                <ul className="flex flex-wrap flex-row lg:flex-col">
+                    <SuggestedReads isSmallScreen={isSmallScreen} />
+                </ul>
+            </div>
+        </div>
+    );
+}
 
 const SocialMediaIcons = () => (
     socialMediaIconData.map((icon) => (
@@ -158,42 +141,7 @@ const BlogPage = () => {
                 </div>
             </div>
             {/* Sidebar (only visible on large screens) */}
-            <div className="w-full lg:w-1/5 px-4 py-8">
-                {/* Search Bar */}
-                <div className="mb-6 hidden lg:block">
-                    {/* Add your search bar component here */}
-                    <input type="text" placeholder="Search..." className="w-full px-4 py-2 border border-gray-300 rounded-3xl" />
-                </div>
-
-                {/* Author Details */}
-                <div className="mb-6 hidden lg:block">
-                    {/* Author Info */}
-                    <div className="flex items-center mb-4">
-                        {/* Author Logo */}
-                        <img src="/images/blogs/blogpage/authorLogo.png" alt="Author Logo" className="w-10 h-10 rounded-full mr-4" />
-                        {/* Author Info */}
-                        <div>
-                            <h2 className="text-sm font-bold">Vishal Sharma</h2>
-                            <p className="text-[12px] text-gray-500">267k followers</p>
-                        </div>
-                    </div>
-
-                    {/* Short Paragraph about the Author */}
-                    <p className='text-[12px] text-gray-400'>
-                        Lead UX Designer @ Slack. Loves travelling and lives for backstage action!
-                        Love to design user centric products and understanding consumer behaviour
-                    </p>
-                </div>
-
-                {/* Suggested Reads */}
-                <div>
-                    <h2 className="text-lg font-bold mb-4">Suggested Reads</h2>
-                    {/* Add your suggested reads links or components here */}
-                    <ul className="flex flex-wrap flex-row lg:flex-col">
-                        <SuggestedReads isSmallScreen={isSmallScreen} />
-                    </ul>
-                </div>
-            </div>
+            <Sidebar isSmallScreen={isSmallScreen} />
         </div>
     )
 };

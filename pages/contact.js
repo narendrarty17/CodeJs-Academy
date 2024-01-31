@@ -7,7 +7,7 @@ import Footer from '@/components/utils/Footer';
 const ContactPage = () => {
 
     return (
-        <div>
+        <div className='font-poppins bg-gray-900 text-white'>
             <Header />
             <div className="flex justify-center pt-40 text-center h-screen space-y-6 bg-gray-900">
                 <div className="space-y-4">

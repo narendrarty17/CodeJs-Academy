@@ -1,0 +1,22 @@
+[
+    {
+        "id": 0,
+        "alt": "facebook",
+        "src": "/images/blogs/blogpage/socialMedia/facebook.svg"
+    },
+    {
+        "id": 1,
+        "alt": "linkedin",
+        "src": "/images/blogs/blogpage/socialMedia/linkedin.svg"
+    },
+    {
+        "id": 2,
+        "alt": "twitter",
+        "src": "/images/blogs/blogpage/socialMedia/twitter.svg"
+    },
+    {
+        "id": 3,
+        "alt": "bookmark",
+        "src": "/images/blogs/blogpage/socialMedia/bookmark.svg"
+    }
+]
