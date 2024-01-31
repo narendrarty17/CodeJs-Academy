@@ -25,7 +25,7 @@ const MainBlogSection = () => {
                     <h3 className="text-3xl pb-2">
                         Use of VR to display websites in 3D
                     </h3>
-                    <p className="text-gray-300 px-3 pb-4">
+                    <p className="text-gray-300 pb-4">
                         The modern career requires a development plan to match.
                         Discover how the 360-Degree Career Framework
                         can assist multidimensional growth that delivers a more
