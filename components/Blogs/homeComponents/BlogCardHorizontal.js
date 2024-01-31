@@ -2,11 +2,11 @@ import React from 'react';
 
 const BlogCardHorizontal = () => {
     return (
-        <div className="flex bg-gray-700 md:w-1/2">
+        <div className="flex bg-gray-700 w-full">
             {/* Left Part - Image */}
-            <div className="flex-shrink-0 w-full md:w-1/3">
+            <div className="flex-shrink-0 w-36">
                 <img
-                    className="object-cover w-full h-32 md:h-40 rounded-md"
+                    className="object-cover w-36 h-40 rounded-md"
                     src="/images/blogs/blog/blog_01/blogIcon.png"
                     alt="Blog"
                 />

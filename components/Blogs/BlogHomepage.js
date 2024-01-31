@@ -10,8 +10,8 @@ const BlogHomepage = () => {
             <BlogHeader />
             <MainBlogSection />
             <ReportSection />
-            {/* <CareerAdvice />
-            <TopVideos /> */}
+            <CareerAdvice />
+            {/* <TopVideos /> */}
         </div>
     );
 }
