@@ -8,7 +8,7 @@ const CareerAdvice = () => {
                 <h1 className="text-3xl">Career Advice</h1>
             </div>
             <div className="flex flex-col items-center gap-8 md:gap-10 mt-8">
-                <div className="flex justify-center items-center flex-wrap gap-4 md:gap-8">
+                <div className="flex justify-center items-center flex-wrap gap-6 md:gap-8">
                     <BlogCardHorizontal />
                     <BlogCardHorizontal />
                     <BlogCardHorizontal />
