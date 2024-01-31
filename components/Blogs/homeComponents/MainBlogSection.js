@@ -3,7 +3,7 @@ import BlogCardVertical from './BlogCardVertical';
 
 const MainBlogSection = () => {
     return (
-        <div className="flex justify-center gap-6 mt-10 px-6 md:px-20">
+        <div className="flex justify-center gap-6 px-6 md:px-20">
             {/* Big Blog Card */}
             <div className="flex flex-col gap-4">
                 <div className="max-w-lg mx-auto">

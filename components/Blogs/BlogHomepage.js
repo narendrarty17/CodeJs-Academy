@@ -6,7 +6,7 @@ import TopVideos from "./homeComponents/TopVideos";
 
 const BlogHomepage = () => {
     return (
-        <div>
+        <div className="flex flex-col gap-10">
             <BlogHeader />
             <MainBlogSection />
             <ReportSection />

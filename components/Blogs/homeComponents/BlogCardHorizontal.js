@@ -2,7 +2,7 @@ import React from 'react';
 
 const BlogCardHorizontal = () => {
     return (
-        <div className="flex bg-gray-700 w-full">
+        <div className="max-w-lg flex bg-gray-700">
             {/* Left Part - Image */}
             <div className="flex-shrink-0 w-36">
                 <img
@@ -13,7 +13,7 @@ const BlogCardHorizontal = () => {
             </div>
 
             {/* Right Part - Category and Title */}
-            <div className="flex flex-col justify-center gap-2 px-2 ml-4">
+            <div className="flex flex-col justify-center gap-2 px-4">
                 {/* Category */}
                 <p className="text-sm text-gray-400">Programming | Business</p>
 
