@@ -11,7 +11,7 @@ const BlogHomepage = () => {
             <MainBlogSection />
             <ReportSection />
             <CareerAdvice />
-            {/* <TopVideos /> */}
+            <TopVideos />
         </div>
     );
 }
