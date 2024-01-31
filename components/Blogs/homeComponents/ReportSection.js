@@ -4,7 +4,7 @@ import React from 'react';
 
 const ReportSection = () => {
     return (
-        <section className="flex flex-col lg:flex-row items-center mt-16 px-16 lg:px-0 max-w-3xl gap-8 lg:gap-16 mx-auto">
+        <section className="flex flex-col lg:flex-row items-center mt-16 px-12 lg:px-0 max-w-3xl gap-8 lg:gap-16 mx-auto">
             <div className="text-content flex-1">
                 <div className='max-w-xl ml-[-16px] lg:ml-[-25px] mb-3 flex justify-start items-center'>
                     <div className="text-xl bg-pink-500 w-10 h-10 flex items-center justify-center rounded-full">Rep</div>

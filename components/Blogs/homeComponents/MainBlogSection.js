@@ -17,12 +17,12 @@ const MainBlogSection = () => {
                     </div>
 
                     {/* Category Section */}
-                    <div className="px-3 mb-1 text-gray-400">
+                    <div className="mb-1 text-gray-400">
                         Programming
                     </div>
 
                     {/* Title Section */}
-                    <h3 className="px-3 text-3xl pb-2">
+                    <h3 className="text-3xl pb-2">
                         Use of VR to display websites in 3D
                     </h3>
                     <p className="text-gray-300 px-3 pb-4">

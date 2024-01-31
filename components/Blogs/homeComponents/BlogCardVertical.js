@@ -13,12 +13,12 @@ const BlogCardVertical = () => {
             </div>
 
             {/* Category Section */}
-            <div className="px-3 mb-1 text-gray-400">
+            <div className="mb-1 text-gray-400">
                 Programming
             </div>
 
             {/* Title Section */}
-            <h3 className="px-3 text-xl pb-3">
+            <h3 className="text-xl pb-3">
                 Use of VR to display websites in 3D
             </h3>
         </div>
