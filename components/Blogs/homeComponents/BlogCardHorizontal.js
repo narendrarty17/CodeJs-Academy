@@ -2,11 +2,11 @@ import React from 'react';
 
 const BlogCardHorizontal = () => {
     return (
-        <div className="max-w-lg flex bg-gray-700">
+        <div className="max-w-lg flex">
             {/* Left Part - Image */}
-            <div className="flex-shrink-0 w-36">
+            <div className="flex-shrink-0">
                 <img
-                    className="object-cover w-36 h-40 rounded-md"
+                    className="object-cover w-36 h-28 md:w-[140px] md:h-[120px] lg:w-64 lg:h-48 xl:w-72 xl:h-54 "
                     src="/images/blogs/blog/blog_01/blogIcon.png"
                     alt="Blog"
                 />
@@ -18,7 +18,7 @@ const BlogCardHorizontal = () => {
                 <p className="text-sm text-gray-400">Programming | Business</p>
 
                 {/* Blog Title */}
-                <h2 className="text-lg">Use of VR to view 3D websites</h2>
+                <h2 className="text-md lg:text-lg font-semibold">Use of VR to view 3D websites</h2>
             </div>
         </div>
     );
