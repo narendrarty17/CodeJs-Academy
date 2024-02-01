@@ -3,6 +3,7 @@ import ReportSection from "./homeComponents/ReportSection";
 import MainBlogSection from "./homeComponents/MainBlogSection";
 import BlogHeader from "./homeComponents/BlogHeader";
 import TopVideos from "./homeComponents/TopVideos";
+import Newsletter from "./homeComponents/NewsLetter";
 
 const BlogHomepage = () => {
     return (
@@ -12,6 +13,7 @@ const BlogHomepage = () => {
             <ReportSection />
             <CareerAdvice />
             <TopVideos />
+            <Newsletter />
         </div>
     );
 }
