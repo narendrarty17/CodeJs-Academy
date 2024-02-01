@@ -6,7 +6,7 @@ const BlogCardHorizontal = () => {
             {/* Left Part - Image */}
             <div className="flex-shrink-0">
                 <img
-                    className="object-cover w-36 h-28 md:w-[140px] md:h-[120px] lg:w-64 lg:h-48 xl:w-72 xl:h-54 "
+                    className="object-cover max-w-[250px] xl:max-w-[300px] 2xl:max-w-[350px]"
                     src="/images/blogs/blog/blog_01/blogIcon.png"
                     alt="Blog"
                 />
