@@ -2,7 +2,7 @@ import BlogCardHorizontal from "./BlogCardHorizontal";
 
 const CareerAdvice = () => {
     return (
-        <div className="flex px-8 md:px-20">
+        <div className="px-8 md:px-20">
             <div className="flex gap-4 items-center">
                 <span className="bg-green-400 w-8 h-8 rounded-full" />
                 <h1 className="text-2xl">Career Advice</h1>
