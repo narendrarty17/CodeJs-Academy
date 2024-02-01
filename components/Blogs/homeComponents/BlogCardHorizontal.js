@@ -18,7 +18,7 @@ const BlogCardHorizontal = () => {
                 <p className="text-sm text-gray-400">Programming | Business</p>
 
                 {/* Blog Title */}
-                <h2 className="text-lg font-semibold">Use of VR to view 3D websites</h2>
+                <h2 className="text-lg">Use of VR to view 3D websites</h2>
             </div>
         </div>
     );

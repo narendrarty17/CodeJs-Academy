@@ -22,7 +22,7 @@ const MainBlogSection = () => {
                     </div>
 
                     {/* Title Section */}
-                    <h3 className="text-3xl pb-2">
+                    <h3 className="text-2xl pb-2">
                         Use of VR to display websites in 3D
                     </h3>
                     <p className="text-gray-300 pb-4">
@@ -32,7 +32,7 @@ const MainBlogSection = () => {
                         balanced and fulfilling career.
                     </p>
                 </div>
-                <button className="text-lg bg-blue-500 text-white py-4 px-6 w-40 rounded-full">
+                <button className="text-lg bg-blue-500 text-white py-3 px-3 w-32 rounded-full">
                     Read me
                 </button>
             </div>

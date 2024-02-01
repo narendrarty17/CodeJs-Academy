@@ -10,7 +10,7 @@ const ReportSection = () => {
                     <div className="text-xl bg-pink-500 w-10 h-10 flex items-center justify-center rounded-full">Rep</div>
                     <div className='text-xl'>ort</div>
                 </div>
-                <h2 className="text-3xl mb-4">2021 Sustainability Report</h2>
+                <h2 className="text-2xl mb-4">2021 Sustainability Report</h2>
                 <p className="text-gray-300">Sustainability is transforming the way professionals live and work globally. Discover insights from almost 600 professionals across 65 countries about the meaning, changing perceptions, and expanding agendas of sustainability – and understand how sustainability will impact your skills, career, and business.</p>
             </div>
             <div className="image-content flex-1">
