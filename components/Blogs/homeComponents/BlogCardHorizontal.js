@@ -6,7 +6,7 @@ const BlogCardHorizontal = () => {
             {/* Left Part - Image */}
             <div className="flex-shrink-0">
                 <img
-                    className="object-cover max-w-[250px] xl:max-w-[300px] 2xl:max-w-[350px]"
+                    className="object-cover w-36 h-28 md:w-[140px] md:h-[120px] lg:w-64 lg:h-48 xl:w-72 xl:h-54 "
                     src="/images/blogs/blog/blog_01/blogIcon.png"
                     alt="Blog"
                 />
@@ -18,7 +18,7 @@ const BlogCardHorizontal = () => {
                 <p className="text-sm text-gray-400">Programming | Business</p>
 
                 {/* Blog Title */}
-                <h2 className="text-md lg:text-lg">Use of VR to view 3D websites</h2>
+                <h2 className="text-md lg:text-lg font-semibold">Use of VR to view 3D websites</h2>
             </div>
         </div>
     );
