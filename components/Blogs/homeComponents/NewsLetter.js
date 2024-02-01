@@ -22,19 +22,19 @@ const Newsletter = () => {
                             <input
                                 type="text"
                                 placeholder="First name *"
-                                className="w-full md:w-1/2 bg-transparent border-b border-gray-500 py-3"
+                                className="w-full md:w-1/2 outline-none bg-transparent border-b border-gray-500 py-3"
                             />
                             <input
                                 type="text"
                                 placeholder="Last name *"
-                                className="w-full md:w-1/2 bg-transparent border-b border-gray-500 py-3"
+                                className="w-full md:w-1/2 outline-none bg-transparent border-b border-gray-500 py-3"
                             />
                         </div>
                         <div className="max-w-md">
                             <input
                                 type="email"
                                 placeholder="Email *"
-                                className="bg-transparent border-b border-gray-500 py-2 w-full py-3"
+                                className="bg-transparent outline-none border-b border-gray-500 py-2 w-full py-3"
                             />
                         </div>
                         <div className="max-w-lg italic text-[10px] text-gray-400 py-5">
