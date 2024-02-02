@@ -1,15 +1,15 @@
-import BlogPage from '@/components/Blogs/BlogPage';
-import Footer from '@/components/utils/Footer';
-import Header from '@/components/utils/Header';
+import BlogHomepage from "@/components/Blogs/BlogHomepage";
+import Footer from "@/components/utils/Footer";
+import Header from "@/components/utils/Header";
 
-const Blogs = () => {
+const BlogHome = () => {
     return (
-        <div className='font-poppins bg-gray-900 text-white'>
+        <div className="bg-gray-900 text-white">
             <Header />
-            <BlogPage />
+            <BlogHomepage />
             <Footer />
         </div>
-    );
-}
+    )
+};
 
-export default Blogs;
+export default BlogHome;

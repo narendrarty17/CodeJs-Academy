@@ -1,5 +1,5 @@
-import BlogCardVertical from "./BlogCardVertical";
-import VideoCard from "./VideoCard";
+import BlogCardVertical from "./subHomeComponents/BlogCardVertical";
+import VideoCard from "./subHomeComponents/VideoCard";
 
 const TopVideos = () => {
     return (

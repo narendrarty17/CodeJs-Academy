@@ -1,4 +1,4 @@
-import BlogCardHorizontal from "./BlogCardHorizontal";
+import BlogCardHorizontal from "./subHomeComponents/BlogCardHorizontal";
 
 const CareerAdvice = () => {
     return (

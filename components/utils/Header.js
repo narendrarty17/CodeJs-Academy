@@ -31,6 +31,8 @@ const Header = () => {
 
         if (currentLink) {
             setActiveLink(currentLink.link);
+        } else if (currentPath == "/blog") {
+            setActiveLink("blogs");
         }
     };
 
