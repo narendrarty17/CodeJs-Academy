@@ -70,7 +70,15 @@ const Section_05 = () => {
         }
     };
 
+    const swipeAnimation = async (direction) => {
+        const cardWidth = 300; // Adjust as needed
+        const offset = direction === 'left' ? -cardWidth : cardWidth;
 
+        await controls.start({ x: offset, opacity: 0 });
+
+        // Reset animation
+        controls.set({ x: 0, opacity: 1, transition: { duration: 0.2 } });
+    }
 
     useEffect(() => {
         const handleResize = () => {
@@ -79,17 +87,6 @@ const Section_05 = () => {
 
         handleResize(); // Initial check
         window.addEventListener('resize', handleResize);
-
-
-        const swipeAnimation = async (direction) => {
-            const cardWidth = 300; // Adjust as needed
-            const offset = direction === 'left' ? -cardWidth : cardWidth;
-
-            await controls.start({ x: offset, opacity: 0 });
-
-            // Reset animation
-            controls.set({ x: 0, opacity: 1, transition: { duration: 0.2 } });
-        }
 
         // Auto-swipe on small screens
         let swipeInterval;

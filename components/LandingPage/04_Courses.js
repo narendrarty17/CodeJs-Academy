@@ -44,7 +44,7 @@ const Section_04 = () => {
             </div>
 
             {/* Part 3: Courses */}
-            <motion.div className="flex flex-wrap justify-around" variants={containerVariants} initial="hidden" animate="visible">
+            <motion.div className="flex flex-col gap-5 md:flex-row justify-around" variants={containerVariants} initial="hidden" animate="visible">
                 {courseData
                     .map((course) => (
                         <Link
