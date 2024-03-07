@@ -1,0 +1,50 @@
+[
+  {
+    "id": 0,
+    "iconImage": "blogIcon.png",
+    "authorImage": "vishal_sharma.png",
+    "authorName": "Vishal Sharma",
+    "title": "Understanding React.js: An Introduction",
+    "type": "careerAdvice"
+  },
+  {
+    "id": 1,
+    "iconImage": "/blogIcon.png",
+    "authorImage": "vishal_sharma.png",
+    "authorName": "Vishal Sharma",
+    "title": "Understanding React.js: An Introduction",
+    "type": "careerAdvice"
+  },
+  {
+    "id": 2,
+    "iconImage": "/blogIcon.png",
+    "authorImage": "narendra_kumar.png",
+    "authorName": "Narendra Kumar",
+    "title": "Understanding React.js: An Introduction",
+    "type": "careerAdvice"
+  },
+  {
+    "id": 3,
+    "iconImage": "/blogIcon.png",
+    "authorImage": "vishal_sharma.png",
+    "authorName": "Vishal Sharma",
+    "title": "Understanding React.js: An Introduction",
+    "type": "careerAdvice"
+  },
+  {
+    "id": 4,
+    "iconImage": "/blogIcon.png",
+    "authorImage": "vishal_sharma.png",
+    "authorName": "Vishal Sharma",
+    "title": "Understanding React.js: An Introduction",
+    "type": "careerAdvice"
+  },
+  {
+    "id": 5,
+    "iconImage": "/blogIcon.png",
+    "authorImage": "vishal_sharma.png",
+    "authorName": "Vishal Sharma",
+    "title": "Understanding React.js: An Introduction",
+    "type": "careerAdvice"
+  }
+]
