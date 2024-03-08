@@ -28,12 +28,7 @@ const Header = () => {
 
     const settingActiveLinkByURL = () => {
         const currentLink = linksList.find(link => link.url === currentPath);
-
-        if (currentLink) {
-            setActiveLink(currentLink.link);
-        } else if (currentPath == "/blog") {
-            setActiveLink("blogs");
-        }
+        setActiveLink(currentLink.link);
     };
 
     const NavLink = ({ link, children, url }) => {
