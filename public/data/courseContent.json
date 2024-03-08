@@ -16,19 +16,19 @@
             "lectureSr": 1,
             "title": "Introduction to HTML, CSS, JavaScript",
             "duration": 18,
-            "videoId": "6mbwJ2xhgzM"
+            "videoId": "S6_-Vi3DcCY"
           },
           {
             "lectureSr": 2,
             "title": "Installing VS Code & Live Server",
             "duration": 17,
-            "videoId": "TeZdo8mx0gc"
+            "videoId": "3NtEjDC_vGg"
           },
           {
             "lectureSr": 3,
             "title": "Basic Structure of a Website",
             "duration": 11,
-            "videoId": "IA8JWGP13dI"
+            "videoId": "TcI9J5noF5k"
           }
         ]
       },
@@ -39,31 +39,31 @@
             "lectureSr": 4,
             "title": "Title, Script, Link & Meta Tags",
             "duration": 8,
-            "videoId": "EZCc_4abdcE"
+            "videoId": "WWDhfWWVzH8"
           },
           {
             "lectureSr": 5,
             "title": "Headings & Paragraphs",
             "duration": 13,
-            "videoId": "ulv_q6-b7uI"
+            "videoId": "C24X5KJsLtw"
           },
           {
             "lectureSr": 6,
             "title": "Img and Anchor Tags",
             "duration": 14,
-            "videoId": "z6H22xGAZEA"
+            "videoId": "JxrBc0F-o8g"
           },
           {
             "lectureSr": 7,
             "title": "List and Tables",
             "duration": 9,
-            "videoId": "N69xumSjg5Q"
+            "videoId": "T-drzvplCUw"
           },
           {
             "lectureSr": 8,
             "title": "Forms & Input Tags",
             "duration": 21,
-            "videoId": "KqJikDzb3l4"
+            "videoId": "_fzHPM2RVSc"
           }
         ]
       },
@@ -74,25 +74,25 @@
             "lectureSr": 9,
             "title": "Inline & Block Elements",
             "duration": 8,
-            "videoId": "DFT9qxVCF6k"
+            "videoId": "gZFcNcji4QM"
           },
           {
             "lectureSr": 10,
             "title": "Ids & Classes in HTML",
             "duration": 13,
-            "videoId": "BucLTOfLQsk"
+            "videoId": "c8V0Hoh7Mzg"
           },
           {
             "lectureSr": 11,
             "title": "HTML Entities",
             "duration": 10,
-            "videoId": "gw1efv5WF_Q"
+            "videoId": "r1deXpoIBOw"
           },
           {
             "lectureSr": 12,
             "title": "Semantic Tags in HTML",
             "duration": 9,
-            "videoId": "FKfsmV6otEM"
+            "videoId": "sq8mX2Xyk5g"
           }
         ]
       }
@@ -128,25 +128,25 @@
             "lectureSr": 1,
             "title": "Introduction to JavaScript + Setup",
             "duration": 13,
-            "videoId": "ER9SspLe4Hg"
+            "videoId": "JGkA_98471s"
           },
           {
             "lectureSr": 2,
             "title": "Variables in JavaScript",
             "duration": 13,
-            "videoId": "Q4p8vRQX8uY"
+            "videoId": "r3uYjeCq168"
           },
           {
             "lectureSr": 3,
             "title": "const, let and var in JavaScript",
             "duration": 13,
-            "videoId": "Icev9Oxf0WA"
+            "videoId": "GPvU6BihvQM"
           },
           {
             "lectureSr": 4,
             "title": "Primitives and Objects in JavaScript",
             "duration": 11,
-            "videoId": "qpU3WIqRz9I"
+            "videoId": "rknetRS2Vlw"
           }
         ]
       },
@@ -157,13 +157,13 @@
             "lectureSr": 5,
             "title": "JavaScript Operators and Expressions",
             "duration": 23,
-            "videoId": "lsV8JQgSW1s"
+            "videoId": "dMWVPFVJAKQ"
           },
           {
             "lectureSr": 6,
             "title": "Conditional expressions in JavaScript",
             "duration": 21,
-            "videoId": "s5Lu4QTjeL0"
+            "videoId": "Nxz_sceFXlg"
           }
         ]
       },
@@ -174,13 +174,7 @@
             "lectureSr": 7,
             "title": "for Loops in JavaScript",
             "duration": 19,
-            "videoId": "XKyyM1VWtUE"
-          },
-          {
-            "lectureSr": 8,
-            "title": "while Loops in JavaScript",
-            "duration": 11,
-            "videoId": "drEjyBSu33w"
+            "videoId": "https://youtu.be/jB3OKI1a8R8"
           }
         ]
       }
@@ -197,6 +191,118 @@
     "summary": "Master the art of building mobile applications using React Native framework.",
     "imageCover": "https://example.com/react-native-cover.jpg",
     "createdAt": "2024-02-22T08:12:34.567Z",
+    "secretCourse": false
+  },
+  {
+    "courseId": 2,
+    "title": "Web Development Masterclass",
+    "description": "A comprehensive course on web development.",
+    "instructor": "Harry",
+    "price": 99,
+    "duration": 30,
+    "level": "Beginner",
+    "category": "Programming",
+    "sections": [
+      {
+        "title": "Getting Started",
+        "lectures": [
+          {
+            "lectureSr": 1,
+            "title": "Introduction to HTML, CSS, JavaScript",
+            "duration": 18,
+            "videoId": "S6_-Vi3DcCY"
+          },
+          {
+            "lectureSr": 2,
+            "title": "Installing VS Code & Live Server",
+            "duration": 17,
+            "videoId": "3NtEjDC_vGg"
+          },
+          {
+            "lectureSr": 3,
+            "title": "Basic Structure of a Website",
+            "duration": 11,
+            "videoId": "TcI9J5noF5k"
+          }
+        ]
+      },
+      {
+        "title": "HTML Tags",
+        "lectures": [
+          {
+            "lectureSr": 4,
+            "title": "Title, Script, Link & Meta Tags",
+            "duration": 8,
+            "videoId": "WWDhfWWVzH8"
+          },
+          {
+            "lectureSr": 5,
+            "title": "Headings & Paragraphs",
+            "duration": 13,
+            "videoId": "C24X5KJsLtw"
+          },
+          {
+            "lectureSr": 6,
+            "title": "Img and Anchor Tags",
+            "duration": 14,
+            "videoId": "JxrBc0F-o8g"
+          },
+          {
+            "lectureSr": 7,
+            "title": "List and Tables",
+            "duration": 9,
+            "videoId": "T-drzvplCUw"
+          },
+          {
+            "lectureSr": 8,
+            "title": "Forms & Input Tags",
+            "duration": 21,
+            "videoId": "_fzHPM2RVSc"
+          }
+        ]
+      },
+      {
+        "title": "Adding Identifier and Structure",
+        "lectures": [
+          {
+            "lectureSr": 9,
+            "title": "Inline & Block Elements",
+            "duration": 8,
+            "videoId": "gZFcNcji4QM"
+          },
+          {
+            "lectureSr": 10,
+            "title": "Ids & Classes in HTML",
+            "duration": 13,
+            "videoId": "c8V0Hoh7Mzg"
+          },
+          {
+            "lectureSr": 11,
+            "title": "HTML Entities",
+            "duration": 10,
+            "videoId": "r1deXpoIBOw"
+          },
+          {
+            "lectureSr": 12,
+            "title": "Semantic Tags in HTML",
+            "duration": 9,
+            "videoId": "sq8mX2Xyk5g"
+          }
+        ]
+      }
+    ],
+    "studentsEnrolled": 1200,
+    "slug": "web-development-bootcamp",
+    "numSections": 3,
+    "numLectures": 12,
+    "numVideos": 3,
+    "numDocs": 0,
+    "ratingsAverage": 4.8,
+    "ratingsQuantity": 250,
+    "priceDiscount": 79.99,
+    "summary": "Learn the fundamentals of web development and build real-world projects.",
+    "imageCover": "https://example.com/web-dev-bootcamp-cover.jpg",
+    "createdAt": "2024-02-21T12:34:56.789Z",
     "secretCourse": false
   }
 ]

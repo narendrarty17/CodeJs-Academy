@@ -78,7 +78,7 @@ const Section_04 = () => {
                                 </div>
 
                                 {/* Section 3: Title */}
-                                <h3 className="px-4 text-xl font-bold text-black mb-2 truncate">{course.title}</h3>
+                                <h3 className="px-4 text-lg font-bold text-black mb-2 truncate">{course.title}</h3>
 
                                 {/* Section 4: Description */}
                                 <p className="px-4 text-gray-600 line-clamp-2 mb-4">

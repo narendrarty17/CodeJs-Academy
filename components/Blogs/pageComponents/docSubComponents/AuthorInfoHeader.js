@@ -22,10 +22,7 @@ const AuthorInfoHeader = ({ author }) => {
             </div>
 
             {/* Social Media Links */}
-            <div className="flex items-center space-x-4">
-                {/* Add your social media icons and links here */}
-                <SocialMediaIcons links={author.socialMediaLinks} />
-            </div>
+            <SocialMediaIcons links={author.socialMediaLinks} />
         </div>
     );
 }

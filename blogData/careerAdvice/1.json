@@ -12,28 +12,11 @@
     "description": "Lead UX Designer @ Slack. Loves travelling lives for backstage action! Love to design user centric products and understanding consumer behavious",
     "publicationDate": "5 July, 2023",
     "followers": 267,
-    "socialMediaLinks": [
-      {
-        "alt": "facebook",
-        "iconURL": "/images/blogs/blogpage/socialMedia/facebook.svg",
-        "src": "/"
-      },
-      {
-        "alt": "linkedin",
-        "iconURL": "/images/blogs/blogpage/socialMedia/linkedin.svg",
-        "src": "/"
-      },
-      {
-        "alt": "twitter",
-        "iconURL": "/images/blogs/blogpage/socialMedia/twitter.svg",
-        "src": "/"
-      },
-      {
-        "alt": "bookmark",
-        "iconURL": "/images/blogs/blogpage/socialMedia/bookmark.svg",
-        "src": "/"
-      }
-    ]
+    "socialMediaLinks": {
+      "facebook": "/",
+      "linkedin": "/",
+      "twitter": "/"
+    }
   },
   "content": [
     {

@@ -4,7 +4,7 @@
     "image": "/images/landingPage/section_04/course_01.png",
     "category": "Programming",
     "rating": 5.0,
-    "title": "HTML and CSS Tutorials",
+    "title": "HTML, CSS and JavaScript Masterclass",
     "description": "A comprehensive course on web development.",
     "price": 99,
     "enrollButton": "INR 499",
@@ -26,10 +26,10 @@
     "image": "/images/landingPage/section_04/course_03.png",
     "category": "Programming",
     "rating": 4,
-    "title": "Python Tutorials",
-    "description": "This Javascript tutorial in Hindi course is designed for beginners with an aim to take JavaScript/ES6 and its concepts to an advanced level.",
+    "title": "Web Development Masterclass",
+    "description": "This web development tutorial in Hindi course is designed for beginners with an aim to take web development and its concepts to an advanced level.",
     "price": 250,
     "enrollButton": "INR 399",
-    "url": "/course?courseId=1"
+    "url": "/course?courseId=2"
   }
 ]
